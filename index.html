@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MLA Company - Contact, Services & Blog</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    hello world
+    <header>
+     
+    <main>
+    
+      <!-- Services Section -->
+      <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="/images/car custom.jpg" alt="Car Customization">
+                <h3>Car Customization</h3>
+                <p>Personalize your vehicle with top-tier modifications and premium finishes.</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/Maintenance & Repairs.jpg" alt="Maintenance & Repairs">
+                <h3>Maintenance & Repairs</h3>
+                <p>Our experts provide high-quality repairs and servicing to keep your car in peak condition.</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/performance upgrades.jpg" alt="Performance Upgrades">
+                <h3>Performance Upgrades</h3>
+                <p>Enhance your car’s power, speed, and efficiency with cutting-edge upgrades.</p>
+            </div>
+        </div>
+    </section>
+    
+<section class="blog">
+    <h2>Our Blog</h2>
+    <div class="blog-grid">
+        <div class="blog-post">
+            <img src="/images/maintenance.jpg" alt="Luxury Car Maintenance">
+            <h3>Luxury Car Maintenance Tips</h3>
+            <p>Discover how to keep your luxury vehicle in pristine condition with expert care.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <img src="/images/top cars.jpg" alt="Top Cars of the Year">
+            <h3>Top 10 Cars of the Year</h3>
+            <p>Explore the best luxury and sports cars that made headlines this year.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <img src="/images/electric cars.jpg" alt="Future of Electric Cars">
+            <h3>Future of Electric Cars</h3>
+            <p>Learn about the latest innovations in electric vehicle technology.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section class="contact-us">
+    <h2>Contact Us</h2>
+    <div class="contact-form-container">
+        <form class="contact-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here" rows="5" required></textarea>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    <script src="main.js"></script>
 </body>
 </html>
