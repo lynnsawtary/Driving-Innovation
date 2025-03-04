@@ -174,3 +174,52 @@
     background-color: #1abc9c; /* Blue-green */
     transform: translateY(-2px);
 }
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background-color: #ecf0f1; /* Light gray background for consistency */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #2c3e50; /* Dark blue-gray for consistency */
+}
+
+.service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: #ffffff; /* White background for a clean look */
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center-align text */
+}
+
+.service-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    color: #2c3e50; /* Dark blue-gray */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
