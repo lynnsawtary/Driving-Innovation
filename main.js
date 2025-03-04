@@ -19,3 +19,11 @@ document.querySelector('.menu').addEventListener('mouseenter', function() {
 document.querySelector('.menu').addEventListener('mouseleave', function() {
     document.querySelector('.dropdown').style.display = 'none';
 });
+
+// document.querySelector('.menu').addEventListener('mouseenter', function() {
+//     document.querySelector('.dropdown').style.display = 'block';
+// });
+
+// document.querySelector('.menu').addEventListener('mouseleave', function() {
+//     document.querySelector('.dropdown').style.display = 'none';
+// });

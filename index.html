@@ -3,78 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLA Company - Contact, Services & Blog</title>
+    <title>MLA Company</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-     
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Models</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Parts</a></li>
+                <li><a href="#">Our Blog</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="menu">
+                    <a href="#">Menu</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Take a Test Drive</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
+        <section class="hero">
+            <img src="images/mclaren-1-ht-gmh-240412_1712928561648_hpMain_16x9.jpg" alt="Car" class="car-image">
+        </section>
+    </main>
+    <section class="about-us">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>At MLA, we believe that driving should be an experience, not just a means of transportation. Our mission is to provide top-quality cars that deliver exceptional performance, comfort, and style. We’re passionate about innovation and continuously work to create vehicles that inspire and excite drivers around the world.</p>
+                
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Quality:</strong> We’re committed to delivering the highest standards of excellence in every vehicle we make.</li>
+                    <li><strong>Innovation:</strong> Our team constantly pushes the boundaries of automotive technology to deliver cutting-edge solutions.</li>
+                    <li><strong>Customer Focus:</strong> We strive to provide an outstanding customer experience from start to finish.</li>
+                </ul>
     
-      <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="service-item">
-            <img src="images/car custom.jpg" alt="Car Customization">
-            <h3>Car Customization</h3>
-            <p>Personalize your vehicle with top-tier modifications and premium finishes.</p>
+                <h3>Our Story</h3>
+                <p>Founded in 1990, we started with a vision to revolutionize the car industry by focusing on quality, performance, and customer satisfaction. Over the years, we've grown into a global brand, but our dedication to craftsmanship and passion for driving remains the same. With a team of skilled engineers and designers, we continue to push the limits of what a car can be, ensuring that every customer enjoys a driving experience like no other.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/worker-getting-into-company-car.jpg" alt="Our Team">
+            </div>
         </div>
-        <div class="service-item">
-            <img src="images/Maintenance & Repairs.jpg" alt="Maintenance & Repairs">
-            <h3>Maintenance & Repairs</h3>
-            <p>Our experts provide high-quality repairs and servicing to keep your car in peak condition.</p>
-        </div>
-        <div class="service-item">
-            <img src="images/performance upgrades.jpg" alt="Performance Upgrades">
-            <h3>Performance Upgrades</h3>
-            <p>Enhance your car’s power, speed, and efficiency with cutting-edge upgrades.</p>
-        </div>
-    </div>
-</section>
-
+    </section>
     
-<section class="blog">
-    <h2>Our Blog</h2>
-    <div class="blog-grid">
-        <div class="blog-post">
-            <img src="/images/maintenance.jpg" alt="Luxury Car Maintenance">
-            <h3>Luxury Car Maintenance Tips</h3>
-            <p>Discover how to keep your luxury vehicle in pristine condition with expert care.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="blog-post">
-            <img src="/images/top cars.jpg" alt="Top Cars of the Year">
-            <h3>Top 10 Cars of the Year</h3>
-            <p>Explore the best luxury and sports cars that made headlines this year.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="blog-post">
-            <img src="/images/electric cars.jpg" alt="Future of Electric Cars">
-            <h3>Future of Electric Cars</h3>
-            <p>Learn about the latest innovations in electric vehicle technology.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-    </div>
-</section>
 
-<!-- Contact Us Section -->
-<section class="contact-us">
-    <h2>Contact Us</h2>
-    <div class="contact-form-container">
-        <form class="contact-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your full name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message here" rows="5" required></textarea>
-
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-    </div>
-</section>
+    <footer>
+        <p>&copy; 2025 Car Company. All rights reserved.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
