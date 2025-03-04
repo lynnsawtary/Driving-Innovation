@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="model.css">
+</head>
+<body>
+    <section class="our-models">
+    <h2>Our Models</h2>
+    <div class="model-filter">
+        <label for="filter">Filter by: </label>
+        <select id="filter">
+            <option value="all">All Models</option>
+            <option value="sports">Sports Cars</option>
+            <option value="luxury">Luxury Cars</option>
+            <option value="sedan">Sedans</option>
+        </select>
+    </div>
+
+    <div class="model-cards">
+        <!-- Card 1 -->
+        <div class="model-card" data-category="sports" data-model="1">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/2025-tesla-model-s-1-672d42e172407.jpg?crop=0.465xw:0.466xh;0.285xw,0.361xh&resize=1200:*" alt="Car Model 1" class="model-image">
+            <div class="model-info">
+                <h3>Model 1</h3>
+                <p>A powerful sports car that combines speed and luxury.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="model-card" data-category="luxury" data-model="2">
+            <img src="https://www.bmw-me.com/content/dam/bmw/common/all-models/m-series/m760e-xdrive/2023/navigation/bmw-7-series-i7-m70-modelfinder.png/jcr:content/renditions/cq5dam.resized.img.585.low.time1681391222527.png" alt="Car Model 2" class="model-image">
+            <div class="model-info">
+                <h3>Model 2</h3>
+                <p>Experience the perfect blend of comfort and performance.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="model-card" data-category="sedan" data-model="3">
+            <img src="https://modenamotorsgmbh.com/64790-thickbox_default/mercedes-benz-g500-amg-my2025.jpg" alt="Car Model 3" class="model-image">
+            <div class="model-info">
+                <h3>Model 3</h3>
+                <p>A luxury sedan offering unmatched style and elegance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal Popup for Model Details -->
+<div id="modelModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h3 id="modalTitle">Model Name</h3>
+        <img id="modalImage" src="" alt="Car Image">
+        <p id="modalDescription"></p>
+        <h4>Specifications</h4>
+        <ul id="modalSpecs">
+            <!-- Specifications dynamically added here -->
+        </ul>
+    </div>
+</div>
+</body>
+<script src="model.js"></script>
+</html>

@@ -1,0 +1,157 @@
+* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2, h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Our Models Section */
+.our-models {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.our-models h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Filter Section */
+.model-filter {
+    margin-bottom: 30px;
+}
+
+.model-filter label {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.model-filter select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Model Cards */
+.model-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.model-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.model-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.model-info {
+    padding: 15px;
+}
+
+.model-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.model-info p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Modal Popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#modalSpecs {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#modalSpecs li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .model-cards {
+        grid-template-columns: 1fr;
+    }
+}
