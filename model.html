@@ -1,66 +1,222 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Driving Innovation Project</title>
+
     <link rel="stylesheet" href="model.css">
+
+    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon" >
+    <script src="model.js" defer></script>
+
 </head>
+
 <body>
-    <section class="our-models">
-    <h2>Our Models</h2>
-    <div class="model-filter">
-        <label for="filter">Filter by: </label>
-        <select id="filter">
-            <option value="all">All Models</option>
-            <option value="sports">Sports Cars</option>
-            <option value="luxury">Luxury Cars</option>
-            <option value="sedan">Sedans</option>
-        </select>
-    </div>
 
-    <div class="model-cards">
-        <!-- Card 1 -->
-        <div class="model-card" data-category="sports" data-model="1">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/2025-tesla-model-s-1-672d42e172407.jpg?crop=0.465xw:0.466xh;0.285xw,0.361xh&resize=1200:*" alt="Car Model 1" class="model-image">
-            <div class="model-info">
-                <h3>Model 1</h3>
-                <p>A powerful sports car that combines speed and luxury.</p>
+        <!--Animation of RHU Logo-->
+
+    <!-- <div class="logo-container">
+
+        <img src="./images/rhu.jpg" alt="RHU Logo" class="logo">
+
+    </div> -->
+
+ 
+
+     <!-- Our Models Section -->
+
+        <!--Boxes+ title(header)-->
+
+    <section class="models-section">
+
+        <h1>Our Models</h1>
+
+        <small>Discover our varied brand and model range—and find your desired vehicle.</small>
+
+   
+
+        <div class="model-boxes">
+
+            <div class="brand-box" onclick="showModels('ferrari')">
+
+                <div class="brand-category">Ferrari</div>
+
             </div>
+
+            <div class="brand-box" onclick="showModels('lambo')">
+
+                <div class="brand-category">Lamborghini</div>
+
+            </div>
+
+            <div class="brand-box" onclick="showModels('mercedes')">
+
+                <div class="brand-category">Mercedes</div>
+
+            </div>
+
+            <div class="brand-box" onclick="showModels('bmw')">
+
+                <div class="brand-category">BMW</div>
+
+            </div>
+
+            <div class="brand-box" onclick="showModels('tesla')">
+
+                <div class="brand-category">Tesla</div>
+
+            </div>
+
         </div>
 
-        <!-- Card 2 -->
-        <div class="model-card" data-category="luxury" data-model="2">
-            <img src="https://www.bmw-me.com/content/dam/bmw/common/all-models/m-series/m760e-xdrive/2023/navigation/bmw-7-series-i7-m70-modelfinder.png/jcr:content/renditions/cq5dam.resized.img.585.low.time1681391222527.png" alt="Car Model 2" class="model-image">
-            <div class="model-info">
-                <h3>Model 2</h3>
-                <p>Experience the perfect blend of comfort and performance.</p>
+       
+
+ 
+
+<!-- Main Section with Car Details -->
+
+<div class="car-details-section">
+
+   
+
+    <div class="car-details">
+
+        <!-- Ferrari -->
+
+        <div class="car-item">
+
+            <div class="car-image">
+
+                <img src="./images/ferrari-f80.jpg" alt="Ferrari">
+
             </div>
+
+            <div class="car-info">
+
+                <h3>Ferrari F80</h3>
+
+                <p class="car-price">$330,000</p>
+
+                <button class="learn-more-btn">Learn More</button>
+
+            </div>
+
         </div>
 
-        <!-- Card 3 -->
-        <div class="model-card" data-category="sedan" data-model="3">
-            <img src="https://modenamotorsgmbh.com/64790-thickbox_default/mercedes-benz-g500-amg-my2025.jpg" alt="Car Model 3" class="model-image">
-            <div class="model-info">
-                <h3>Model 3</h3>
-                <p>A luxury sedan offering unmatched style and elegance.</p>
+ 
+
+        <!-- Lamborghini -->
+
+         
+
+        <div class="car-item">
+
+            <div class="car-image">
+
+                <img src="./images/Lamborghini-Aventador.avif" alt="Lamborghini">
+
             </div>
+
+            <div class="car-info">
+
+                <h3>Lamborghini Aventador</h3>
+
+                <p class="car-price">$400,000</p>
+
+                <button class="learn-more-btn">Learn More</button>
+
+            </div>
+
         </div>
+
+ 
+
+        <!-- Tesla -->
+
+        <div class="car-item">
+
+            <div class="car-image">
+
+                <img src="./images/Tesla_Model_S.jpg" alt="Tesla">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Tesla Model S Plaid</h3>
+
+                <p class="car-price">$135,000</p>
+
+                <button class="learn-more-btn">Learn More</button>
+
+            </div>
+
+        </div>
+
+ 
+
+        <!-- BMW -->
+
+        <div class="car-item">
+
+            <div class="car-image">
+
+                <img src="./images/BMW M5.jpg" alt="BMW">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>BMW M5</h3>
+
+                <p class="car-price">$105,000</p>
+
+                <button class="learn-more-btn">Learn More</button>
+
+            </div>
+
+        </div>
+
+ 
+
+        <!-- Mercedes -->
+
+        <div class="car-item">
+
+            <div class="car-image">
+
+                <img src="./images/mercedes-benz s-class.jpg" alt="Mercedes">
+
+            </div>
+
+            <div class="car-info">
+
+                <h3>Mercedes-Benz S-Class</h3>
+
+                <p class="car-price">$115,000</p>
+
+                <button class="learn-more-btn">Learn More</button>
+
+            </div>
+
+        </div>
+
     </div>
-</section>
-<!-- Modal Popup for Model Details -->
-<div id="modelModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <h3 id="modalTitle">Model Name</h3>
-        <img id="modalImage" src="" alt="Car Image">
-        <p id="modalDescription"></p>
-        <h4>Specifications</h4>
-        <ul id="modalSpecs">
-            <!-- Specifications dynamically added here -->
-        </ul>
-    </div>
+
 </div>
+
+ 
+
+</section>
+
+ 
+
 </body>
-<script src="model.js"></script>
+
 </html>

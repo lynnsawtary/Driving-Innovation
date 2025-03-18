@@ -3,43 +3,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
     background-color: #f4f4f4;
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Header and Navigation Bar */
-header {
-    background-color: #2c3e50; /* Dark background for the header */
+  }
+  
+  /* Header and Navigation Bar */
+  header {
+    background-color: #2c3e50; /* Dark header background */
     padding: 15px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     text-align: center;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
+    display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.navbar ul li {
-    display: inline-block;
+  }
+  
+  .navbar ul li {
     margin: 0 20px;
     position: relative;
-}
-
-.navbar ul li a {
+  }
+  
+  .navbar ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -47,24 +48,24 @@ header {
     display: block;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover effect for navigation items */
-.navbar ul li a:hover {
-    background-color: #3498db; /* Blue background on hover */
-    transform: translateY(-5px); /* Slight lift effect */
-}
-
-/* Dropdown Menu */
-.menu {
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #3498db;
+    transform: translateY(-5px);
+  }
+  
+  /* Position the Login item at the far right */
+  .navbar ul li.login {
+    margin-left: auto;
+  }
+  
+  /* Dropdown Menu */
+  .menu {
     position: relative;
-}
-
-.menu:hover .dropdown {
-    display: block;
-}
-
-.dropdown {
+  }
+  
+  .dropdown {
     display: none;
     position: absolute;
     background-color: #34495e;
@@ -75,134 +76,200 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-}
-
-.dropdown li a {
+  }
+  
+  .menu:hover .dropdown {
+    display: block;
+    opacity: 1;
+  }
+  
+  .dropdown li a {
     color: white;
     padding: 10px;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.dropdown li a:hover {
+  }
+  
+  .dropdown li a:hover {
     background-color: #1abc9c;
     transform: translateY(-2px);
-}
-
-/* Hover transition for dropdown visibility */
-.menu:hover .dropdown {
-    opacity: 1;
-}
-
-/* Main Hero Section */
-.hero {
+  }
+  
+  /* Main Hero Section */
+  .hero {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ecf0f1; /* Light background for hero section */
-    padding-top: 60px; /* To make room for the fixed navbar */
-}
-
-.car-image {
+    background-color: #ecf0f1;
+    padding-top: 60px; /* To account for the fixed navbar */
+  }
+  
+  .car-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire space */
+    object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-/* About Us Section */
-.about-us {
+  }
+  
+  /* About Us Section */
+  .about-us {
     padding: 50px 20px;
     background-color: #f4f4f4;
     text-align: center;
-}
-
-.about-us h2 {
+  }
+  
+  .about-us h2 {
     font-size: 36px;
     margin-bottom: 40px;
     font-weight: bold;
-}
-
-.about-content {
+  }
+  
+  .about-content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
-}
-
-.about-text {
+  }
+  
+  .about-text {
     width: 60%;
     text-align: left;
-}
-
-.about-text h3 {
+  }
+  
+  .about-text h3 {
     font-size: 28px;
     margin-bottom: 15px;
     color: #2c3e50;
-}
-
-.about-text p {
+  }
+  
+  .about-text p {
     font-size: 18px;
     margin-bottom: 20px;
     line-height: 1.6;
-}
-
-.about-text ul {
+  }
+  
+  .about-text ul {
     list-style: none;
     padding: 0;
-}
-
-.about-text li {
+  }
+  
+  .about-text li {
     font-size: 16px;
     margin-bottom: 10px;
     text-align: left;
-}
-
-.about-image {
+  }
+  
+  .about-image {
     width: 30%;
     max-width: 400px;
-}
-
-.about-image img {
+  }
+  
+  .about-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure content is responsive */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive adjustments for About Us */
+  @media (max-width: 768px) {
     .about-content {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
-
     .about-text {
-        width: 100%;
+      width: 100%;
     }
-
     .about-image {
-        width: 100%;
-        margin-top: 20px;
+      width: 100%;
+      margin-top: 20px;
     }
-}
-
-
-/* Footer */
-footer {
+  }
+  
+  /* Footer */
+  footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 15px;
-    position: relative;
-    bottom: 0;
     width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
+  }
+  
+  /* Login Overlay and Form Styling */
+  .login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Hidden by default; shown via JS */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    width: 350px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-login:hover {
+    background-color: #1abc9c;
+  }
+  
+  /* Optional: Close Button Styling (if used) */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  

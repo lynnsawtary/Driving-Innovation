@@ -81,3 +81,32 @@ filterSelect.addEventListener('change', function() {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+   
+
+    // ⏳ Set a timeout to transition after 4 seconds (3s fade-in + 1s fade-out)
+
+    setTimeout(() => {
+
+        // 🎬 Hide the logo section after animation ends
+
+        document.querySelector(".logo-container").style.display = "none";
+
+       
+
+        // 🚀 Show the main content after the logo disappears
+
+        document.querySelector(".main-content").style.display = "block";
+
+       
+
+        // 🌑 Change the background color for the main content
+
+        document.body.style.backgroundColor = "#111"; // Dark gray background
+
+    }, 4000); // 4 seconds total (animation time)
+
+});
