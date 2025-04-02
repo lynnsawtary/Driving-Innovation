@@ -5,6 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRIVING INNOVATION</title>
     <link rel="stylesheet" href="services.css">
+    <style>
+        /* Modal styles - Only this new CSS has been added */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-dialog {
+            position: absolute;
+            width: 500px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease-out;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .modal-overlay.show .modal-dialog {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 18px 25px;
+            background: linear-gradient(135deg, #0066cc, #004080);
+            color: white;
+            cursor: move;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: transform 0.2s;
+        }
+        
+        .close-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .modal-body {
+            padding: 25px;
+            background: #f9fafb;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+        
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            margin-top: 25px;
+            text-align: right;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #0066cc, #004080);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #0055aa, #003366);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+        
+        /* Date and time inputs */
+        input[type="date"], input[type="time"] {
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 11px 15px;
+        }
+        
+        /* Select dropdown styling */
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
+    </style>
 </head>
 <body>
     <!-- Services Header -->
@@ -90,251 +239,249 @@
                       </div>
                 
                 <div class="service-cta">
-                    <a href="#contact" class="btn btn-primary">Schedule Maintenance</a>
-                    <a href="#" class="btn btn-secondary" data-action="view-packages">View Maintenance Packages</a>
-                    
+                    <button id="scheduleMaintenanceBtn" class="btn btn-primary">Schedule Maintenance</button>
+                    <!-- "View Maintenance Packages" button has been removed as requested -->
                 </div>
             </section>
             
-            
             <!-- Customization -->
-<!-- Customization -->
-<section class="service-category" id="customization">
-    <div class="service-header">
-        <i class="fas fa-paint-roller"></i>
-        <h2>Vehicle Customization</h2>
-        <p>Transform your vehicle into a unique masterpiece that reflects your personality</p>
-    </div>
-    
-    <div class="service-details">
-        <div class="service-features">
-            <h3>Customization Options</h3>
-            <div class="features-grid">
-                <!-- Paint & Wraps Card with PPG Logo -->
-                <div class="feature-card">
-                    <div class="brand-logo">
-                        <img src="https://i.imgur.com/JQJQJQJ.png" alt="PPG" class="logo-img">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <h4>Paint & Wraps</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Full color changes</li>
-                        <li><i class="fas fa-check"></i> Custom airbrush designs</li>
-                        <li><i class="fas fa-check"></i> Premium vinyl wraps</li>
-                        <li><i class="fas fa-check"></i> Ceramic coatings</li>
-                        <li><i class="fas fa-check"></i> Chrome delete services</li>
-                    </ul>
+            <section class="service-category" id="customization">
+                <div class="service-header">
+                    <i class="fas fa-paint-roller"></i>
+                    <h2>Vehicle Customization</h2>
+                    <p>Transform your vehicle into a unique masterpiece that reflects your personality</p>
                 </div>
                 
-                <!-- Interior Card with Recaro Logo -->
-                <div class="feature-card">
-                    <div class="brand-logo">
-                        <img src="https://www.recaro-automotive.com/fileadmin/_processed_/4/0/csm_recaro-logo-standard_2c8e1c1c1a.png" alt="Recaro" class="logo-img">
+                <div class="service-details">
+                    <div class="service-features">
+                        <h3>Customization Options</h3>
+                        <div class="features-grid">
+                            <!-- Paint & Wraps Card with PPG Logo -->
+                            <div class="feature-card">
+                                <div class="brand-logo">
+                                    <img src="https://i.imgur.com/JQJQJQJ.png" alt="PPG" class="logo-img">
+                                </div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-spray-can"></i>
+                                </div>
+                                <h4>Paint & Wraps</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Full color changes</li>
+                                    <li><i class="fas fa-check"></i> Custom airbrush designs</li>
+                                    <li><i class="fas fa-check"></i> Premium vinyl wraps</li>
+                                    <li><i class="fas fa-check"></i> Ceramic coatings</li>
+                                    <li><i class="fas fa-check"></i> Chrome delete services</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Interior Card with Recaro Logo -->
+                            <div class="feature-card">
+                                <div class="brand-logo">
+                                    <img src="https://www.recaro-automotive.com/fileadmin/_processed_/4/0/csm_recaro-logo-standard_2c8e1c1c1a.png" alt="Recaro" class="logo-img">
+                                </div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                                <h4>Interior</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Custom upholstery</li>
+                                    <li><i class="fas fa-check"></i> Carbon fiber trim</li>
+                                    <li><i class="fas fa-check"></i> Ambient lighting</li>
+                                    <li><i class="fas fa-check"></i> Personalized stitching</li>
+                                    <li><i class="fas fa-check"></i> Custom dashboard wraps</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Wheels & Tires Card with BBS Logo -->
+                            <div class="feature-card">
+                                <div class="brand-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/BBS_Logo.svg/1200px-BBS_Logo.svg.png" alt="BBS" class="logo-img">
+                                </div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-tire"></i>
+                                </div>
+                                <h4>Wheels & Tires</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Custom forged wheels</li>
+                                    <li><i class="fas fa-check"></i> Color-matched calipers</li>
+                                    <li><i class="fas fa-check"></i> Performance tire packages</li>
+                                    <li><i class="fas fa-check"></i> Spacers & adapters</li>
+                                    <li><i class="fas fa-check"></i> Tire lettering</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Lighting Card with HELLA Logo -->
+                            <div class="feature-card">
+                                <div class="brand-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hella_logo.svg/1200px-Hella_logo.svg.png" alt="HELLA" class="logo-img">
+                                </div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4>Lighting</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> LED conversions</li>
+                                    <li><i class="fas fa-check"></i> Custom headlight designs</li>
+                                    <li><i class="fas fa-check"></i> Underglow lighting</li>
+                                    <li><i class="fas fa-check"></i> Sequential turn signals</li>
+                                    <li><i class="fas fa-check"></i> Interior mood lighting</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-icon">
-                        <i class="fas fa-couch"></i>
+                    
+                    <div class="customization-process">
+                        <h3>Our Customization Process</h3>
+                        <div class="process-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Design Consultation</h4>
+                                    <p>60-minute session with our design specialists to understand your vision</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>3D Rendering</h4>
+                                    <p>See photorealistic previews of your customized vehicle before work begins</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Material Selection</h4>
+                                    <p>Choose from premium materials with our expert guidance</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Fabrication</h4>
+                                    <p>Precision work by our master craftsmen in our state-of-the-art facility</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Final Reveal</h4>
+                                    <p>Professional unveiling experience with before/after documentation</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Interior</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Custom upholstery</li>
-                        <li><i class="fas fa-check"></i> Carbon fiber trim</li>
-                        <li><i class="fas fa-check"></i> Ambient lighting</li>
-                        <li><i class="fas fa-check"></i> Personalized stitching</li>
-                        <li><i class="fas fa-check"></i> Custom dashboard wraps</li>
-                    </ul>
                 </div>
                 
-                <!-- Wheels & Tires Card with BBS Logo -->
-                <div class="feature-card">
-                    <div class="brand-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/BBS_Logo.svg/1200px-BBS_Logo.svg.png" alt="BBS" class="logo-img">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="fas fa-tire"></i>
-                    </div>
-                    <h4>Wheels & Tires</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Custom forged wheels</li>
-                        <li><i class="fas fa-check"></i> Color-matched calipers</li>
-                        <li><i class="fas fa-check"></i> Performance tire packages</li>
-                        <li><i class="fas fa-check"></i> Spacers & adapters</li>
-                        <li><i class="fas fa-check"></i> Tire lettering</li>
-                    </ul>
+                <div class="service-cta">
+                    <a href="#contact" class="btn btn-primary">Book Design Consultation</a>
+                    <a href="#" class="btn btn-secondary" data-action="view-gallery">View Custom Gallery</a>
                 </div>
-                
-                <!-- Lighting Card with HELLA Logo -->
-                <div class="feature-card">
-                    <div class="brand-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hella_logo.svg/1200px-Hella_logo.svg.png" alt="HELLA" class="logo-img">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h4>Lighting</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> LED conversions</li>
-                        <li><i class="fas fa-check"></i> Custom headlight designs</li>
-                        <li><i class="fas fa-check"></i> Underglow lighting</li>
-                        <li><i class="fas fa-check"></i> Sequential turn signals</li>
-                        <li><i class="fas fa-check"></i> Interior mood lighting</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="customization-process">
-            <h3>Our Customization Process</h3>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Design Consultation</h4>
-                        <p>60-minute session with our design specialists to understand your vision</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>3D Rendering</h4>
-                        <p>See photorealistic previews of your customized vehicle before work begins</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Material Selection</h4>
-                        <p>Choose from premium materials with our expert guidance</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Fabrication</h4>
-                        <p>Precision work by our master craftsmen in our state-of-the-art facility</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h4>Final Reveal</h4>
-                        <p>Professional unveiling experience with before/after documentation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="service-cta">
-        <a href="#contact" class="btn btn-primary">Book Design Consultation</a>
-        <a href="#" class="btn btn-secondary" data-action="view-gallery">View Custom Gallery</a>
-    </div>
-</section>
+            </section>
             
-         <!-- Performance Upgrades -->
-<section class="service-category" id="performance">
-    <div class="service-header">
-        <i class="fas fa-tachometer-alt"></i>
-        <h2>Performance Upgrades</h2>
-        <p>Unlock your vehicle's full potential with our engineered performance solutions</p>
-    </div>
-    
-    <div class="service-details">
-        <div class="performance-packages">
-            <h3>Stage Upgrade Packages</h3>
-            <div class="package-tabs">
-                <button class="tab-btn active" onclick="showTab('stage1')">Stage 1</button>
-                <button class="tab-btn" onclick="showTab('stage2')">Stage 2</button>
-                <button class="tab-btn" onclick="showTab('stage3')">Stage 3</button>
-                <button class="tab-btn" onclick="showTab('custom')">Custom</button>
-            </div>
+            <!-- Performance Upgrades -->
+            <section class="service-category" id="performance">
+                <div class="service-header">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h2>Performance Upgrades</h2>
+                    <p>Unlock your vehicle's full potential with our engineered performance solutions</p>
+                </div>
+                
+                <div class="service-details">
+                    <div class="performance-packages">
+                        <h3>Stage Upgrade Packages</h3>
+                        <div class="package-tabs">
+                            <button class="tab-btn active" onclick="showTab('stage1')">Stage 1</button>
+                            <button class="tab-btn" onclick="showTab('stage2')">Stage 2</button>
+                            <button class="tab-btn" onclick="showTab('stage3')">Stage 3</button>
+                            <button class="tab-btn" onclick="showTab('custom')">Custom</button>
+                        </div>
+                        
+                        <div class="tab-contents">
+                            <div id="stage1" class="package-content active">
+                                <div class="package-details">
+                                    <h4>Entry-Level Performance</h4>
+                                    <p class="price">From $2,499</p>
+                                    <ul>
+                                        <li>ECU Remapping (Up to +50HP)</li>
+                                        <li>Performance Air Filter</li>
+                                        <li>Cat-Back Exhaust System</li>
+                                        <li>Basic Suspension Upgrade</li>
+                                        <li>Dyno Testing Included</li>
+                                    </ul>
+                                    <p class="time">Installation: 1-2 Days</p>
+                                </div>
+                                <div class="package-image">
+                                    <img src="https://s2-autoesporte.glbimg.com/Whi4tNS2SzF-i-DgEWhuwgrVNa0=/0x0:620x413/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/R/O/mfh7s8ScaTKiUE95QRtg/2016-06-30-volvo-s90-03.jpg" alt="Stage 1 Performance Package">
+                                </div>
+                            </div>
+                            
+                            <div id="stage2" class="package-content">
+                                <div class="package-details">
+                                    <h4>Serious Performance</h4>
+                                    <p class="price">From $5,999</p>
+                                    <ul>
+                                        <li>ECU Remapping with TCU Tune</li>
+                                        <li>Cold Air Intake System</li>
+                                        <li>Full Turbo-Back Exhaust</li>
+                                        <li>Coilover Suspension</li>
+                                        <li>Upgraded Intercooler</li>
+                                        <li>Dyno Testing + Road Tuning</li>
+                                    </ul>
+                                    <p class="time">Installation: 3-5 Days</p>
+                                </div>
+                                <div class="package-image">
+                                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stage 2 Performance Package">
+                                </div>
+                            </div>
+                            
+                            <div id="stage3" class="package-content">
+                                <div class="package-details">
+                                    <h4>Track-Ready Build</h4>
+                                    <p class="price">From $12,999</p>
+                                    <ul>
+                                        <li>Custom ECU Mapping</li>
+                                        <li>Big Turbo/Supercharger Kit</li>
+                                        <li>Fuel System Upgrades</li>
+                                        <li>Full Suspension Overhaul</li>
+                                        <li>Brake System Upgrade</li>
+                                        <li>Roll Cage Installation</li>
+                                        <li>Extensive Dyno Tuning</li>
+                                    </ul>
+                                    <p class="time">Installation: 2-3 Weeks</p>
+                                </div>
+                                <div class="package-image">
+                                    <img src="https://hips.hearstapps.com/hmg-prod/images/2024-volvo-s90-103-66a11cb112494.jpg?crop=0.429xw:0.336xh;0.313xw,0.581xh&resize=1200:*" alt="Stage 3 Performance Package">
+                                </div>
+                            </div>
+                            
+                            <div id="custom" class="package-content">
+                                <div class="package-details">
+                                    <h4>Bespoke Performance</h4>
+                                    <p class="price">Custom Quote</p>
+                                    <ul>
+                                        <li>Fully Custom Engine Builds</li>
+                                        <li>Forced Induction Systems</li>
+                                        <li>Standalone Engine Management</li>
+                                        <li>Custom Fabrication</li>
+                                        <li>Aerodynamic Enhancements</li>
+                                        <li>Complete Vehicle Lightweighting</li>
+                                    </ul>
+                                    <p class="time">Installation: Varies by Project</p>
+                                </div>
+                                <div class="package-image">
+                                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Custom Build">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-cta">
+                    <a href="#contact" class="btn btn-primary">Get Performance Consultation</a>
+                    <a href="#" class="btn btn-secondary" data-action="view-dyno">View Dyno Results</a>
+                </div>
+            </section>
             
-            <div class="tab-contents">
-                <div id="stage1" class="package-content active">
-                    <div class="package-details">
-                        <h4>Entry-Level Performance</h4>
-                        <p class="price">From $2,499</p>
-                        <ul>
-                            <li>ECU Remapping (Up to +50HP)</li>
-                            <li>Performance Air Filter</li>
-                            <li>Cat-Back Exhaust System</li>
-                            <li>Basic Suspension Upgrade</li>
-                            <li>Dyno Testing Included</li>
-                        </ul>
-                        <p class="time">Installation: 1-2 Days</p>
-                    </div>
-                    <div class="package-image">
-                        <img src="https://s2-autoesporte.glbimg.com/Whi4tNS2SzF-i-DgEWhuwgrVNa0=/0x0:620x413/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/R/O/mfh7s8ScaTKiUE95QRtg/2016-06-30-volvo-s90-03.jpg" alt="Stage 1 Performance Package">
-                    </div>
-                </div>
-                
-                <div id="stage2" class="package-content">
-                    <div class="package-details">
-                        <h4>Serious Performance</h4>
-                        <p class="price">From $5,999</p>
-                        <ul>
-                            <li>ECU Remapping with TCU Tune</li>
-                            <li>Cold Air Intake System</li>
-                            <li>Full Turbo-Back Exhaust</li>
-                            <li>Coilover Suspension</li>
-                            <li>Upgraded Intercooler</li>
-                            <li>Dyno Testing + Road Tuning</li>
-                        </ul>
-                        <p class="time">Installation: 3-5 Days</p>
-                    </div>
-                    <div class="package-image">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stage 2 Performance Package">
-                    </div>
-                </div>
-                
-                <div id="stage3" class="package-content">
-                    <div class="package-details">
-                        <h4>Track-Ready Build</h4>
-                        <p class="price">From $12,999</p>
-                        <ul>
-                            <li>Custom ECU Mapping</li>
-                            <li>Big Turbo/Supercharger Kit</li>
-                            <li>Fuel System Upgrades</li>
-                            <li>Full Suspension Overhaul</li>
-                            <li>Brake System Upgrade</li>
-                            <li>Roll Cage Installation</li>
-                            <li>Extensive Dyno Tuning</li>
-                        </ul>
-                        <p class="time">Installation: 2-3 Weeks</p>
-                    </div>
-                    <div class="package-image">
-                        <img src="https://hips.hearstapps.com/hmg-prod/images/2024-volvo-s90-103-66a11cb112494.jpg?crop=0.429xw:0.336xh;0.313xw,0.581xh&resize=1200:*" alt="Stage 3 Performance Package">
-                    </div>
-                </div>
-                
-                <div id="custom" class="package-content">
-                    <div class="package-details">
-                        <h4>Bespoke Performance</h4>
-                        <p class="price">Custom Quote</p>
-                        <ul>
-                            <li>Fully Custom Engine Builds</li>
-                            <li>Forced Induction Systems</li>
-                            <li>Standalone Engine Management</li>
-                            <li>Custom Fabrication</li>
-                            <li>Aerodynamic Enhancements</li>
-                            <li>Complete Vehicle Lightweighting</li>
-                        </ul>
-                        <p class="time">Installation: Varies by Project</p>
-                    </div>
-                    <div class="package-image">
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Custom Build">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="service-cta">
-        <a href="#contact" class="btn btn-primary">Get Performance Consultation</a>
-        <a href="#" class="btn btn-secondary" data-action="view-dyno">View Dyno Results</a>
-    </div>
-</section>
             <!-- Technology Integration -->
             <section class="service-category" id="technology">
                 <div class="service-header">
@@ -418,7 +565,6 @@
                                 Your browser doesn't support HTML5 video.
                             </video>
                         </div>
-                        
                     </div>
                 </div>
                 
@@ -438,6 +584,77 @@
             <a href="#contact" class="btn btn-large">GET IN TOUCH</a>
         </div>
     </section>
+
+    <!-- Modal Dialog for Maintenance Form -->
+    <div id="maintenanceModal" class="modal-overlay">
+        <div id="modalDialog" class="modal-dialog">
+            <div class="modal-header" id="modalHeader">
+                <h3>Schedule Your Maintenance</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Make & Model</label>
+                        <input type="text" id="vehicle" name="vehicle" required placeholder="Tesla Model S">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year">Vehicle Year</label>
+                        <input type="number" id="year" name="year" min="1900" max="2025" required placeholder="2022">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Type</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Select a service --</option>
+                            <option value="oil-change">Oil Change</option>
+                            <option value="brake-service">Brake Service</option>
+                            <option value="tire-rotation">Tire Rotation</option>
+                            <option value="diagnostics">Diagnostics</option>
+                            <option value="full-inspection">Full Inspection</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" placeholder="Any special requests or details about your vehicle..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Schedule Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function showTab(tabId) {
             // Remove active class from all tab buttons
@@ -460,6 +677,98 @@
             const activeContent = document.getElementById(tabId);
             activeContent.classList.add('active');
         }
-        </script>
+        
+        // Enhanced Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('maintenanceModal');
+            const modalDialog = document.getElementById('modalDialog');
+            const modalHeader = document.getElementById('modalHeader');
+            const closeBtn = document.getElementById('closeModal');
+            const scheduleBtn = document.getElementById('scheduleMaintenanceBtn');
+            const form = document.getElementById('appointmentForm');
+            
+            // Make modal draggable
+            let isDragging = false;
+            let offsetX, offsetY;
+            
+            modalHeader.addEventListener('mousedown', function(e) {
+                if (e.target === closeBtn) return;
+                isDragging = true;
+                offsetX = e.clientX - modalDialog.getBoundingClientRect().left;
+                offsetY = e.clientY - modalDialog.getBoundingClientRect().top;
+                modalDialog.style.cursor = 'grabbing';
+                document.body.style.userSelect = 'none';
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                
+                // Keep modal within viewport with 20px margin
+                const maxX = window.innerWidth - modalDialog.offsetWidth - 20;
+                const maxY = window.innerHeight - modalDialog.offsetHeight - 20;
+                
+                modalDialog.style.left = Math.min(Math.max(20, x), maxX) + 'px';
+                modalDialog.style.top = Math.min(Math.max(20, y), maxY) + 'px';
+            });
+            
+            function stopDragging() {
+                isDragging = false;
+                modalDialog.style.cursor = 'default';
+                document.body.style.userSelect = '';
+            }
+            
+            document.addEventListener('mouseup', stopDragging);
+            document.addEventListener('mouseleave', stopDragging);
+            
+            // Show modal with animation
+            scheduleBtn.addEventListener('click', function() {
+                modal.style.display = 'block';
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    // Center modal initially with viewport boundary checks
+                    const left = Math.max(20, (window.innerWidth - modalDialog.offsetWidth) / 2);
+                    const top = Math.max(20, (window.innerHeight - modalDialog.offsetHeight) / 3);
+                    modalDialog.style.left = left + 'px';
+                    modalDialog.style.top = top + 'px';
+                }, 10);
+            });
+            
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+            
+            closeBtn.addEventListener('click', closeModal);
+            
+            // Close when clicking outside modal
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Thank you! Your maintenance appointment has been scheduled. We will contact you shortly to confirm.');
+                closeModal();
+                form.reset();
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
