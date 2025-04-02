@@ -3,80 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLA Company - Contact, Services & Blog</title>
-    <link rel="stylesheet" href="styleServices.css">
+    <title>DRIVING INNOVATION</title>
+    <link rel="stylesheet" href="services.css">
 </head>
 <body>
-    <header>
-     
-    <main>
+    <!-- Services Header -->
+    <header class="services-header" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-X-Desktop-US.png') no-repeat center center/cover;">
+        <div class="container">
+            <h1>OUR <span>EXPERT SERVICES</span></h1>
+            <p>Precision engineering meets automotive passion - we deliver excellence in every detail</p>
+        </div>
+    </header>
+
+    <!-- Main Services Section -->
+    <main class="services-main">
+        <div class="container">
+            <!-- Maintenance & Repairs -->
+            <section class="service-category" id="maintenance">
+                <div class="service-header">
+                    <i class="fas fa-tools"></i>
+                    <h2>Maintenance & Repairs</h2>
+                    <p>Keep your vehicle performing at peak condition with our factory-trained technicians</p>
+                </div>
+                
+                <div class="service-details">
+                    <div class="service-features">
+                        <h3>Comprehensive Care Packages</h3>
+                        <ul>
+                            <li><strong>Factory Scheduled Maintenance:</strong> Adhering to exact OEM specifications</li>
+                            <li><strong>Diagnostic Services:</strong> Advanced computer diagnostics for all makes/models</li>
+                            <li><strong>Fluid Services:</strong> Premium synthetic oil changes, coolant flushes, brake fluid replacement</li>
+                            <li><strong>Brake Systems:</strong> Complete inspection, pad/rotor replacement, caliper service</li>
+                            <li><strong>Suspension Services:</strong> Strut/shock replacement, alignment, bushing inspection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-benefits">
+                        <h3>Why Choose Our Maintenance?</h3>
+                        <div class="benefit-card">
+                            <i class="fas fa-certificate"></i>
+                            <h4>OEM-Certified Technicians</h4>
+                            <p>Our team receives continuous training from manufacturers</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Precision Timelines</h4>
+                            <p>90% of services completed within 2 hours</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>2-Year Warranty</h4>
+                            <p>All services come with our premium warranty</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-gallery">
+                        <h3>Our Maintenance Facility</h3>
+                        <div class="gallery-grid">
+                          <!-- Card 1 -->
+                          <div class="gallery-item">
+                            <img src="images/performance upgrades.jpg" alt="Service Bay">
+                            <div class="card-content">
+                              <h4 class="card-title">Premium Service Bay</h4>
+                              <p class="card-description">Our climate-controlled service bays feature OEM-grade equipment and lifts for precision maintenance work on your vehicle.</p>
+                            </div>
+                          </div>
+                          
+                          <!-- Card 2 -->
+                          <div class="gallery-item">
+                            <img src="images/Maintenance & Repairs.jpg" alt="Technicians">
+                            <div class="card-content">
+                              <h4 class="card-title">Certified Technicians</h4>
+                              <p class="card-description">Factory-trained specialists using manufacturer-approved tools and procedures for all maintenance services.</p>
+                            </div>
+                          </div>
+                          
+                          <!-- Card 3 -->
+                          <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" alt="Diagnostics">
+                            <div class="card-content">
+                              <h4 class="card-title">Advanced Diagnostics</h4>
+                              <p class="card-description">State-of-the-art computerized systems for accurate troubleshooting and comprehensive vehicle health analysis.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+                <div class="service-cta">
+                    <a href="#contact" class="btn btn-primary">Schedule Maintenance</a>
+                    <a href="#" class="btn btn-secondary" data-action="view-packages">View Maintenance Packages</a>
+                    
+                </div>
+            </section>
+            
+            
+            <!-- Customization -->
+<!-- Customization -->
+<section class="service-category" id="customization">
+    <div class="service-header">
+        <i class="fas fa-paint-roller"></i>
+        <h2>Vehicle Customization</h2>
+        <p>Transform your vehicle into a unique masterpiece that reflects your personality</p>
+    </div>
     
-      <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="service-item">
-            <img src="images/car custom.jpg" alt="Car Customization">
-            <h3>Car Customization</h3>
-            <p>Personalize your vehicle with top-tier modifications and premium finishes.</p>
+    <div class="service-details">
+        <div class="service-features">
+            <h3>Customization Options</h3>
+            <div class="features-grid">
+                <!-- Paint & Wraps Card with PPG Logo -->
+                <div class="feature-card">
+                    <div class="brand-logo">
+                        <img src="https://i.imgur.com/JQJQJQJ.png" alt="PPG" class="logo-img">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h4>Paint & Wraps</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full color changes</li>
+                        <li><i class="fas fa-check"></i> Custom airbrush designs</li>
+                        <li><i class="fas fa-check"></i> Premium vinyl wraps</li>
+                        <li><i class="fas fa-check"></i> Ceramic coatings</li>
+                        <li><i class="fas fa-check"></i> Chrome delete services</li>
+                    </ul>
+                </div>
+                
+                <!-- Interior Card with Recaro Logo -->
+                <div class="feature-card">
+                    <div class="brand-logo">
+                        <img src="https://www.recaro-automotive.com/fileadmin/_processed_/4/0/csm_recaro-logo-standard_2c8e1c1c1a.png" alt="Recaro" class="logo-img">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h4>Interior</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Custom upholstery</li>
+                        <li><i class="fas fa-check"></i> Carbon fiber trim</li>
+                        <li><i class="fas fa-check"></i> Ambient lighting</li>
+                        <li><i class="fas fa-check"></i> Personalized stitching</li>
+                        <li><i class="fas fa-check"></i> Custom dashboard wraps</li>
+                    </ul>
+                </div>
+                
+                <!-- Wheels & Tires Card with BBS Logo -->
+                <div class="feature-card">
+                    <div class="brand-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/BBS_Logo.svg/1200px-BBS_Logo.svg.png" alt="BBS" class="logo-img">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <h4>Wheels & Tires</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Custom forged wheels</li>
+                        <li><i class="fas fa-check"></i> Color-matched calipers</li>
+                        <li><i class="fas fa-check"></i> Performance tire packages</li>
+                        <li><i class="fas fa-check"></i> Spacers & adapters</li>
+                        <li><i class="fas fa-check"></i> Tire lettering</li>
+                    </ul>
+                </div>
+                
+                <!-- Lighting Card with HELLA Logo -->
+                <div class="feature-card">
+                    <div class="brand-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hella_logo.svg/1200px-Hella_logo.svg.png" alt="HELLA" class="logo-img">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Lighting</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> LED conversions</li>
+                        <li><i class="fas fa-check"></i> Custom headlight designs</li>
+                        <li><i class="fas fa-check"></i> Underglow lighting</li>
+                        <li><i class="fas fa-check"></i> Sequential turn signals</li>
+                        <li><i class="fas fa-check"></i> Interior mood lighting</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="service-item">
-            <img src="images/Maintenance & Repairs.jpg" alt="Maintenance & Repairs">
-            <h3>Maintenance & Repairs</h3>
-            <p>Our experts provide high-quality repairs and servicing to keep your car in peak condition.</p>
-        </div>
-        <div class="service-item">
-            <img src="images/performance upgrades.jpg" alt="Performance Upgrades">
-            <h3>Performance Upgrades</h3>
-            <p>Enhance your car’s power, speed, and efficiency with cutting-edge upgrades.</p>
+        
+        <div class="customization-process">
+            <h3>Our Customization Process</h3>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Design Consultation</h4>
+                        <p>60-minute session with our design specialists to understand your vision</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>3D Rendering</h4>
+                        <p>See photorealistic previews of your customized vehicle before work begins</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Material Selection</h4>
+                        <p>Choose from premium materials with our expert guidance</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Fabrication</h4>
+                        <p>Precision work by our master craftsmen in our state-of-the-art facility</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Final Reveal</h4>
+                        <p>Professional unveiling experience with before/after documentation</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-
     
-<section class="blog">
-    <h2>Our Blog</h2>
-    <div class="blog-grid">
-        <div class="blog-post">
-            <img src="/images/maintenance.jpg" alt="Luxury Car Maintenance">
-            <h3>Luxury Car Maintenance Tips</h3>
-            <p>Discover how to keep your luxury vehicle in pristine condition with expert care.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="blog-post">
-            <img src="/images/top cars.jpg" alt="Top Cars of the Year">
-            <h3>Top 10 Cars of the Year</h3>
-            <p>Explore the best luxury and sports cars that made headlines this year.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="blog-post">
-            <img src="/images/electric cars.jpg" alt="Future of Electric Cars">
-            <h3>Future of Electric Cars</h3>
-            <p>Learn about the latest innovations in electric vehicle technology.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
+    <div class="service-cta">
+        <a href="#contact" class="btn btn-primary">Book Design Consultation</a>
+        <a href="#" class="btn btn-secondary" data-action="view-gallery">View Custom Gallery</a>
     </div>
 </section>
-
-<!-- Contact Us Section -->
-<section class="contact-us">
-    <h2>Contact Us</h2>
-    <div class="contact-form-container">
-        <form class="contact-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your full name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message here" rows="5" required></textarea>
-
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
+            
+         <!-- Performance Upgrades -->
+<section class="service-category" id="performance">
+    <div class="service-header">
+        <i class="fas fa-tachometer-alt"></i>
+        <h2>Performance Upgrades</h2>
+        <p>Unlock your vehicle's full potential with our engineered performance solutions</p>
+    </div>
+    
+    <div class="service-details">
+        <div class="performance-packages">
+            <h3>Stage Upgrade Packages</h3>
+            <div class="package-tabs">
+                <button class="tab-btn active" onclick="showTab('stage1')">Stage 1</button>
+                <button class="tab-btn" onclick="showTab('stage2')">Stage 2</button>
+                <button class="tab-btn" onclick="showTab('stage3')">Stage 3</button>
+                <button class="tab-btn" onclick="showTab('custom')">Custom</button>
+            </div>
+            
+            <div class="tab-contents">
+                <div id="stage1" class="package-content active">
+                    <div class="package-details">
+                        <h4>Entry-Level Performance</h4>
+                        <p class="price">From $2,499</p>
+                        <ul>
+                            <li>ECU Remapping (Up to +50HP)</li>
+                            <li>Performance Air Filter</li>
+                            <li>Cat-Back Exhaust System</li>
+                            <li>Basic Suspension Upgrade</li>
+                            <li>Dyno Testing Included</li>
+                        </ul>
+                        <p class="time">Installation: 1-2 Days</p>
+                    </div>
+                    <div class="package-image">
+                        <img src="https://s2-autoesporte.glbimg.com/Whi4tNS2SzF-i-DgEWhuwgrVNa0=/0x0:620x413/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/R/O/mfh7s8ScaTKiUE95QRtg/2016-06-30-volvo-s90-03.jpg" alt="Stage 1 Performance Package">
+                    </div>
+                </div>
+                
+                <div id="stage2" class="package-content">
+                    <div class="package-details">
+                        <h4>Serious Performance</h4>
+                        <p class="price">From $5,999</p>
+                        <ul>
+                            <li>ECU Remapping with TCU Tune</li>
+                            <li>Cold Air Intake System</li>
+                            <li>Full Turbo-Back Exhaust</li>
+                            <li>Coilover Suspension</li>
+                            <li>Upgraded Intercooler</li>
+                            <li>Dyno Testing + Road Tuning</li>
+                        </ul>
+                        <p class="time">Installation: 3-5 Days</p>
+                    </div>
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stage 2 Performance Package">
+                    </div>
+                </div>
+                
+                <div id="stage3" class="package-content">
+                    <div class="package-details">
+                        <h4>Track-Ready Build</h4>
+                        <p class="price">From $12,999</p>
+                        <ul>
+                            <li>Custom ECU Mapping</li>
+                            <li>Big Turbo/Supercharger Kit</li>
+                            <li>Fuel System Upgrades</li>
+                            <li>Full Suspension Overhaul</li>
+                            <li>Brake System Upgrade</li>
+                            <li>Roll Cage Installation</li>
+                            <li>Extensive Dyno Tuning</li>
+                        </ul>
+                        <p class="time">Installation: 2-3 Weeks</p>
+                    </div>
+                    <div class="package-image">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/2024-volvo-s90-103-66a11cb112494.jpg?crop=0.429xw:0.336xh;0.313xw,0.581xh&resize=1200:*" alt="Stage 3 Performance Package">
+                    </div>
+                </div>
+                
+                <div id="custom" class="package-content">
+                    <div class="package-details">
+                        <h4>Bespoke Performance</h4>
+                        <p class="price">Custom Quote</p>
+                        <ul>
+                            <li>Fully Custom Engine Builds</li>
+                            <li>Forced Induction Systems</li>
+                            <li>Standalone Engine Management</li>
+                            <li>Custom Fabrication</li>
+                            <li>Aerodynamic Enhancements</li>
+                            <li>Complete Vehicle Lightweighting</li>
+                        </ul>
+                        <p class="time">Installation: Varies by Project</p>
+                    </div>
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Custom Build">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="service-cta">
+        <a href="#contact" class="btn btn-primary">Get Performance Consultation</a>
+        <a href="#" class="btn btn-secondary" data-action="view-dyno">View Dyno Results</a>
     </div>
 </section>
-    
+            <!-- Technology Integration -->
+            <section class="service-category" id="technology">
+                <div class="service-header">
+                    <i class="fas fa-microchip"></i>
+                    <h2>Technology Integration</h2>
+                    <p>Modernize your vehicle with cutting-edge technology and connectivity</p>
+                </div>
+                
+                <div class="service-details">
+                    <div class="tech-systems">
+                        <h3>Advanced Systems Integration</h3>
+                        <div class="systems-grid">
+                            <div class="system-card">
+                                <div class="system-icon">
+                                    <i class="fas fa-volume-up"></i>
+                                </div>
+                                <h4>Premium Audio</h4>
+                                <ul>
+                                    <li>Complete sound system upgrades</li>
+                                    <li>Custom speaker enclosures</li>
+                                    <li>DSP tuning and calibration</li>
+                                    <li>Noise cancellation systems</li>
+                                </ul>
+                            </div>
+                            <div class="system-card">
+                                <div class="system-icon">
+                                    <i class="fas fa-car-crash"></i>
+                                </div>
+                                <h4>Security Systems</h4>
+                                <ul>
+                                    <li>GPS tracking solutions</li>
+                                    <li>Remote immobilizers</li>
+                                    <li>360° camera systems</li>
+                                    <li>Biometric access</li>
+                                </ul>
+                            </div>
+                            <div class="system-card">
+                                <div class="system-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>Smart Cockpit</h4>
+                                <ul>
+                                    <li>Digital gauge clusters</li>
+                                    <li>Heads-up displays</li>
+                                    <li>Voice control integration</li>
+                                    <li>Gesture controls</li>
+                                </ul>
+                            </div>
+                            <div class="system-card">
+                                <div class="system-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h4>Connectivity</h4>
+                                <ul>
+                                    <li>5G WiFi hotspots</li>
+                                    <li>Apple CarPlay/Android Auto</li>
+                                    <li>Rear seat entertainment</li>
+                                    <li>Vehicle diagnostics apps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-showcase">
+                        <div class="showcase-content">
+                            <h3>Showcase: Digital Cockpit Upgrade</h3>
+                            <p>Transform your outdated dashboard into a fully digital command center with our premium retrofit solutions:</p>
+                            <ul>
+                                <li>12.3" HD touchscreen display</li>
+                                <li>Customizable digital gauges</li>
+                                <li>Integrated navigation and media</li>
+                                <li>Vehicle performance monitoring</li>
+                                <li>OEM look and feel</li>
+                            </ul>
+                            <p class="showcase-price">Starting at $3,499 installed</p>
+                        </div>
+                        <div class="showcase-video">
+                            <video autoplay playsinline loop muted 
+                                   style="width:100%; max-height:500px; background:#000;">
+                                <source src="images/video car.mp4" type="video/mp4">
+                                Your browser doesn't support HTML5 video.
+                            </video>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="service-cta">
+                    <a href="#contact" class="btn btn-primary">Schedule Tech Consultation</a>
+                    <a href="#" class="btn btn-secondary" data-action="view-tech">View Tech Gallery</a>
+                </div>
+            </section>
+        </div>
+    </main>
 
-    <script src="main.js"></script>
+    <!-- Service Contact Banner -->
+    <section class="contact-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-US.png') no-repeat center center/cover;">
+        <div class="container">
+            <h2>READY TO ELEVATE YOUR VEHICLE?</h2>
+            <p>Contact our specialists to discuss your project</p>
+            <a href="#contact" class="btn btn-large">GET IN TOUCH</a>
+        </div>
+    </section>
+    <script>
+        function showTab(tabId) {
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab button
+            const activeButton = document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`);
+            activeButton.classList.add('active');
+            
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.package-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            const activeContent = document.getElementById(tabId);
+            activeContent.classList.add('active');
+        }
+        </script>
 </body>
 </html>
