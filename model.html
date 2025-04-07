@@ -1,222 +1,315 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Driving Innovation Project</title>
-
+    <title>RHU Auto Explorer | Premium Car Collection</title>
     <link rel="stylesheet" href="model.css">
-
-    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon" >
-    <script src="model.js" defer></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon">
 </head>
-
 <body>
-
-        <!--Animation of RHU Logo-->
-
-    <!-- <div class="logo-container">
-
+    <!-- Animation of RHU Logo -->
+    <div class="logo-container">
         <img src="./images/rhu.jpg" alt="RHU Logo" class="logo">
-
-    </div> -->
-
- 
-
-     <!-- Our Models Section -->
-
-        <!--Boxes+ title(header)-->
-
-    <section class="models-section">
-
-        <h1>Our Models</h1>
-
-        <small>Discover our varied brand and model range—and find your desired vehicle.</small>
-
-   
-
-        <div class="model-boxes">
-
-            <div class="brand-box" onclick="showModels('ferrari')">
-
-                <div class="brand-category">Ferrari</div>
-
-            </div>
-
-            <div class="brand-box" onclick="showModels('lambo')">
-
-                <div class="brand-category">Lamborghini</div>
-
-            </div>
-
-            <div class="brand-box" onclick="showModels('mercedes')">
-
-                <div class="brand-category">Mercedes</div>
-
-            </div>
-
-            <div class="brand-box" onclick="showModels('bmw')">
-
-                <div class="brand-category">BMW</div>
-
-            </div>
-
-            <div class="brand-box" onclick="showModels('tesla')">
-
-                <div class="brand-category">Tesla</div>
-
-            </div>
-
+        <div class="loading-spinner">
+            <div class="spinner"></div>
         </div>
-
-       
-
- 
-
-<!-- Main Section with Car Details -->
-
-<div class="car-details-section">
-
-   
-
-    <div class="car-details">
-
-        <!-- Ferrari -->
-
-        <div class="car-item">
-
-            <div class="car-image">
-
-                <img src="./images/ferrari-f80.jpg" alt="Ferrari">
-
-            </div>
-
-            <div class="car-info">
-
-                <h3>Ferrari F80</h3>
-
-                <p class="car-price">$330,000</p>
-
-                <button class="learn-more-btn">Learn More</button>
-
-            </div>
-
-        </div>
-
- 
-
-        <!-- Lamborghini -->
-
-         
-
-        <div class="car-item">
-
-            <div class="car-image">
-
-                <img src="./images/Lamborghini-Aventador.avif" alt="Lamborghini">
-
-            </div>
-
-            <div class="car-info">
-
-                <h3>Lamborghini Aventador</h3>
-
-                <p class="car-price">$400,000</p>
-
-                <button class="learn-more-btn">Learn More</button>
-
-            </div>
-
-        </div>
-
- 
-
-        <!-- Tesla -->
-
-        <div class="car-item">
-
-            <div class="car-image">
-
-                <img src="./images/Tesla_Model_S.jpg" alt="Tesla">
-
-            </div>
-
-            <div class="car-info">
-
-                <h3>Tesla Model S Plaid</h3>
-
-                <p class="car-price">$135,000</p>
-
-                <button class="learn-more-btn">Learn More</button>
-
-            </div>
-
-        </div>
-
- 
-
-        <!-- BMW -->
-
-        <div class="car-item">
-
-            <div class="car-image">
-
-                <img src="./images/BMW M5.jpg" alt="BMW">
-
-            </div>
-
-            <div class="car-info">
-
-                <h3>BMW M5</h3>
-
-                <p class="car-price">$105,000</p>
-
-                <button class="learn-more-btn">Learn More</button>
-
-            </div>
-
-        </div>
-
- 
-
-        <!-- Mercedes -->
-
-        <div class="car-item">
-
-            <div class="car-image">
-
-                <img src="./images/mercedes-benz s-class.jpg" alt="Mercedes">
-
-            </div>
-
-            <div class="car-info">
-
-                <h3>Mercedes-Benz S-Class</h3>
-
-                <p class="car-price">$115,000</p>
-
-                <button class="learn-more-btn">Learn More</button>
-
-            </div>
-
-        </div>
-
     </div>
 
-</div>
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Experience Automotive Excellence</h1>
+                <p class="hero-subtitle">Discover the perfect blend of performance, luxury, and innovation</p>
+                <a href="#car-listings" class="cta-button">Explore Our Collection</a>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
 
- 
+        <!-- Header with Search -->
+        <header>
+            <div class="header-container">
+                <div class="logo-area">
+                    <img src="./images/rhu.jpg" alt="RHU Logo" class="header-logo">
+                    <span class="brand-name">RHU Auto</span>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search cars...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="sport">Sport</button>
+                    <button class="filter-btn" data-filter="electric">Electric</button>
+                    <button class="filter-btn" data-filter="luxury">Luxury</button>
+                    <button id="show-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button>
+                </div>
+                <div class="sort-container">
+                    <div class="sort-dropdown">
+                        <button class="sort-dropdown-btn">
+                            Sort by <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="sort-dropdown-content">
+                            <button class="sort-btn" data-sort="price-asc">Price: Low to High</button>
+                            <button class="sort-btn" data-sort="price-desc">Price: High to Low</button>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
 
-</section>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <img src="./images/rhu.jpg" alt="RHU Logo" class="mobile-logo">
+                <button class="mobile-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="mobile-menu-content">
+                <div class="mobile-search">
+                    <input type="text" id="mobile-search-input" placeholder="Search cars...">
+                    <button id="mobile-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="mobile-filters">
+                    <h3>Filter By:</h3>
+                    <button class="mobile-filter-btn active" data-filter="all">All Cars</button>
+                    <button class="mobile-filter-btn" data-filter="sport">Sport</button>
+                    <button class="mobile-filter-btn" data-filter="electric">Electric</button>
+                    <button class="mobile-filter-btn" data-filter="luxury">Luxury</button>
+                </div>
+                <button class="mobile-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button>
+            </div>
+        </div>
 
- 
+        <!-- Our Models Section -->
+        <section class="models-section">
+            <h2 class="section-title">Our Prestigious Models</h2>
+            <p class="subtitle">Discover our varied brand and model range—and find your desired vehicle.</p>
+        
+            <div class="model-boxes">
+                <div class="brand-box" data-brand="ferrari">
+                    <div class="brand-category">Ferrari</div>
+                    <div class="brand-logo"><i class="fa-solid fa-car-side"></i></div>
+                </div>
+                <div class="brand-box" data-brand="lambo">
+                    <div class="brand-category">Lamborghini</div>
+                    <div class="brand-logo"><i class="fa-solid fa-car"></i></div>
+                </div>
+                <div class="brand-box" data-brand="mercedes">
+                    <div class="brand-category">Mercedes</div>
+                    <div class="brand-logo"><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="brand-box" data-brand="bmw">
+                    <div class="brand-category">BMW</div>
+                    <div class="brand-logo"><i class="fa-solid fa-gauge-high"></i></div>
+                </div>
+                <div class="brand-box" data-brand="tesla">
+                    <div class="brand-category">Tesla</div>
+                    <div class="brand-logo"><i class="fa-solid fa-bolt"></i></div>
+                </div>
+                <div class="brand-box" data-brand="porsche">
+                    <div class="brand-category">Porsche</div>
+                    <div class="brand-logo"><i class="fa-solid fa-flag-checkered"></i></div>
+                </div>
+            </div>
+            
+            <!-- Favorites Section -->
+            <div class="favorites-section hidden">
+                <div class="favorites-header">
+                    <h2><i class="fas fa-heart"></i> My Favorite Cars</h2>
+                    <button id="back-to-main-btn" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Cars
+                    </button>
+                </div>
+                <div class="favorites-container" id="favorites-container"></div>
+            </div>
+            
+            <!-- Car Listings -->
+            <div id="car-listings" class="car-details-section">
+                <div class="car-details" id="car-container">
+                    <!-- Cars will be loaded here dynamically -->
+                </div>
+            </div>
+            
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2 class="section-title">Premium Features</h2>
+                <div class="features-container">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Premium Safety</h3>
+                        <p>Advanced safety features for maximum protection on the road</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Top Performance</h3>
+                        <p>Engineered for thrilling performance and precision handling</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Advanced Tech</h3>
+                        <p>Cutting-edge technology for an enhanced driving experience</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Sustainable options with reduced environmental impact</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Comparison Section -->
+            <div class="comparison-section">
+                <h2>Compare Cars</h2>
+                <p class="comparison-subtitle">See how our models stack up against each other</p>
+                <div class="comparison-container">
+                    <select id="car1-select">
+                        <option value="">Select first car</option>
+                    </select>
+                    <select id="car2-select">
+                        <option value="">Select second car</option>
+                    </select>
+                    <div class="comparison-buttons">
+                        <button id="compare-btn">Compare Now</button>
+                        <button id="reset-btn">Reset</button>
+                    </div>
+                </div>
+                <div id="comparison-results" class="comparison-results"></div>
+            </div>
 
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The performance and handling of my new Ferrari is beyond my expectations. The team provided exceptional service throughout the buying process."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Johnson</h4>
+                                <p>Ferrari F80 Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"My Tesla Model S Plaid is the most technologically advanced vehicle I've ever owned. The acceleration is mind-blowing and the autopilot features make driving a joy."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Thompson</h4>
+                                <p>Tesla Model S Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The luxury and comfort of my Mercedes S-Class is unmatched. Every detail is perfectly crafted, and the driving experience is simply superb."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>David Williams</h4>
+                                <p>Mercedes S-Class Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Experience Luxury?</h2>
+                    <p>Schedule a test drive today and feel the power of performance engineering.</p>
+                    <button class="cta-button">Book Test Drive</button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="./images/rhu.jpg" alt="RHU Logo" class="footer-logo">
+                    <p>Redefining automotive excellence through innovation and performance</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#car-listings">Models</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Models</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sport Cars</a></li>
+                        <li><a href="#">Electric Vehicles</a></li>
+                        <li><a href="#">Luxury Sedans</a></li>
+                        <li><a href="#">SUVs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Beverly Hills</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@rhuauto.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> RHU Automotive. All rights reserved.</p>
+                <div class="footer-policy-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <script src="model.js"></script>
 </body>
-
 </html>
