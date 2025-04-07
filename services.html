@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRIVING INNOVATION</title>
     <link rel="stylesheet" href="services.css">
+    <script src="services.js" defer></script>
     <style>
         /* Modal styles - Only this new CSS has been added */
         .modal-overlay {
@@ -240,7 +241,6 @@
                 
                 <div class="service-cta">
                     <button id="scheduleMaintenanceBtn" class="btn btn-primary">Schedule Maintenance</button>
-                    <!-- "View Maintenance Packages" button has been removed as requested -->
                 </div>
             </section>
             
@@ -373,8 +373,7 @@
                 </div>
                 
                 <div class="service-cta">
-                    <a href="#contact" class="btn btn-primary">Book Design Consultation</a>
-                    <a href="#" class="btn btn-secondary" data-action="view-gallery">View Custom Gallery</a>
+                    <a href="#contact" class="btn btn-primary open-design-modal">Book Design Consultation</a>
                 </div>
             </section>
             
@@ -477,8 +476,7 @@
                 </div>
                 
                 <div class="service-cta">
-                    <a href="#contact" class="btn btn-primary">Get Performance Consultation</a>
-                    <a href="#" class="btn btn-secondary" data-action="view-dyno">View Dyno Results</a>
+                    <a href="#contact" class="btn btn-primary open-performance-modal">Get Performance Consultation</a>
                 </div>
             </section>
             
@@ -569,19 +567,18 @@
                 </div>
                 
                 <div class="service-cta">
-                    <a href="#contact" class="btn btn-primary">Schedule Tech Consultation</a>
-                    <a href="#" class="btn btn-secondary" data-action="view-tech">View Tech Gallery</a>
+                    <a href="#contact" class="btn btn-primary open-tech-modal">Schedule Tech Consultation</a>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Service Contact Banner -->
-    <section class="contact-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-US.png') no-repeat center center/cover;">
+     <!-- Service Contact Banner -->
+     <section class="contact-banner" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-US.png') no-repeat center center/cover;">
         <div class="container">
             <h2>READY TO ELEVATE YOUR VEHICLE?</h2>
             <p>Contact our specialists to discuss your project</p>
-            <a href="#contact" class="btn btn-large">GET IN TOUCH</a>
+            <button id="contactUsBtn" class="btn btn-large">GET IN TOUCH</button>
         </div>
     </section>
 
@@ -590,7 +587,7 @@
         <div id="modalDialog" class="modal-dialog">
             <div class="modal-header" id="modalHeader">
                 <h3>Schedule Your Maintenance</h3>
-                <button class="close-btn" id="closeModal">&times;</button>
+                <button class="close-btn" id="closeDesignModal">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="appointmentForm">
@@ -655,6 +652,265 @@
         </div>
     </div>
 
+    <!-- Modal Dialog for Design Consultation Form -->
+    <div id="designConsultationModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Book Design Consultation</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="designConsultationForm">
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designEmail">Email Address</label>
+                        <input type="email" id="designEmail" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designPhone">Phone Number</label>
+                        <input type="tel" id="designPhone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designVehicle">Vehicle Make & Model</label>
+                        <input type="text" id="designVehicle" name="vehicle" required placeholder="Tesla Model S">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designYear">Vehicle Year</label>
+                        <input type="number" id="designYear" name="year" min="1900" max="2025" required placeholder="2022">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designStyle">Preferred Style</label>
+                        <select id="designStyle" name="style" required>
+                            <option value="">-- Select preferred style --</option>
+                            <option value="sport">Sport</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="classic">Classic</option>
+                            <option value="modern">Modern</option>
+                            <option value="custom">Custom Design</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designDate">Preferred Date</label>
+                        <input type="date" id="designDate" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designNotes">Design Ideas</label>
+                        <textarea id="designNotes" name="notes" placeholder="Describe your vision or inspiration for the customization..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Book Consultation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Dialog for Performance Consultation Form -->
+    <div id="performanceConsultationModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Performance Consultation</h3>
+                <button class="close-btn" id="closePerformanceModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="performanceConsultationForm">
+                    <div class="form-group">
+                        <label for="perfName">Full Name</label>
+                        <input type="text" id="perfName" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfEmail">Email Address</label>
+                        <input type="email" id="perfEmail" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfPhone">Phone Number</label>
+                        <input type="tel" id="perfPhone" name="phone" required placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfVehicle">Vehicle Make & Model</label>
+                        <input type="text" id="perfVehicle" name="vehicle" required placeholder="Tesla Model S">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfYear">Vehicle Year</label>
+                        <input type="number" id="perfYear" name="year" min="1900" max="2025" required placeholder="2022">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfGoals">Performance Goals</label>
+                        <select id="perfGoals" name="goals" required>
+                            <option value="">-- Select your primary goal --</option>
+                            <option value="speed">Increased Speed</option>
+                            <option value="handling">Improved Handling</option>
+                            <option value="track">Track Performance</option>
+                            <option value="daily">Daily Driving Enhancement</option>
+                            <option value="custom">Custom Build</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfBudget">Estimated Budget</label>
+                        <select id="perfBudget" name="budget" required>
+                            <option value="">-- Select budget range --</option>
+                            <option value="2-5k">$2,000 - $5,000</option>
+                            <option value="5-10k">$5,000 - $10,000</option>
+                            <option value="10-20k">$10,000 - $20,000</option>
+                            <option value="20k+">$20,000+</option>
+                            <option value="custom">Custom Budget</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="perfNotes">Additional Notes</label>
+                        <textarea id="perfNotes" name="notes" placeholder="Any specific performance upgrades you're interested in or requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Request Consultation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Dialog for Tech Consultation Form -->
+    <div id="techConsultationModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Technology Consultation</h3>
+                <button class="close-btn" id="closeTechModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="techConsultationForm">
+                    <div class="form-group">
+                        <label for="techName">Full Name</label>
+                        <input type="text" id="techName" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techEmail">Email Address</label>
+                        <input type="email" id="techEmail" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techPhone">Phone Number</label>
+                        <input type="tel" id="techPhone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techVehicle">Vehicle Make & Model</label>
+                        <input type="text" id="techVehicle" name="vehicle" required placeholder="Tesla Model S">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techYear">Vehicle Year</label>
+                        <input type="number" id="techYear" name="year" min="1900" max="2025" required placeholder="2022">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techInterest">Technology Interest</label>
+                        <select id="techInterest" name="interest" required>
+                            <option value="">-- Select area of interest --</option>
+                            <option value="audio">Audio System</option>
+                            <option value="security">Security Systems</option>
+                            <option value="cockpit">Digital Cockpit</option>
+                            <option value="connectivity">Connectivity</option>
+                            <option value="multiple">Multiple Systems</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techDate">Preferred Date</label>
+                        <input type="date" id="techDate" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techNotes">Specific Requirements</label>
+                        <textarea id="techNotes" name="notes" placeholder="Describe the technology upgrades you're interested in..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Schedule Consultation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Dialog for Contact Us Form -->
+    <div id="contactUsModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Contact Us</h3>
+                <button class="close-btn" id="closeContactModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactUsForm">
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="contactFirstName">First Name</label>
+                            <input type="text" id="contactFirstName" name="firstName" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactLastName">Last Name</label>
+                            <input type="text" id="contactLastName" name="lastName" required placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number (Optional)</label>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" name="subject" required>
+                            <option value="">-- Select a subject --</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="quote">Request a Quote</option>
+                            <option value="appointment">Schedule Appointment</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message</label>
+                        <textarea id="contactMessage" name="message" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script>
         function showTab(tabId) {
             // Remove active class from all tab buttons
