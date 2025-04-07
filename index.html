@@ -3,63 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLA Company</title>
+    <title>MLA | Premium Automotive Excellence</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="luxury-header">
+        <div class="header-top-bar">
+            <div class="container">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> contact@mla-automotive.com</span>
+                </div>
+                <div class="header-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
         <nav class="navbar">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="model.html">Our Models</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="Parts.html">Parts</a></li>
-              <li><a href="#">Our Blog</a></li>
-              <li><a href="#">About Us</a></li>
-              <li class="login"><a href="login.html" id="loginLink">Login</a></li>
-              <li class="menu">
-                <a href="#">Menu</a>
-                <ul class="dropdown">
-                  <li><a href="#">Take a Test Drive</a></li>
-                  <li><a href="#">Contact Us</a></li>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">MLA</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="model.html">Models</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Parts.html">Parts</a></li>
+                    <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
                 </ul>
-              </li>
-            </ul>
-          </nav>
-          
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <img src="images/mclaren-1-ht-gmh-240412_1712928561648_hpMain_16x9.jpg" alt="Car" class="car-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Redefining Automotive Excellence</h1>
+                <p>Experience the pinnacle of luxury performance with MLA's handcrafted vehicles</p>
+                <div class="hero-buttons">
+                    <a href="model.html" class="btn btn-primary">Explore Models</a>
+                    <a href="#" class="btn btn-secondary">Book Consultation</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll to Discover</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="featured-models">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Our Collection</span>
+                    <h2 class="section-title">Featured Models</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="models-grid">
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="images/model-1.jpg" alt="MLA GT">
+                            <div class="model-overlay">
+                                <a href="model.html#gt" class="btn btn-primary">Discover GT</a>
+                            </div>
+                        </div>
+                        <div class="model-info">
+                            <h3>MLA GT</h3>
+                            <div class="model-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 3.2s 0-60</span>
+                                <span><i class="fas fa-horse-head"></i> 620 HP</span>
+                                <span><i class="fas fa-cogs"></i> Dual-Clutch</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="images/model-2.jpg" alt="MLA Touring">
+                            <div class="model-overlay">
+                                <a href="model.html#touring" class="btn btn-primary">Discover Touring</a>
+                            </div>
+                        </div>
+                        <div class="model-info">
+                            <h3>MLA Touring</h3>
+                            <div class="model-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 4.1s 0-60</span>
+                                <span><i class="fas fa-horse-head"></i> 550 HP</span>
+                                <span><i class="fas fa-cogs"></i> All-Wheel Drive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="images/model-3.jpg" alt="MLA Heritage">
+                            <div class="model-overlay">
+                                <a href="model.html#heritage" class="btn btn-primary">Discover Heritage</a>
+                            </div>
+                        </div>
+                        <div class="model-info">
+                            <h3>MLA Heritage</h3>
+                            <div class="model-specs">
+                                <span><i class="fas fa-tachometer-alt"></i> 4.5s 0-60</span>
+                                <span><i class="fas fa-horse-head"></i> 480 HP</span>
+                                <span><i class="fas fa-cogs"></i> Rear-Wheel Drive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <a href="model.html" class="btn btn-secondary">View Full Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="section-header">
+                            <span class="section-subtitle">Our Philosophy</span>
+                            <h2 class="section-title">About MLA</h2>
+                            <div class="section-divider"></div>
+                        </div>
+                        <p class="lead">Since 1990, MLA has been synonymous with uncompromising quality and exhilarating performance. Each vehicle is a testament to our passion for automotive perfection.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-medal"></i>
+                                <h3>Handcrafted Excellence</h3>
+                                <p>Every MLA vehicle receives over 200 hours of meticulous hand-finishing by our master craftsmen.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-cogs"></i>
+                                <h3>Cutting-Edge Engineering</h3>
+                                <p>Our proprietary MLA-X engine platform delivers class-leading performance and efficiency.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-tie"></i>
+                                <h3>Bespoke Customization</h3>
+                                <p>From paint to upholstery, create a vehicle that's uniquely yours through our MLA Bespoke program.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="images/worker-getting-into-company-car.jpg" alt="MLA Craftsmanship">
+                            <div class="frame-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="testimonials-overlay"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Client Experiences</span>
+                    <h2 class="section-title">Testimonials</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Owning an MLA has been a transformative experience. The attention to detail and performance exceeds anything I've driven before.</p>
+                            <div class="testimonial-author">
+                                <h4>James Wilson</h4>
+                                <span>MLA GT Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The MLA Bespoke program allowed me to create my dream car exactly as I envisioned it. Their team's expertise is unmatched.</p>
+                            <div class="testimonial-author">
+                                <h4>Sarah Chen</h4>
+                                <span>MLA Touring Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>From purchase to aftercare, MLA's service has been impeccable. This is what true luxury automotive ownership should feel like.</p>
+                            <div class="testimonial-author">
+                                <h4>Michael Rodriguez</h4>
+                                <span>MLA Heritage Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Experience MLA?</h2>
+                    <p>Schedule a private consultation or test drive at one of our global showrooms.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="tel:+15551234567" class="btn btn-secondary"><i class="fas fa-phone"></i> Contact Us</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <section class="about-us">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Our Mission</h3>
-                <p>At MLA, we believe that driving should be an experience, not just a means of transportation. Our mission is to provide top-quality cars that deliver exceptional performance, comfort, and style. We’re passionate about innovation and continuously work to create vehicles that inspire and excite drivers around the world.</p>
-                
-                <h3>Our Values</h3>
-                <ul>
-                    <li><strong>Quality:</strong> We’re committed to delivering the highest standards of excellence in every vehicle we make.</li>
-                    <li><strong>Innovation:</strong> Our team constantly pushes the boundaries of automotive technology to deliver cutting-edge solutions.</li>
-                    <li><strong>Customer Focus:</strong> We strive to provide an outstanding customer experience from start to finish.</li>
-                </ul>
-    
-                <h3>Our Story</h3>
-                <p>Founded in 1990, we started with a vision to revolutionize the car industry by focusing on quality, performance, and customer satisfaction. Over the years, we've grown into a global brand, but our dedication to craftsmanship and passion for driving remains the same. With a team of skilled engineers and designers, we continue to push the limits of what a car can be, ensuring that every customer enjoys a driving experience like no other.</p>
-            </div>
-            <div class="about-image">
-                <img src="images/worker-getting-into-company-car.jpg" alt="Our Team">
+
+    <footer class="luxury-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>MLA Automotive</h3>
+                        <p>Redefining the boundaries of luxury performance since 1990. Each MLA vehicle represents the pinnacle of automotive craftsmanship.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="model.html">Models</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="Parts.html">Parts</a></li>
+                            <li><a href="login.html">Client Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope"></i> contact@mla-automotive.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe for exclusive updates and offers.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    
-
-    <footer>
-        <p>&copy; 2025 Car Company. All rights reserved.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="main.js"></script>
