@@ -421,7 +421,6 @@ document.addEventListener('click', function(e) {
                                 <h3>${car.name}</h3>
                                 <p class="car-price">${car.price}</p>
                                 <span class="car-type ${typeClass}">${typeText}</span>
-                                <button class="learn-more-btn">Learn More</button>
                             </div>
                         </div>
                         <div class="car-item-back">
@@ -1361,3 +1360,111 @@ document.addEventListener('click', function(e) {
 });
 
 
+// Video Gallery Variables
+const videoSlides = document.querySelectorAll('.video-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const videos = document.querySelectorAll('.gallery-video');
+let currentSlide = 0;
+
+// Video Gallery Functions
+function showSlide(index) {
+  // Hide all slides
+  videoSlides.forEach(slide => {
+    slide.classList.remove('active');
+    const video = slide.querySelector('video');
+    if (video) {
+      video.pause();
+    }
+  });
+  
+  // Deactivate all dots
+  dots.forEach(dot => {
+    dot.classList.remove('active');
+  });
+  
+  // Show the current slide and activate corresponding dot
+  videoSlides[index].classList.add('active');
+  dots[index].classList.add('active');
+  
+  // Play the video on the active slide
+  const activeVideo = videoSlides[index].querySelector('video');
+  if (activeVideo) {
+    activeVideo.currentTime = 0;
+    activeVideo.play();
+  }
+  
+  currentSlide = index;
+}
+
+function nextSlide() {
+  const next = (currentSlide + 1) % videoSlides.length;
+  showSlide(next);
+}
+
+function prevSlide() {
+  const prev = (currentSlide - 1 + videoSlides.length) % videoSlides.length;
+  showSlide(prev);
+}
+
+// Video Gallery Event Listeners
+if (nextBtn) {
+  nextBtn.addEventListener('click', nextSlide);
+}
+
+if (prevBtn) {
+  prevBtn.addEventListener('click', prevSlide);
+}
+
+// Dot navigation
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    showSlide(index);
+  });
+});
+
+// Show the first slide initially and play the video
+if (videoSlides.length > 0) {
+  showSlide(0);
+}
+
+// Add touch support for the video gallery
+let touchStartX = 0;
+let touchEndX = 0;
+const videoCarousel = document.querySelector('.video-carousel');
+
+if (videoCarousel) {
+  videoCarousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  videoCarousel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  if (touchEndX < touchStartX - swipeThreshold) {
+    // Swipe left -> next slide
+    nextSlide();
+  } else if (touchEndX > touchStartX + swipeThreshold) {
+    // Swipe right -> previous slide
+    prevSlide();
+  }
+}
+
+// Auto-advance slides (optional)
+// let slideInterval = setInterval(nextSlide, 5000);
+
+// Pause auto-advance when user interacts (optional)
+// function pauseSlideShow() {
+//   clearInterval(slideInterval);
+// }
+
+// videoCarousel.addEventListener('mouseenter', pauseSlideShow);
+// videoCarousel.addEventListener('mouseleave', () => {
+//   slideInterval = setInterval(nextSlide, 5000);
+// });

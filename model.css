@@ -1506,3 +1506,128 @@ header {
     bottom: 20px;
   }
 }
+/* Video Gallery Styles */
+.video-gallery {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.video-carousel {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--tesla-darkgray);
+  max-height: 80vh;
+}
+
+.video-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.video-slide {
+  flex: 0 0 100%;
+  position: relative;
+  display: none;
+  width: 100%;
+}
+
+.video-slide.active {
+  display: block;
+}
+
+.gallery-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 50vh;
+}
+
+.video-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.video-info h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--tesla-yellow);
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--tesla-yellow);
+}
+
+.video-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--tesla-yellow);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+
+.nav-btn:hover {
+  color: #fff;
+}
+
+.video-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--tesla-lightgray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--tesla-yellow);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .video-info h4 {
+    font-size: 1rem;
+  }
+  
+  .video-info p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-video {
+    max-height: 40vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-video {
+    max-height: 60vh;
+  }
+}

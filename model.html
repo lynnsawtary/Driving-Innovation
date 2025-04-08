@@ -35,7 +35,6 @@
         <header>
             <div class="header-container">
                 <div class="logo-area">
-                    <img src="./images/rhu.jpg" alt="RHU Logo" class="header-logo">
                     <span class="brand-name">RHU Auto</span>
                 </div>
                 <div class="search-container">
@@ -241,14 +240,53 @@
                 </div>
             </section>
 
-            <!-- Call to Action Section -->
-            <section class="cta-section">
-                <div class="cta-content">
-                    <h2>Ready to Experience Luxury?</h2>
-                    <p>Schedule a test drive today and feel the power of performance engineering.</p>
-                    <button class="cta-button">Book Test Drive</button>
+            
+            <!-- Swipeable Video Gallery -->
+          <div class="video-gallery animate__animated animate__fadeIn">
+            <h3 class="text-tesla-yellow text-xl font-semibold mb-4">Experience Tesla Technology</h3>
+            <div class="video-carousel">
+              <div class="video-track">
+                <div class="video-slide active">
+                  <video class="gallery-video" loop muted playsinline>
+                    <source src="./videos/tesla navigate on autopilot.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-info">
+                    <h4>Navigate on Autopilot</h4>
+                    <p>Automatically navigates from on-ramp to off-ramp</p>
+                  </div>
                 </div>
-            </section>
+                <div class="video-slide">
+                  <video class="gallery-video" loop muted playsinline>
+                    <source src="./videos/autolane change.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-info">
+                    <h4>Auto Lane Change</h4>
+                    <p>Changes lanes automatically when safe</p>
+                  </div>
+                </div>
+                <div class="video-slide">
+                  <video class="gallery-video" loop muted playsinline>
+                    <source src="./videos/autopark.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-info">
+                    <h4>Autopark</h4>
+                    <p>Parallel and perpendicular parking with one touch</p>
+                  </div>
+                </div>
+              </div>
+              <div class="video-nav">
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="video-dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         </section>
     </div>
 
