@@ -13,12 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupFeedback = document.getElementById('signup-feedback');
     const loginFeedback = document.getElementById('login-feedback');
 
-    // User data (could be from a database in real applications)
-    const users = [
+    // Load users from localStorage or initialize an empty array
+    const users = JSON.parse(localStorage.getItem('users')) || [
         { name: "Lynn Sawtary", email: "lynn@example.com", password: "123" },
         { name: "Mohammad Mezher", email: "mohammad@example.com", password: "456" },
         { name: "Adam Dishari", email: "adam@example.com", password: "789" }
     ];
+
+    // Save the users back to localStorage after a new registration
+    function saveUsersToLocalStorage() {
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 
     registerBtn.addEventListener('click', () => {
         container.classList.add("active");
@@ -46,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     signupForm.addEventListener('submit', (event) => {
         event.preventDefault();
         
-        const signupEmail = document.getElementById('signup-email').value;
-        const signupPassword = document.getElementById('signup-password').value;
+        const signupEmail = document.getElementById('signup-email').value.trim();
+        const signupPassword = document.getElementById('signup-password').value.trim();
 
         // Check if the email already exists
         const userExists = users.some(user => user.email === signupEmail);
@@ -58,11 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Register new user
             const newUser = {
-                name: document.getElementById('signup-name').value,
+                name: document.getElementById('signup-name').value.trim(),
                 email: signupEmail,
                 password: signupPassword
             };
             users.push(newUser);
+
+            // Save new users list to localStorage
+            saveUsersToLocalStorage();
 
             // Provide success feedback and switch to login form
             signupFeedback.textContent = 'Registration successful! Redirecting to login.';
@@ -79,11 +87,17 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const loginEmail = document.getElementById('login-email').value;
-        const loginPassword = document.getElementById('login-password').value;
+        const loginEmail = document.getElementById('login-email').value.trim(); // Remove spaces
+        const loginPassword = document.getElementById('login-password').value.trim(); // Remove spaces
 
-        // Check if the user exists and if the password is correct
-        const user = users.find(user => user.email === loginEmail && user.password === loginPassword);
+        console.log("Login attempt: ");
+        console.log("Email:", loginEmail);
+        console.log("Password:", loginPassword);
+
+        // Check if the user exists and if the password is correct (case-insensitive comparison)
+        const user = users.find(user => 
+            user.email.toLowerCase() === loginEmail.toLowerCase() && user.password === loginPassword
+        );
 
         if (user) {
             loginFeedback.textContent = 'Login successful! Redirecting to home page.';
