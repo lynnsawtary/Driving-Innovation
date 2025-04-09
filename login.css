@@ -38,7 +38,7 @@ body {
 }
 
 .container span {
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .container a {
@@ -60,10 +60,6 @@ body {
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
-}
-
-.container button.hidden {
-  border-color: white;
 }
 
 .container form {
@@ -226,6 +222,7 @@ body {
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+
 /* Add glowing effect to inputs when focused */
 input:focus {
   outline: none;
@@ -256,4 +253,16 @@ input:focus {
 
 .password-container i:hover {
   color:cornflowerblue;
+}
+
+.feedback {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  color: red;
+}
+
+.feedback.green {
+  color: green;
 }
