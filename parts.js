@@ -17,59 +17,126 @@ document.addEventListener('DOMContentLoaded', function() {
     let partsData = [
         {
             id: 1,
-            title: "MLA Performance Exhaust System",
+            title: "MLA Hybrid Electric Engine Module",
             category: "engine",
-            price: 3499,
-            sku: "MLA-EX-2025",
-            image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
-            description: "High-performance stainless steel exhaust system engineered for optimal flow and an aggressive tone.",
+            price: 4000,
+            sku: "MLA-HE-2026",
+            image: "images/1-1.jpg",
+            description: "The MLA Hybrid Electric Engine Module offers a cutting-edge solution for hybrid vehicles, combining electric power with traditional fuel systems for optimized fuel efficiency and lower emissions. Perfect for an eco-friendly upgrade.",
             specs: {
-                "Material": "304 Stainless Steel",
-                "Weight": "28.5 lbs",
-                "Power Gain": "+15 HP",
-                "Warranty": "5 years",
-                "Compatibility": "MLA V8 Models"
+                "Material": "Aluminum, High-Impact Plastic",
+                "Weight": "220 lbs",
+                "Power Output": "200 HP",
+                "Battery Type": "Lithium-Ion",
+                "Warranty": "8 years",
+                "Compatibility": "Fits Most Hybrid Vehicles"
             }
         },
         {
             id: 2,
-            title: "Carbon Ceramic Brake Kit",
-            category: "brakes",
-            price: 8999,
-            sku: "MLA-CCB-2025",
-            image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "Ultra-high-performance carbon ceramic brakes for track-ready stopping power and reduced unsprung weight.",
+            title: "MLA Universal High-Performance Engine",
+            category: "engine",
+            price: 1500,
+            sku: "MLA-EN-2025",
+            image: "images/ezgif.com-gif-maker-2021-11-24T204220.732.webp",
+            description: "This MLA Universal Engine is designed for high-performance and versatility, suitable for any car. It delivers enhanced horsepower and efficiency with a durable stainless steel construction.",
             specs: {
-                "Rotor Size": "16.5 inches",
-                "Pad Material": "Carbon Ceramic",
-                "Weight Savings": "22 lbs per corner",
-                "Warranty": "3 years",
-                "Compatibility": "MLA GT Models"
-            }
+                "Material": "304 Stainless Steel",
+                "Weight": "350 lbs",
+                "Horsepower": "350 HP",
+                "Warranty": "5 years",
+                "Compatibility": "Universal Fit for Any Car Model"
+        }
         },
         {
             id: 3,
-            title: "MLA Digital Instrument Cluster",
-            category: "electrical",
-            price: 2499,
-            sku: "MLA-DIC-2025",
-            image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "Fully customizable 12.3-inch digital instrument cluster with multiple display modes and performance telemetry.",
+            title: "MLA High-Torque Diesel Engine",
+            category: "engine",
+            price: 2200,
+            sku: "MLA-DT-2027",
+            image: "images/Figure-1-Vehicle-engine.webp",
+            description: "Designed for heavy-duty applications, the MLA High-Torque Diesel Engine delivers robust performance and unmatched durability. Ideal for commercial trucks and industrial vehicles, this engine ensures maximum productivity with minimal downtime.",
             specs: {
-                "Display Size": "12.3 inches",
-                "Resolution": "1920x720",
-                "Features": "Track mode, Night vision",
-                "Warranty": "2 years",
-                "Compatibility": "All MLA Models"
+                "Material": "Cast Iron",
+                "Weight": "960 lbs",
+                "Torque": "1200 lb-ft",
+                "Fuel Efficiency": "15 MPG",
+                "Warranty": "10 years",
+                "Compatibility": "Designed for Large Trucks and Industrial Vehicles"
             }
         },
         {
             id: 4,
+            title: "MLA High-Performance Disc Brakes",
+            category: "brakes",
+            price: 150,
+            sku: "MLA-HPDB-2028",
+            image: "images/AdobeStock_591668589___Resized.jpg",
+            description: "Engineered for extreme conditions, MLA High-Performance Disc Brakes provide superior stopping power and fade resistance, ideal for sports cars and high-speed driving. Experience enhanced safety and control with our advanced brake technology.",
+            specs: {
+                "Material": "Carbon Fiber",
+                "Diameter": "350 mm",
+                "Pad Type": "Ceramic",
+                "Warranty": "5 years",
+                "Compatibility": "Fits Most High-Performance Sports Cars"
+        }
+        },
+        {
+                id: 5,
+                title: "MLA All-Terrain Brake Kit",
+                category: "brakes",
+                price: 200,
+                sku: "MLA-ATBK-2029",
+                image: "images/istockphoto-1284268855-612x612.jpg",
+                description: "MLA All-Terrain Brake Kit is specifically designed for SUVs and trucks, ensuring optimal performance in diverse driving environments from muddy trails to urban roads. This kit enhances braking reliability and durability under tough conditions.",
+                specs: {
+                    "Material": "Cast Iron",
+                    "Diameter": "300 mm",
+                    "Pad Type": "Semi-Metallic",
+                    "Warranty": "3 years",
+                    "Compatibility": "Universal Fit for SUVs and Trucks"
+                }
+            },
+            {
+                id: 6,
+                title: "MLA Advanced Car Dynamo",
+                category: "electrical",
+                price: 120,
+                sku: "MLA-DYN-2030",
+                image: "images/car-generator-white-background-done-d-37481007.webp",
+                description: "The MLA Advanced Car Dynamo is designed to ensure reliable power generation for your vehicle’s electrical system. Featuring robust construction and advanced magnetic technology, it efficiently converts mechanical energy into electrical energy, keeping your battery charged and your electrical components running smoothly.",
+                specs: {
+                    "Output": "100 Amp",
+                    "Voltage": "12V",
+                    "Material": "Aluminum Alloy",
+                    "Warranty": "4 years",
+                    "Compatibility": "Fits Most Modern Vehicles"
+                }
+            },
+            {
+                id: 7,
+                title: "MLA High-Capacity Car Battery",
+                category: "electrical",
+                price: 150,
+                sku: "MLA-HCB-2031",
+                image: "images/065-powerline-45-435.webp",
+                description: "Keep your vehicle starting smoothly and reliably with the MLA High-Capacity Car Battery. Designed for modern vehicles that require robust electrical support, this battery provides long-lasting power and stability in all weather conditions, ensuring that your car is ready to go whenever you are.",
+                specs: {
+                    "Capacity": "75 Ah",
+                    "Voltage": "12V",
+                    "Type": "Lead-Acid",
+                    "Cold Cranking Amps": "800 CCA",
+                    "Warranty": "5 years",
+                    "Compatibility": "Universal Fit for Most Cars"
+                }
+            },
+        {
+            id: 8,
             title: "Handcrafted Leather Steering Wheel",
             category: "interior",
-            price: 1299,
+            price: 20,
             sku: "MLA-HSW-2025",
-            image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            image: "images/3580af7009d44c8747202f43a388dd118a76d6b4_original.avif",
             description: "Hand-stitched Nappa leather steering wheel with contrast stitching and optional carbon fiber inserts.",
             specs: {
                 "Material": "Italian Nappa Leather",
@@ -80,69 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         {
-            id: 5,
-            title: "MLA Billet Aluminum Pedals",
+            id: 9,
+            title: "MLA Adjustable Car Seat Belt",
             category: "interior",
-            price: 499,
-            sku: "MLA-BAP-2025",
-            image: "https://images.unsplash.com/photo-1555661537-923633077102?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "CNC-machined aluminum pedals with rubber inserts for improved grip and premium aesthetics.",
+            price: 50,
+            sku: "MLA-SB-2033",
+            image: "images/3-ptbeltwfullcover_77ec56bd-8521-4cfe-8216-c5060104867f_1024x1024.webp",
+            description: "Ensure your safety with the MLA Adjustable Car Seat Belt, designed for universal compatibility with most car models. This seat belt features a robust locking mechanism and a comfortable, adjustable strap that accommodates all passengers, enhancing safety and comfort during travel.",
             specs: {
-                "Material": "Aircraft-grade Aluminum",
-                "Finish": "Brushed/Anodized",
-                "Includes": "Accelerator, Brake, Dead pedal",
-                "Warranty": "2 years",
-                "Compatibility": "All MLA Models"
+                "Material": "Nylon Webbing",
+                "Length": "Adjustable up to 120 cm",
+                "Width": "48 mm",
+                "Lock Type": "Retractable Buckle",
+                "Warranty": "5 years",
+                "Compatibility": "Universal Fit for Most Car Models"
             }
         },
-        {
-            id: 6,
-            title: "MLA Performance Air Intake",
-            category: "engine",
-            price: 899,
-            sku: "MLA-PAI-2025",
-            image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "High-flow cold air intake system with washable performance filter and heat shield.",
-            specs: {
-                "Filter Type": "Cotton Gauze",
-                "Power Gain": "+8 HP",
-                "Installation": "Direct bolt-on",
-                "Warranty": "2 years",
-                "Compatibility": "MLA V8 Models"
-            }
-        },
-        {
-            id: 7,
-            title: "MLA Carbon Fiber Mirror Caps",
-            category: "exterior",
-            price: 799,
-            sku: "MLA-CFM-2025",
-            image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "Authentic carbon fiber mirror caps with UV-resistant clear coat for durability.",
-            specs: {
-                "Material": "2x2 Twill Carbon Fiber",
-                "Weight": "0.8 lbs each",
-                "Finish": "Gloss or Matte",
-                "Warranty": "2 years",
-                "Compatibility": "All MLA Models"
-            }
-        },
-        {
-            id: 8,
-            title: "MLA LED Interior Lighting Kit",
-            category: "electrical",
-            price: 349,
-            sku: "MLA-LED-2025",
-            image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "Premium LED lighting kit with customizable colors and brightness for footwells, cup holders, and doors.",
-            specs: {
-                "Colors": "16.8 million RGB",
-                "Control": "Touchscreen or App",
-                "Zones": "4 independent",
-                "Warranty": "2 years",
-                "Compatibility": "All MLA Models"
-            }
-        }
     ];
     
     let partsGrid = document.querySelector('.parts-grid');

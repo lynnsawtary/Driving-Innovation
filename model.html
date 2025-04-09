@@ -21,15 +21,27 @@
     </div>
 
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">Experience Automotive Excellence</h1>
-                <p class="hero-subtitle">Discover the perfect blend of performance, luxury, and innovation</p>
-                <a href="#car-listings" class="cta-button">Explore Our Collection</a>
+        <!--header-->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MLA</a>
             </div>
-            <div class="hero-overlay"></div>
-        </section>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="model.html">Models</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Parts.html">Parts</a></li>
+                <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
 
         <!-- Header with Search -->
         <header>
@@ -292,61 +304,62 @@
 
     <!-- Footer Section -->
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <img src="./images/rhu.jpg" alt="RHU Logo" class="footer-logo">
-                    <p>Redefining automotive excellence through innovation and performance</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+        <footer class="luxury-footer">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-col">
+                            <h3>MLA Automotive</h3>
+                            <p>Redefining the boundaries of luxury performance since 1990. Each MLA vehicle represents the pinnacle of automotive craftsmanship.</p>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="model.html">Models</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="Parts.html">Parts</a></li>
+                                <li><a href="login.html">Client Portal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
+                                <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                                <li><i class="fas fa-envelope"></i> contact@mla-automotive.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Newsletter</h3>
+                            <p>Subscribe for exclusive updates and offers.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your Email Address">
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#car-listings">Models</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Our Models</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Sport Cars</a></li>
-                        <li><a href="#">Electric Vehicles</a></li>
-                        <li><a href="#">Luxury Sedans</a></li>
-                        <li><a href="#">SUVs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Beverly Hills</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@rhuauto.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
-                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> RHU Automotive. All rights reserved.</p>
-                <div class="footer-policy-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
+                <div class="container">
+                    <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <div id="back-to-top" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+            <!-- <span id="current-year"></span> -->
+        </footer>
     
     <script src="model.js"></script>
 </body>

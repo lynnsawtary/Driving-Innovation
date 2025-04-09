@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://kit.fontawesome.com/2efc16a506.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="login.css">
     <title>Login Form</title>
 </head>
@@ -13,40 +12,28 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
-                <h1>Register With</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <form id="signup-form">
+                <span>Fill Out The Following Info For Registration:</span>
+                <input type="text" id="signup-name" placeholder="Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="toggle-signup-password"></i>
                 </div>
-                <hr>
-                <h1>OR</h1>
-                <hr>
-                <span>Fill Out The Following Info For Registeration</span>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
+                <p id="signup-feedback" class="feedback"></p>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
-                <h1>Login With</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <form id="login-form">
+                <span>Login With Your Email & Password:</span>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="toggle-login-password"></i>
                 </div>
-                <hr>
-                <h1>OR</h1>
-                <hr>
-                <span>Login With Your Email & Password</span>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button>Login</button>
+                <button type="submit">Login</button>
+                <p id="login-feedback" class="feedback"></p>
             </form>
         </div>
         <div class="toggle-container">
