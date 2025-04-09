@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://kit.fontawesome.com/2efc16a506.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="login.css">
     <title>Login Form</title>
 </head>
@@ -13,7 +12,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form id="signup-form">
                 <h1>Register With</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -24,15 +23,18 @@
                 <hr>
                 <h1>OR</h1>
                 <hr>
-                <span>Fill Out The Following Info For Registeration</span>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button>Sign Up</button>
+                <span>Fill Out The Following Info For Registration</span>
+                <input type="text" id="signup-name" placeholder="Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="toggle-signup-password"></i>
+                </div>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form id="login-form">
                 <h1>Login With</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -44,9 +46,12 @@
                 <h1>OR</h1>
                 <hr>
                 <span>Login With Your Email & Password</span>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button>Login</button>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="toggle-login-password"></i>
+                </div>
+                <button type="submit">Login</button>
             </form>
         </div>
         <div class="toggle-container">
