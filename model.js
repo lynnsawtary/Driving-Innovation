@@ -134,7 +134,7 @@ const cars = [
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    // document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // Logo animation
     setTimeout(() => {
@@ -691,9 +691,6 @@ document.addEventListener('click', function(e) {
                     }).join('')}
                 </tbody>
             </table>
-            <div class="comparison-actions">
-                <button class="request-quote-btn">Request Quote for Both</button>
-            </div>
         `;
         
         // Add event listener to the request quote button
@@ -1455,16 +1452,3 @@ function handleSwipe() {
     prevSlide();
   }
 }
-
-// Auto-advance slides (optional)
-// let slideInterval = setInterval(nextSlide, 5000);
-
-// Pause auto-advance when user interacts (optional)
-// function pauseSlideShow() {
-//   clearInterval(slideInterval);
-// }
-
-// videoCarousel.addEventListener('mouseenter', pauseSlideShow);
-// videoCarousel.addEventListener('mouseleave', () => {
-//   slideInterval = setInterval(nextSlide, 5000);
-// });
