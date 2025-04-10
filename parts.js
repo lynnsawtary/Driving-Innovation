@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         localStorage.setItem('mlaCart', JSON.stringify(cart));
         updateCartCount();
-        updateMiniCart(); // Add this to update the dropdown after adding an item
+        updateMiniCart();
 
         // Show visual feedback
         const addButton = document.querySelector('.modal-actions .btn-primary');
@@ -346,7 +346,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Add event listener to the Add to Cart button in modal
         document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
             const partId = parseInt(this.getAttribute('data-id'));
             addToCart(partId);
@@ -361,17 +360,16 @@ document.addEventListener('DOMContentLoaded', function() {
         partModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
-    // Update mini cart (improved version)
+    
+    // Update mini cart
     function updateMiniCart() {
         const cart = JSON.parse(localStorage.getItem('mlaCart')) || [];
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         
-        // Update all mini-cart counts on the page
         document.querySelectorAll('.mini-cart-count').forEach(element => {
             element.textContent = totalItems;
         });
         
-        // Get all mini-cart elements
         const miniCartElements = document.querySelectorAll('.mini-cart');
         
         miniCartElements.forEach(miniCart => {
@@ -381,18 +379,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const subtotalEl = miniCart.querySelector('.mini-cart-subtotal span:last-child');
             
             if (totalItems === 0) {
-                // Empty cart state
                 if (emptyEl) emptyEl.style.display = 'block';
                 if (itemsEl) itemsEl.style.display = 'none';
                 if (summaryEl) summaryEl.style.display = 'none';
             } else {
-                // Has items state
                 if (emptyEl) emptyEl.style.display = 'none';
                 if (itemsEl) {
                     itemsEl.innerHTML = '';
                     itemsEl.style.display = 'block';
                     
-                    // Add items to mini cart
                     cart.forEach(item => {
                         const part = partsData.find(p => p.id === item.id);
                         if (part) {
@@ -424,34 +419,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-// Toggle mini cart dropdown
-document.addEventListener('DOMContentLoaded', function() {
-    const miniCartTrigger = document.getElementById('mini-cart-trigger');
-    const miniCartDropdown = document.getElementById('mini-cart-dropdown');
-    
-    if (miniCartTrigger && miniCartDropdown) {
-        miniCartTrigger.addEventListener('click', function(e) {
-            e.stopPropagation();
-            miniCartDropdown.classList.toggle('active');
-        });
+
+    // Toggle mini cart dropdown
+    function setupMiniCart() {
+        const miniCartTrigger = document.getElementById('mini-cart-trigger');
+        const miniCartDropdown = document.getElementById('mini-cart-dropdown');
         
-        // Close when clicking outside
-        document.addEventListener('click', function() {
-            miniCartDropdown.classList.remove('active');
-        });
-        
-        // Prevent dropdown from closing when clicking inside it
-        miniCartDropdown.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
+        if (miniCartTrigger && miniCartDropdown) {
+            miniCartTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                miniCartDropdown.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', function() {
+                miniCartDropdown.classList.remove('active');
+            });
+            
+            miniCartDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
     }
     
-    // Initialize cart
-    initializeCart();
-    updateCartCount();
-    renderParts();
-});
+    // Helper function to get active category
+    function getActiveCategory() {
+        let activeTab = document.querySelector('.tab-btn.active');
+        return activeTab ? activeTab.dataset.category : 'all';
+    }
     
+    // Initialize the page
+    function init() {
+        // Set 'All Parts' tab as active by default
+        const allPartsTab = document.querySelector('.tab-btn[data-category="all"]');
+        if (allPartsTab) {
+            allPartsTab.classList.add('active');
+        }
+        
+        initializeCart();
+        updateCartCount();
+        renderParts('all'); // Explicitly render all parts on load
+        setupMiniCart();
+        updateMiniCart();
+    }
     
     // Event listeners
     categoryTabs.forEach(tab => {
@@ -531,9 +540,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Helper function to get active category
-    function getActiveCategory() {
-        let activeTab = document.querySelector('.tab-btn.active');
-        return activeTab ? activeTab.dataset.category : 'all';
-    }
+    // Initialize the page
+    init();
 });
