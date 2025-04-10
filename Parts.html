@@ -1,217 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLA | Genuine Parts & Accessories</title>
-    <link rel="stylesheet" href="parts.css">
-    lin
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLA | Genuine Parts & Accessories</title>
+  <link rel="stylesheet" href="parts.css">
+  <!-- Font links removed as per your requirements -->
 </head>
 <body>
-    <header class="luxury-header">
-        <div class="header-top-bar">
-            <div class="container">
-            </div>
-        </div>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">MLA</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="model.html">Models</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="Parts.html" class="active">Parts</a></li>
-                    <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
-               
-                </ul>
-               
-                <!-- Add this cart icon container -->
-                <div class="cart-icon-container">
-                    <a href="cart.html" class="cart-link">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="parts-hero">
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Genuine MLA Parts</h1>
-                    <p>Precision-engineered components designed exclusively for your MLA vehicle</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="parts-categories">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Premium Components</span>
-                    <h2 class="section-title">Parts Collection</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="category-tabs">
-                    <button class="tab-btn active" data-category="all">All Parts</button>
-                    <button class="tab-btn" data-category="engine">Engine</button>
-                    <button class="tab-btn" data-category="brakes">Brakes</button>
-                    <button class="tab-btn" data-category="electrical">Electrical</button>
-                    <button class="tab-btn" data-category="interior">Interior</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="parts-gallery">
-            <div class="container">
-                <div class="parts-controls">
-                    <input type="text" id="searchInput" placeholder="Search parts...">
-                    <select id="sortSelect">
-                      <option value="default">Sort By: Default</option>
-                      <option value="priceLowHigh">Price: Low to High</option>
-                      <option value="priceHighLow">Price: High to Low</option>
-                      <option value="nameAZ">Name: A-Z</option>
-                      <option value="nameZA">Name: Z-A</option>
-                    </select>
-                    <select id="priceFilter">
-                      <option value="all">All Prices</option>
-                      <option value="under1000">Under $1,000</option>
-                      <option value="1000to3000">$1,000 - $3,000</option>
-                      <option value="above3000">Above $3,000</option>
-                    </select>
-                  </div>
-                <div class="parts-grid">
-                </div>
-            </div>
-        </section>
-
-        <section class="parts-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Can't Find What You Need?</h2>
-                    <p>Our parts specialists can source any component for your MLA vehicle</p>
-                    <div class="cta-buttons">
-                        <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone"></i> Call Parts Specialist</a>
-                        <a href="#" class="btn btn-secondary">Request a Quote</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="parts-benefits">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Why Choose MLA</span>
-                    <h2 class="section-title">Genuine Parts Advantage</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Authenticity Guaranteed</h3>
-                        <p>Every part is manufactured to MLA's exacting standards and comes with a certificate of authenticity.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Extended Warranty</h3>
-                        <p>All genuine MLA parts include a 2-year unlimited mileage warranty for peace of mind.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3>Global Express Shipping</h3>
-                        <p>Priority worldwide delivery with tracking and customs clearance handled by our team.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Perfect Fit</h3>
-                        <p>Engineered specifically for your MLA model to ensure seamless integration and performance.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="luxury-footer">
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col">
-                        <h3>MLA Automotive</h3>
-                        <p>Redefining the boundaries of luxury performance since 1990. Each MLA vehicle represents the pinnacle of automotive craftsmanship.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="model.html">Models</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="Parts.html">Parts</a></li>
-                            <li><a href="login.html">Client Portal</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Parts Department</h3>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
-                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                            <li><i class="fas fa-envelope"></i> parts@mla-automotive.com</li>
-                            <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Parts Newsletter</h3>
-                        <p>Subscribe for exclusive parts offers and inventory updates.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your Email Address" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="part-modal" id="partModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-            </div>
-        </div>
+  <!-- HEADER -->
+  <header class="luxury-header">
+    <div class="header-top-bar">
+      <div class="container">
     </div>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">MLA</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="model.html">Models</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Parts.html" class="active">Parts</a></li>
+          <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
+        </ul>
+         <!-- Add this cart icon container -->
+         <div class="cart-icon-container">
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END HEADER -->
 
-    <script src="parts.js"></script>
+  <main>
+    <!-- Parts Hero Section -->
+    <section class="parts-hero">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Genuine MLA Parts</h1>
+          <p>Precision-engineered components designed exclusively for your MLA vehicle</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parts Categories Section -->
+    <section class="parts-categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Premium Components</span>
+          <h2 class="section-title">Parts Collection</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="category-tabs">
+          <button class="tab-btn active" data-category="all">All Parts</button>
+          <button class="tab-btn" data-category="engine">Engine</button>
+          <button class="tab-btn" data-category="brakes">Brakes</button>
+          <button class="tab-btn" data-category="electrical">Electrical</button>
+          <button class="tab-btn" data-category="interior">Interior</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parts Gallery Section -->
+    <section class="parts-gallery">
+      <div class="container">
+        <div class="parts-controls">
+          <input type="text" id="searchInput" placeholder="Search parts...">
+          <select id="sortSelect">
+            <option value="default">Sort By: Default</option>
+            <option value="priceLowHigh">Price: Low to High</option>
+            <option value="priceHighLow">Price: High to Low</option>
+            <option value="nameAZ">Name: A-Z</option>
+            <option value="nameZA">Name: Z-A</option>
+          </select>
+          <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="under1000">Under $1,000</option>
+            <option value="1000to3000">$1,000 - $3,000</option>
+            <option value="above3000">Above $3,000</option>
+          </select>
+        </div>
+        <div class="parts-grid">
+          <!-- Parts will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Parts CTA Section -->
+    <section class="parts-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Can't Find What You Need?</h2>
+          <p>Our parts specialists can source any component for your MLA vehicle</p>
+          <div class="cta-buttons">
+            <!-- Added IDs so they can trigger modals -->
+            <a href="#" class="btn btn-primary" id="callPartsBtn"><i class="fas fa-phone"></i> Call Parts Specialist</a>
+            <a href="#" class="btn btn-secondary" id="quoteBtn">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parts Benefits Section -->
+    <section class="parts-benefits">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Why Choose MLA</span>
+          <h2 class="section-title">Genuine Parts Advantage</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Authenticity Guaranteed</h3>
+            <p>Every part is manufactured to MLA's exacting standards and comes with a certificate of authenticity.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Extended Warranty</h3>
+            <p>All genuine MLA parts include a 2-year unlimited mileage warranty for peace of mind.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Global Express Shipping</h3>
+            <p>Priority worldwide delivery with tracking and customs clearance handled by our team.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Perfect Fit</h3>
+            <p>Engineered specifically for your MLA model to ensure seamless integration and performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="luxury-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>MLA Automotive</h3>
+            <p>Redefining the boundaries of luxury performance since 1990. Each MLA vehicle represents the pinnacle of automotive craftsmanship.</p>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="model.html">Models</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="Parts.html">Parts</a></li>
+              <li><a href="login.html">Client Portal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Parts Department</h3>
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> parts@mla-automotive.com</li>
+              <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Parts Newsletter</h3>
+            <p>Subscribe for exclusive parts offers and inventory updates.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your Email Address" required>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+<!-- Call Parts Specialist Modal -->
+<div class="part-modal" id="callPartsModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="callModalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <h2>Call Parts Specialist</h2>
+        <p>Fill out the form below, and our MLA Parts Specialist will contact you to assist with your request.</p>
+        <form id="callPartsForm">
+          <div class="form-group">
+            <label for="callName">Your Name</label>
+            <input type="text" id="callName" required />
+          </div>
+          <div class="form-group">
+            <label for="callPhone">Phone Number</label>
+            <input type="tel" id="callPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="callEmail">Email</label>
+            <input type="email" id="callEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="callMessage">Message (optional)</label>
+            <textarea id="callMessage" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Request a Quote Modal -->
+  <div class="part-modal" id="quoteModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="quoteModalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <h2>Request a Quote</h2>
+        <p>Please provide the details below, and we'll prepare a personalized quote for your MLA parts needs.</p>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="quoteName">Your Name</label>
+            <input type="text" id="quoteName" required />
+          </div>
+          <div class="form-group">
+            <label for="quoteEmail">Email</label>
+            <input type="email" id="quoteEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="quotePhone">Phone Number</label>
+            <input type="tel" id="quotePhone" required />
+          </div>
+          <div class="form-group">
+            <label for="quoteParts">Parts or Services Interested In</label>
+            <textarea id="quoteParts" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Part Details Modal (for "View Details") -->
+  <div class="part-modal" id="partModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="partModalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-body">
+        <!-- Content for part details will be injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="parts.js"></script>
 </body>
 </html>
