@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLA | Your Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="luxury-header">
+        <div class="header-top-bar">
+            <div class="container">
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-main">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> / <a href="Parts.html">Parts</a> / <span>Cart</span>
+                </div>
+                <h1>Your Shopping Cart</h1>
+                <p>Review and manage your selected MLA genuine parts</p>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart-layout">
+                    <div class="cart-items-container">
+                        <div class="cart-header">
+                            <h2><i class="fas fa-shopping-cart"></i> Your Cart (<span id="item-count">0</span>)</h2>
+                            <a href="Parts.html" class="continue-shopping"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                        </div>
+                        
+                        <div class="cart-empty" id="cart-empty">
+                            <div class="empty-cart-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h3>Your cart is empty</h3>
+                            <p>Browse our premium parts collection to get started</p>
+                            <a href="Parts.html" class="btn btn-primary">Shop Parts</a>
+                        </div>
+                        
+                        <div class="cart-items-list" id="cart-items-list">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary-container">
+                        <div class="summary-card">
+                            <h3>Order Summary</h3>
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping</span>
+                                    <span id="shipping">Calculated at checkout</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Tax</span>
+                                    <span id="tax">Calculated at checkout</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Estimated Total</span>
+                                    <span id="total">$0.00</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-checkout" id="checkout-btn">Proceed to Checkout</button>
+                            
+                            <div class="secure-checkout">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                        </div>
+                        
+                        <div class="customer-support">
+                            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                            <p>Our parts specialists are available to assist you with any questions.</p>
+                            <a href="tel:+18005551234" class="support-phone"><i class="fas fa-phone"></i> 1-800-555-1234</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recommendations-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Complete Your Build</h2>
+                    <p>These parts pair well with items in your cart</p>
+                </div>
+                <div class="recommendations-grid" id="recommendations-grid">
+                    <!-- Recommended items will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="luxury-footer">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <div class="mini-cart" id="mini-cart">
+        <div class="mini-cart-header">
+            <span class="mini-cart-count" id="mini-cart-count">0</span>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+            <div class="mini-cart-empty" id="mini-cart-empty">
+                <p>Your cart is empty</p>
+            </div>
+            <div class="mini-cart-items" id="mini-cart-items">
+                <!-- Mini cart items will be dynamically inserted here -->
+            </div>
+            <div class="mini-cart-summary" id="mini-cart-summary">
+                <div class="mini-cart-subtotal">
+                    <span>Subtotal:</span>
+                    <span id="mini-cart-subtotal">$0.00</span>
+                </div>
+                <a href="cart.html" class="btn btn-primary btn-view-cart">View Cart</a>
+                <button class="btn btn-secondary btn-checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
