@@ -23,15 +23,28 @@
           <li><a href="model.html">Models</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="Parts.html" class="active">Parts</a></li>
-          <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
         </ul>
-         <!-- Add this cart icon container -->
-         <div class="cart-icon-container">
-            <a href="cart.html" class="cart-link">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">0</span>
-            </a>
+        
+          
+        <!-- New container for icons using inline SVGs -->
+      <div class="header-icons">
+        <!-- User Icon -->
+        <div class="user-icon">
+          <a href="login.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-user">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8 8 0 0112 15a8 8 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </a>
         </div>
+        <!-- Cart Icon -->
+        <div class="cart-icon">
+          <a href="cart.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-cart">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.293 1.414l.293.293m7.414-3.414H7m7.414 3.414l1.293 2.293a1 1 0 01-.293 1.414l-.293.293M5 21a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4z" />
+            </svg>
+          </a>
+        </div>
+      </div>
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -170,7 +183,6 @@
               <li><a href="model.html">Models</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="Parts.html">Parts</a></li>
-              <li><a href="login.html">Client Portal</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -178,7 +190,13 @@
             <ul>
               <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
               <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-              <li><i class="fas fa-envelope"></i> parts@mla-automotive.com</li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:parts@mla-automotive.com" style="color: #d4af37;; text-decoration: none;">
+                  parts@mla-automotive.com
+                </a>
+              </li>
+              
               <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</li>
             </ul>
           </div>
@@ -196,11 +214,6 @@
     <div class="footer-bottom">
       <div class="container">
         <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -276,6 +289,16 @@
       <button class="modal-close" id="partModalClose"><i class="fas fa-times"></i></button>
       <div class="modal-body">
         <!-- Content for part details will be injected dynamically -->
+      </div>
+    </div>
+  </div>
+  <!-- Newsletter Success Modal -->
+<div class="modal-overlay" id="newsletterSuccessModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeNewsletterModal">&times;</button>
+      <div class="modal-body" style="text-align: center; padding: 20px;">
+        <h2>Thank You!</h2>
+        <p>Thank you for subscribing to our newsletter!</p>
       </div>
     </div>
   </div>

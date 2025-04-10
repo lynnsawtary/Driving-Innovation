@@ -306,16 +306,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     </ul>
                 </div>
                 <div class="modal-actions">
-                    <button class="btn btn-primary add-to-cart-btn" data-id="${part.id}">
+                    <button class="btn btn-primary add-to-cart-btn" data-id="${part.id}"style="background-color: #d4af37; color: #ffffff;">
                         <i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
-                    <button class="btn btn-secondary"><i class="fas fa-phone"></i> Call to Order</button>
                 </div>
             </div>
         `;
         
         document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
-            const partId = parseInt(this.getAttribute('data-id'));
+            let partId = parseInt(this.getAttribute('data-id'));
             addToCart(partId);
         });
         
@@ -368,18 +367,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    let newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let emailInput = this.querySelector('input[type="email"]');
-            let email = emailInput.value.trim();
-            if (email) {
-                alert('Thank you for subscribing to our newsletter!');
-                emailInput.value = '';
-            }
-        });
-    }
+  // Newsletter Modal functionality
+let newsletterForm = document.querySelector('.newsletter-form');
+let newsletterModal = document.getElementById('newsletterSuccessModal');
+let closeNewsletterModal = document.getElementById('closeNewsletterModal');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Instead of alert, show the newsletter success modal
+        if (newsletterModal) {
+            newsletterModal.classList.add('active');
+        }
+        // Optionally clear the newsletter input field
+        let emailInput = newsletterForm.querySelector('input[type="email"]');
+        if (emailInput) {
+            emailInput.value = '';
+        }
+    });
+}
+
+if (closeNewsletterModal) {
+    closeNewsletterModal.addEventListener('click', function() {
+        newsletterModal.classList.remove('active');
+    });
+}
+
+// Also close the modal if clicking the overlay
+if (newsletterModal) {
+    newsletterModal.addEventListener('click', function(e) {
+        if (e.target === newsletterModal) {
+            newsletterModal.classList.remove('active');
+        }
+    });
+}
+
     
     // -------------------------------
     // CART FUNCTIONALITY
@@ -399,10 +421,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update the cart count display in the header
     function updateCartCount() {
-        const cartCount = document.querySelector('.cart-count');
+        let cartCount = document.querySelector('.cart-count');
         if (cartCount) {
-            const cart = getCart();
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            let cart = getCart();
+            let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartCount.textContent = totalItems;
             // Optionally hide the count if there are no items:
             cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
@@ -411,11 +433,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to add an item (part) to the cart
     function addToCart(partId) {
-        const part = partsData.find(p => p.id === partId);
+        let part = partsData.find(p => p.id === partId);
         if (!part) return;
         
         let cart = getCart();
-        const existingItem = cart.find(item => item.id === partId);
+        let existingItem = cart.find(item => item.id === partId);
         
         if (existingItem) {
             existingItem.quantity += 1;
@@ -435,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateMiniCart();
         
         // Optional: Visual feedback when an item is added
-        const addButton = document.querySelector('.modal-actions .btn-primary');
+        let addButton = document.querySelector('.modal-actions .btn-primary');
         if (addButton) {
             addButton.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
             addButton.classList.add('added');
@@ -448,20 +470,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update the mini-cart (if you have a mini-cart dropdown)
     function updateMiniCart() {
-        const cart = getCart();
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        let cart = getCart();
+        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         
         document.querySelectorAll('.mini-cart-count').forEach(element => {
             element.textContent = totalItems;
         });
         
-        const miniCartElements = document.querySelectorAll('.mini-cart');
+        let miniCartElements = document.querySelectorAll('.mini-cart');
         
         miniCartElements.forEach(miniCart => {
-            const emptyEl = miniCart.querySelector('.mini-cart-empty');
-            const itemsEl = miniCart.querySelector('.mini-cart-items');
-            const summaryEl = miniCart.querySelector('.mini-cart-summary');
-            const subtotalEl = miniCart.querySelector('.mini-cart-subtotal span:last-child');
+            let emptyEl = miniCart.querySelector('.mini-cart-empty');
+            let itemsEl = miniCart.querySelector('.mini-cart-items');
+            let summaryEl = miniCart.querySelector('.mini-cart-summary');
+            let subtotalEl = miniCart.querySelector('.mini-cart-subtotal span:last-child');
             
             if (totalItems === 0) {
                 if (emptyEl) emptyEl.style.display = 'block';
@@ -474,9 +496,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     itemsEl.style.display = 'block';
                     
                     cart.forEach(item => {
-                        const part = partsData.find(p => p.id === item.id);
+                        let part = partsData.find(p => p.id === item.id);
                         if (part) {
-                            const miniCartItem = document.createElement('div');
+                            let miniCartItem = document.createElement('div');
                             miniCartItem.className = 'mini-cart-item';
                             miniCartItem.innerHTML = `
                                 <div class="mini-cart-item-img">
@@ -495,8 +517,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (summaryEl) summaryEl.style.display = 'block';
                 if (subtotalEl) {
-                    const subtotal = cart.reduce((sum, item) => {
-                        const part = partsData.find(p => p.id === item.id);
+                    let subtotal = cart.reduce((sum, item) => {
+                        let part = partsData.find(p => p.id === item.id);
                         return part ? sum + (part.price * item.quantity) : sum;
                     }, 0);
                     subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
@@ -514,10 +536,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // MODAL FUNCTIONALITY FOR NEW FORMS
     // ------------------------------
     // Call Parts Specialist Modal
-    const callPartsBtn = document.getElementById('callPartsBtn');
-    const callPartsModal = document.getElementById('callPartsModal');
-    const callModalClose = document.getElementById('callModalClose');
-    const callPartsForm = document.getElementById('callPartsForm');
+    let callPartsBtn = document.getElementById('callPartsBtn');
+    let callPartsModal = document.getElementById('callPartsModal');
+    let callModalClose = document.getElementById('callModalClose');
+    let callPartsForm = document.getElementById('callPartsForm');
     
     if (callPartsBtn && callPartsModal) {
         callPartsBtn.addEventListener('click', function(e) {
@@ -550,10 +572,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Request a Quote Modal
-    const quoteBtn = document.getElementById('quoteBtn');
-    const quoteModal = document.getElementById('quoteModal');
-    const quoteModalClose = document.getElementById('quoteModalClose');
-    const quoteForm = document.getElementById('quoteForm');
+    let quoteBtn = document.getElementById('quoteBtn');
+    let quoteModal = document.getElementById('quoteModal');
+    let quoteModalClose = document.getElementById('quoteModalClose');
+    let quoteForm = document.getElementById('quoteForm');
     
     if (quoteBtn && quoteModal) {
         quoteBtn.addEventListener('click', function(e) {

@@ -145,8 +145,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* Logo at left, icons at right */
 }
 
 .logo a {
@@ -158,15 +158,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+/* Center the nav links in the available space */
 .nav-links {
-  display: flex;
+  flex: 1;          /* Take all available space between logo and icons */
+  text-align: center; /* Center the text within the nav container */
   list-style: none;
 }
 
+/* Optional: If individual nav links need additional spacing */
 .nav-links li {
-  margin-left: 30px;
+  display: inline-block;
+  margin: 0 15px; /* Adjust spacing as needed */
 }
-
 .nav-links a {
   color: #fff;
   text-decoration: none;
@@ -191,6 +194,46 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   background-color: #d4af37;
 }
+
+/* Header icons container using Flexbox */
+.header-icons {
+  margin-left: auto;     /* Pushes the container to the right side */
+  display: flex;         /* Align icons in a row */
+  align-items: center;   /* Vertical center alignment */
+  gap: 20px;             /* Space between icons; adjust as needed */
+}
+
+/* Icon wrapper styles for fixed dimensions */
+.header-icons .user-icon,
+.header-icons .cart-icon {
+  width: 40px;   /* Fixed width */
+  height: 40px;  /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG icon adjustments */
+.header-icons .user-icon .icon,
+.header-icons .cart-icon .icon {
+  width: 100%;
+  height: 100%;
+  /* Optional: If you wish to set a default color override */
+  stroke: currentColor;
+}
+
+/* Optional: Change default color for icons if needed */
+.header-icons .user-icon a,
+.header-icons .cart-icon a {
+  color: #d4af37; /* For instance, using your accent color */
+}
+
+
+/* If your header container is positioned relatively, ensure that header container is set up */
+.navbar .container {
+  position: relative; /* Make the container a positioning context for the absolute positioned .cart-icon */
+}
+
 
 .login a {
   color: #d4af37;
@@ -334,13 +377,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .part-item {
-  background-color: #333333;
-  color: #f8f8f8;
+  /* Existing rules */
+  background-color: #333;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
+   /* NEW: make the entire card a flex container, vertical direction */
+   display: flex;
+   flex-direction: column;
 }
 
 .part-item:hover {
@@ -365,10 +411,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .part-info {
+  /* Keep existing .part-info rules (padding, etc.) */
   padding: 25px;
-  color: #f8f8f8;
+  /* NEW: allow this section to flex & grow so the bottom can anchor */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
 .part-category {
   display: inline-block;
   font-size: 0.8rem;
@@ -398,7 +447,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
+/* Use auto top margin to push .part-meta to the bottom of .part-info */
 .part-meta {
+  margin-top: auto;  /* NEW */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -655,6 +706,24 @@ h1, h2, h3, h4, h5, h6 {
 .footer-links a:hover {
   color: #d4af37;
 }
+
+/* Adjust the main footer area padding for a shorter footer */
+.luxury-footer .footer-main {
+  padding: 15px 0 10px;  /* Reduced from a higher value */
+}
+
+/* Adjust the bottom footer section padding */
+.luxury-footer .footer-bottom {
+  padding: 10px 0;  /* Reduced padding for a more compact look */
+}
+
+/* Optionally, reduce the font size in the footer for a tighter appearance */
+.luxury-footer p,
+.luxury-footer ul li,
+.footer-links a {
+  font-size: 0.8rem;  /* Adjust as needed */
+}
+
 
 /* ========== MODAL (PART-MODAL) SHARED STYLES ========== */
 .part-modal {
@@ -1049,6 +1118,86 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   line-height: 1;
 }
+/* Newsletter Success Modal - similar styling to your other modals */
+#newsletterSuccessModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+#newsletterSuccessModal.active {
+  display: flex;
+}
+
+#newsletterSuccessModal .modal-content {
+  width: 100%;
+  max-width: 400px;  /* slightly smaller modal */
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-out;
+  position: relative;
+  text-align: center;
+}
+
+#newsletterSuccessModal .modal-body h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 15px;
+  background:  #b8860b;
+  border-radius: 6px 6px 0 0;
+}
+
+#newsletterSuccessModal .modal-body p {
+  margin: 0;
+  padding: 20px;
+  color: #444444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#newsletterSuccessModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: transparent;
+}
+
+#newsletterSuccessModal .modal-close:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+#newsletterSuccessModal .modal-close::before {
+  content: '×';
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 1;
+}
+
+
+
 
 /* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
