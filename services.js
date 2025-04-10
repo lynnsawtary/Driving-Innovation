@@ -197,39 +197,16 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.userSelect = '';
     },
     
-    createSuccessBanner: function() {
-      if (this.successBanner) return;
-      
-      const banner = document.createElement('div');
-      banner.className = 'success-banner';
-      banner.innerHTML = `
-        <i class="fas fa-check-circle"></i>
-        <p>Your message has been received successfully!</p>
-      `;
-      document.body.appendChild(banner);
-      this.successBanner = banner;
-    },
-    
-    showSuccessBanner: function() {
-      if (!this.successBanner) this.createSuccessBanner();
-      this.successBanner.classList.add('show');
-      
-      // Auto-hide after 5 seconds
-      setTimeout(() => {
-        this.successBanner.classList.remove('show');
-      }, 5000);
-    },
-    
     handleFormSubmit: function(e, form, modal) {
       e.preventDefault();
-      
+    
       // Reset previous errors
       form.querySelectorAll('.error').forEach(el => {
         el.classList.remove('error');
         const errorMsg = el.querySelector('.error-message');
         if (errorMsg) errorMsg.style.display = 'none';
       });
-      
+    
       // Validate required fields
       let isValid = true;
       form.querySelectorAll('[required]').forEach(input => {
@@ -237,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
           isValid = false;
           const formGroup = input.closest('.form-group');
           formGroup.classList.add('error');
-          
+    
           let errorMsg = formGroup.querySelector('.error-message');
           if (!errorMsg) {
             errorMsg = document.createElement('div');
@@ -248,28 +225,28 @@ document.addEventListener('DOMContentLoaded', function() {
           errorMsg.style.display = 'block';
         }
       });
-      
+    
       if (!isValid) return;
       
-      // Show loading state
-      const submitBtn = form.querySelector('.btn-submit');
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-      submitBtn.disabled = true;
-      
-      // Simulate form submission
-      setTimeout(() => {
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
-        
-        this.showSuccessBanner();
-        form.reset();
-        
-        setTimeout(() => {
-          this.closeModal(modal);
-        }, 1000);
-      }, 1500);
-    }
+    // Show loading state
+  const submitBtn = form.querySelector('.btn-submit');
+  const originalBtnText = submitBtn.textContent;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+  submitBtn.disabled = true;
+
+  // Simulate form submission
+  setTimeout(() => {
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+
+    alert("Your request has been received successfully!");
+    form.reset();
+
+    setTimeout(() => {
+      this.closeModal(modal);
+    }, 1000);
+  }, 1500);
+}
   };
 
   // Initialize modal system
@@ -356,4 +333,5 @@ document.addEventListener('DOMContentLoaded', function() {
       galleryContainer.appendChild(galleryItem);
     });
   }
+  
 });
