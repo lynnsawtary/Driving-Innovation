@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
     let hamburger = document.querySelector('.hamburger');
     let navLinks = document.querySelector('.nav-links');
     
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Parts data
     let partsData = [
         {
             id: 1,
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 price: 120,
                 sku: "MLA-DYN-2030",
                 image: "images/car-generator-white-background-done-d-37481007.webp",
-                description: "The MLA Advanced Car Dynamo is designed to ensure reliable power generation for your vehicle’s electrical system. Featuring robust construction and advanced magnetic technology, it efficiently converts mechanical energy into electrical energy, keeping your battery charged and your electrical components running smoothly.",
+                description: "The MLA Advanced Car Dynamo is designed to ensure reliable power generation for your vehicle's electrical system. Featuring robust construction and advanced magnetic technology, it efficiently converts mechanical energy into electrical energy, keeping your battery charged and your electrical components running smoothly.",
                 specs: {
                     "Output": "100 Amp",
                     "Voltage": "12V",
@@ -165,17 +167,80 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     ];
     
+    // Make partsData available globally for cart.js
+    window.partsData = partsData;
+    
+    // DOM elements
     let partsGrid = document.querySelector('.parts-grid');
     let categoryTabs = document.querySelectorAll('.tab-btn');
     let searchInput = document.querySelector('#searchInput');
     let sortSelect = document.querySelector('#sortSelect');
     let priceFilter = document.querySelector('#priceFilter');
-  
-    function getActiveCategory() {
-        let activeTab = document.querySelector('.tab-btn.active');
-        return activeTab ? activeTab.dataset.category : 'all';
+    let partModal = document.querySelector('.part-modal');
+    let modalOverlay = document.querySelector('.modal-overlay');
+    let modalClose = document.querySelector('.modal-close');
+    
+    // Initialize cart
+    function initializeCart() {
+        if (!localStorage.getItem('mlaCart')) {
+            localStorage.setItem('mlaCart', JSON.stringify([]));
+        }
     }
     
+    // Get current cart
+    function getCart() {
+        return JSON.parse(localStorage.getItem('mlaCart')) || [];
+    }
+    
+    // Update cart count in header
+    function updateCartCount() {
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+        }
+    }
+    
+    // Add to cart function
+    function addToCart(partId) {
+        const part = partsData.find(p => p.id === partId);
+        if (!part) return;
+        
+        let cart = getCart();
+        const existingItem = cart.find(item => item.id === partId);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: part.id,
+                title: part.title,
+                price: part.price,
+                image: part.image,
+                sku: part.sku,
+                quantity: 1
+            });
+        }
+        
+        localStorage.setItem('mlaCart', JSON.stringify(cart));
+        updateCartCount();
+        updateMiniCart(); // Add this to update the dropdown after adding an item
+
+        // Show visual feedback
+        const addButton = document.querySelector('.modal-actions .btn-primary');
+        if (addButton) {
+            addButton.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            addButton.classList.add('added');
+            setTimeout(() => {
+                addButton.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                addButton.classList.remove('added');
+            }, 2000);
+        }
+    }
+    
+    // Render parts
     function renderParts(category = 'all') {
         partsGrid.innerHTML = '';
         
@@ -246,33 +311,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-  
-    renderParts();
     
-    categoryTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            categoryTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            renderParts(this.dataset.category);
-        });
-    });
-    
-    searchInput.addEventListener('input', () => {
-        renderParts(getActiveCategory());
-    });
-    
-    sortSelect.addEventListener('change', () => {
-        renderParts(getActiveCategory());
-    });
-    
-    priceFilter.addEventListener('change', () => {
-        renderParts(getActiveCategory());
-    });
-    
-    let partModal = document.querySelector('.part-modal');
-    let modalOverlay = document.querySelector('.modal-overlay');
-    let modalClose = document.querySelector('.modal-close');
-    
+    // Open part modal
     function openPartModal(partId) {
         let part = partsData.find(p => p.id === partId);
         if (!part) return;
@@ -298,20 +338,141 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 
                 <div class="modal-actions">
-                    <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="${part.id}">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
                     <button class="btn btn-secondary"><i class="fas fa-phone"></i> Call to Order</button>
                 </div>
             </div>
         `;
         
+        // Add event listener to the Add to Cart button in modal
+        document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
+            const partId = parseInt(this.getAttribute('data-id'));
+            addToCart(partId);
+        });
+        
         partModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
     
+    // Close part modal
     function closePartModal() {
         partModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+    // Update mini cart (improved version)
+    function updateMiniCart() {
+        const cart = JSON.parse(localStorage.getItem('mlaCart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        // Update all mini-cart counts on the page
+        document.querySelectorAll('.mini-cart-count').forEach(element => {
+            element.textContent = totalItems;
+        });
+        
+        // Get all mini-cart elements
+        const miniCartElements = document.querySelectorAll('.mini-cart');
+        
+        miniCartElements.forEach(miniCart => {
+            const emptyEl = miniCart.querySelector('.mini-cart-empty');
+            const itemsEl = miniCart.querySelector('.mini-cart-items');
+            const summaryEl = miniCart.querySelector('.mini-cart-summary');
+            const subtotalEl = miniCart.querySelector('.mini-cart-subtotal span:last-child');
+            
+            if (totalItems === 0) {
+                // Empty cart state
+                if (emptyEl) emptyEl.style.display = 'block';
+                if (itemsEl) itemsEl.style.display = 'none';
+                if (summaryEl) summaryEl.style.display = 'none';
+            } else {
+                // Has items state
+                if (emptyEl) emptyEl.style.display = 'none';
+                if (itemsEl) {
+                    itemsEl.innerHTML = '';
+                    itemsEl.style.display = 'block';
+                    
+                    // Add items to mini cart
+                    cart.forEach(item => {
+                        const part = partsData.find(p => p.id === item.id);
+                        if (part) {
+                            const miniCartItem = document.createElement('div');
+                            miniCartItem.className = 'mini-cart-item';
+                            miniCartItem.innerHTML = `
+                                <div class="mini-cart-item-img">
+                                    <img src="${part.image}" alt="${part.title}">
+                                </div>
+                                <div class="mini-cart-item-details">
+                                    <h4 class="mini-cart-item-title">${part.title}</h4>
+                                    <div class="mini-cart-item-price">$${(part.price * item.quantity).toFixed(2)}</div>
+                                    <div class="mini-cart-item-qty">Qty: ${item.quantity}</div>
+                                </div>
+                            `;
+                            itemsEl.appendChild(miniCartItem);
+                        }
+                    });
+                }
+                
+                if (summaryEl) summaryEl.style.display = 'block';
+                if (subtotalEl) {
+                    const subtotal = cart.reduce((sum, item) => {
+                        const part = partsData.find(p => p.id === item.id);
+                        return part ? sum + (part.price * item.quantity) : sum;
+                    }, 0);
+                    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+                }
+            }
+        });
+    }
+// Toggle mini cart dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    const miniCartTrigger = document.getElementById('mini-cart-trigger');
+    const miniCartDropdown = document.getElementById('mini-cart-dropdown');
+    
+    if (miniCartTrigger && miniCartDropdown) {
+        miniCartTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            miniCartDropdown.classList.toggle('active');
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function() {
+            miniCartDropdown.classList.remove('active');
+        });
+        
+        // Prevent dropdown from closing when clicking inside it
+        miniCartDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    // Initialize cart
+    initializeCart();
+    updateCartCount();
+    renderParts();
+});
+    
+    
+    // Event listeners
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            renderParts(this.dataset.category);
+        });
+    });
+    
+    searchInput.addEventListener('input', () => {
+        renderParts(getActiveCategory());
+    });
+    
+    sortSelect.addEventListener('change', () => {
+        renderParts(getActiveCategory());
+    });
+    
+    priceFilter.addEventListener('change', () => {
+        renderParts(getActiveCategory());
+    });
     
     modalOverlay.addEventListener('click', closePartModal);
     modalClose.addEventListener('click', closePartModal);
@@ -320,12 +481,14 @@ document.addEventListener('DOMContentLoaded', function() {
             closePartModal();
         }
     });
+    
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && partModal.classList.contains('active')) {
             closePartModal();
         }
     });
     
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -343,6 +506,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Header shadow on scroll
     window.addEventListener('scroll', function() {
         let header = document.querySelector('.luxury-header');
         if (window.scrollY > 50) {
@@ -352,6 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Newsletter form
     let newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -365,5 +530,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-  });
-  
+    
+    // Helper function to get active category
+    function getActiveCategory() {
+        let activeTab = document.querySelector('.tab-btn.active');
+        return activeTab ? activeTab.dataset.category : 'all';
+    }
+});
