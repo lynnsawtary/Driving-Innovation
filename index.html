@@ -7,33 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="luxury-header">
-        <div class="header-top-bar">
-          <div class="container">
+  <header class="luxury-header">
+    <div class="header-top-bar">
+      <div class="container">
+        <!-- Optional top bar content -->
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">MLA</a>
         </div>
-        <nav class="navbar">
-          <div class="container">
-            <div class="logo">
-              <a href="index.html">MLA</a>
-            </div>
-            <div class="header-tagline">
-                <span>Redefining Luxury Since 1990</span>
-              </div>
-            <ul class="nav-links">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="model.html">Models</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="Parts.html">Parts</a></li>
-              <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
-            </ul>
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </nav>
-      </header> 
+        <div class="header-tagline">
+          <span>Redefining Luxury Since 1990</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="model.html">Models</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Parts.html">Parts</a></li>
+          <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <section class="hero">
@@ -44,7 +46,6 @@
       <div class="hero-overlay"></div>
       <div class="hero-scroll">
         <span>Scroll to Discover</span>
-        <!-- The icon element remains as-is; if not loading, replace with an alternative text/icon -->
         <i><!-- chevron icon placeholder --></i>
       </div>
     </section>
@@ -55,55 +56,9 @@
           <h2 class="section-title">Featured Models</h2>
           <div class="section-divider"></div>
         </div>
-        <div class="models-grid">
-          <div class="model-card">
-            <div class="model-image">
-              <img src="images/mercedes-benz s-class.jpg" alt="MLA GT">
-              <div class="model-overlay">
-                <a href="model.html#gt" class="btn btn-primary">Discover GT</a>
-              </div>
-            </div>
-            <div class="model-info">
-              <h3>MLA GT</h3>
-              <div class="model-specs">
-                <span>3.2s 0-60</span>
-                <span>620 HP</span>
-                <span>Dual-Clutch</span>
-              </div>
-            </div>
-          </div>
-          <div class="model-card">
-            <div class="model-image">
-              <img src="images/Tesla_Model_S.jpg" alt="MLA Touring">
-              <div class="model-overlay">
-                <a href="model.html#touring" class="btn btn-primary">Discover Touring</a>
-              </div>
-            </div>
-            <div class="model-info">
-              <h3>MLA Touring</h3>
-              <div class="model-specs">
-                <span>4.1s 0-60</span>
-                <span>550 HP</span>
-                <span>All-Wheel Drive</span>
-              </div>
-            </div>
-          </div>
-          <div class="model-card">
-            <div class="model-image">
-              <img src="images/BMW M5.jpg" alt="MLA Heritage">
-              <div class="model-overlay">
-                <a href="model.html#heritage" class="btn btn-primary">Discover Heritage</a>
-              </div>
-            </div>
-            <div class="model-info">
-              <h3>MLA Heritage</h3>
-              <div class="model-specs">
-                <span>4.5s 0-60</span>
-                <span>480 HP</span>
-                <span>Rear-Wheel Drive</span>
-              </div>
-            </div>
-          </div>
+        <!-- Dynamic cards container -->
+        <div class="models-grid" id="modelsGrid">
+          <!-- Cards will be injected here by JS -->
         </div>
         <div class="section-footer">
           <a href="model.html" class="btn btn-secondary">View Full Collection</a>
@@ -201,10 +156,10 @@
       <div class="container">
         <div class="cta-content">
           <h2>Ready to Experience MLA?</h2>
-          <p>Schedule a private consultation or test drive at one of our global showrooms.</p>
+          <p>Schedule a private consultation, book an appointment, or contact us directly.</p>
           <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Book Appointment</a>
-            <a href="tel:+15551234567" class="btn btn-secondary">Contact Us</a>
+            <a href="#" class="btn btn-primary" id="bookAppointmentBtn">Book Appointment</a>
+            <a href="#" class="btn btn-secondary" id="contactUsBtn">Contact Us</a>
           </div>
         </div>
       </div>
@@ -222,12 +177,6 @@
               Redefining the boundaries of luxury performance since 1990.
               Each MLA vehicle represents the pinnacle of automotive craftsmanship.
             </p>
-            <div class="footer-social">
-              <a href="#"><!-- icon placeholder --></a>
-              <a href="#"><!-- icon placeholder --></a>
-              <a href="#"><!-- icon placeholder --></a>
-              <a href="#"><!-- icon placeholder --></a>
-            </div>
           </div>
           <div class="footer-col">
             <h3>Quick Links</h3>
@@ -271,33 +220,86 @@
     </div>
   </footer>
 
-  <!-- Consultation Modal -->
+  <!-- Consultation Modal (Book Consultation) -->
   <div class="modal-overlay" id="consultationOverlay">
     <div class="modal-content">
-      <button class="close-modal" id="closeConsultationBtn">&times;</button>
-      <h2>Book a Consultation</h2>
-      <form id="consultationForm">
-        <div class="form-group">
-          <label for="consultationName">Your Name:</label>
-          <input type="text" id="consultationName" required />
-        </div>
-        <div class="form-group">
-          <label for="consultationEmail">Email:</label>
-          <input type="email" id="consultationEmail" required />
-        </div>
-        <div class="form-group">
-          <label for="consultationPhone">Phone:</label>
-          <input type="tel" id="consultationPhone" required />
-        </div>
-        <div class="form-group">
-          <label for="consultationMessage">Message:</label>
-          <textarea id="consultationMessage" rows="4"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <button class="modal-close" id="closeConsultationBtn"></button>
+      <div class="modal-body">
+        <h2>Book a Consultation</h2>
+        <form id="consultationForm">
+          <div class="form-group">
+            <label for="consultationName">Your Name:</label>
+            <input type="text" id="consultationName" required />
+          </div>
+          <div class="form-group">
+            <label for="consultationEmail">Email:</label>
+            <input type="email" id="consultationEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="consultationPhone">Phone:</label>
+            <input type="tel" id="consultationPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="consultationMessage">Message:</label>
+            <textarea id="consultationMessage" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
-
+  <!-- Contact Us Modal -->
+  <div class="modal-overlay" id="contactUsOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="closeContactUsBtn"></button>
+      <div class="modal-body">
+        <h2>Contact Us</h2>
+        <form id="contactUsForm">
+          <div class="form-group">
+            <label for="contactName">Your Name:</label>
+            <input type="text" id="contactName" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email:</label>
+            <input type="email" id="contactEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message:</label>
+            <textarea id="contactMessage" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Book Appointment Modal -->
+  <div class="modal-overlay" id="bookAppointmentOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="closeBookAppointmentBtn"></button>
+      <div class="modal-body">
+        <h2>Book an Appointment</h2>
+        <form id="bookAppointmentForm">
+          <div class="form-group">
+            <label for="appointmentName">Your Name:</label>
+            <input type="text" id="appointmentName" required />
+          </div>
+          <div class="form-group">
+            <label for="appointmentEmail">Email:</label>
+            <input type="email" id="appointmentEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="appointmentDate">Preferred Date:</label>
+            <input type="date" id="appointmentDate" required />
+          </div>
+          <div class="form-group">
+            <label for="appointmentMessage">Message:</label>
+            <textarea id="appointmentMessage" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>

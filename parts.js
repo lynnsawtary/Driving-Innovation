@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger toggling for mobile navigation
     let hamburger = document.querySelector('.hamburger');
     let navLinks = document.querySelector('.nav-links');
     
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Parts Data
     let partsData = [
         {
             id: 1,
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 4000,
             sku: "MLA-HE-2026",
             image: "images/1-1.jpg",
-            description: "The MLA Hybrid Electric Engine Module offers a cutting-edge solution for hybrid vehicles, combining electric power with traditional fuel systems for optimized fuel efficiency and lower emissions. Perfect for an eco-friendly upgrade.",
+            description: "The MLA Hybrid Electric Engine Module offers cutting-edge hybrid technology for improved fuel efficiency and reduced emissions without compromising performance.",
             specs: {
                 "Material": "Aluminum, High-Impact Plastic",
                 "Weight": "220 lbs",
@@ -39,14 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 1500,
             sku: "MLA-EN-2025",
             image: "images/ezgif.com-gif-maker-2021-11-24T204220.732.webp",
-            description: "This MLA Universal Engine is designed for high-performance and versatility, suitable for any car. It delivers enhanced horsepower and efficiency with a durable stainless steel construction.",
+            description: "Designed for versatility, this high-performance engine delivers enhanced horsepower and efficiency for a wide range of vehicles.",
             specs: {
                 "Material": "304 Stainless Steel",
                 "Weight": "350 lbs",
                 "Horsepower": "350 HP",
                 "Warranty": "5 years",
                 "Compatibility": "Universal Fit for Any Car Model"
-        }
+            }
         },
         {
             id: 3,
@@ -55,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 2200,
             sku: "MLA-DT-2027",
             image: "images/Figure-1-Vehicle-engine.webp",
-            description: "Designed for heavy-duty applications, the MLA High-Torque Diesel Engine delivers robust performance and unmatched durability. Ideal for commercial trucks and industrial vehicles, this engine ensures maximum productivity with minimal downtime.",
+            description: "Engineered for heavy-duty applications, this diesel engine delivers robust torque and endurance for commercial trucks and industrial vehicles.",
             specs: {
                 "Material": "Cast Iron",
                 "Weight": "960 lbs",
                 "Torque": "1200 lb-ft",
                 "Fuel Efficiency": "15 MPG",
                 "Warranty": "10 years",
-                "Compatibility": "Designed for Large Trucks and Industrial Vehicles"
+                "Compatibility": "Large Trucks & Industrial Vehicles"
             }
         },
         {
@@ -72,72 +74,72 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 150,
             sku: "MLA-HPDB-2028",
             image: "images/AdobeStock_591668589___Resized.jpg",
-            description: "Engineered for extreme conditions, MLA High-Performance Disc Brakes provide superior stopping power and fade resistance, ideal for sports cars and high-speed driving. Experience enhanced safety and control with our advanced brake technology.",
+            description: "Engineered for extreme conditions, these disc brakes provide superior stopping power and fade resistance, ideal for high-performance sports cars.",
             specs: {
                 "Material": "Carbon Fiber",
                 "Diameter": "350 mm",
                 "Pad Type": "Ceramic",
                 "Warranty": "5 years",
-                "Compatibility": "Fits Most High-Performance Sports Cars"
-        }
+                "Compatibility": "High-Performance Sports Cars"
+            }
         },
         {
-                id: 5,
-                title: "MLA All-Terrain Brake Kit",
-                category: "brakes",
-                price: 200,
-                sku: "MLA-ATBK-2029",
-                image: "images/istockphoto-1284268855-612x612.jpg",
-                description: "MLA All-Terrain Brake Kit is specifically designed for SUVs and trucks, ensuring optimal performance in diverse driving environments from muddy trails to urban roads. This kit enhances braking reliability and durability under tough conditions.",
-                specs: {
-                    "Material": "Cast Iron",
-                    "Diameter": "300 mm",
-                    "Pad Type": "Semi-Metallic",
-                    "Warranty": "3 years",
-                    "Compatibility": "Universal Fit for SUVs and Trucks"
-                }
-            },
-            {
-                id: 6,
-                title: "MLA Advanced Car Dynamo",
-                category: "electrical",
-                price: 120,
-                sku: "MLA-DYN-2030",
-                image: "images/car-generator-white-background-done-d-37481007.webp",
-                description: "The MLA Advanced Car Dynamo is designed to ensure reliable power generation for your vehicle’s electrical system. Featuring robust construction and advanced magnetic technology, it efficiently converts mechanical energy into electrical energy, keeping your battery charged and your electrical components running smoothly.",
-                specs: {
-                    "Output": "100 Amp",
-                    "Voltage": "12V",
-                    "Material": "Aluminum Alloy",
-                    "Warranty": "4 years",
-                    "Compatibility": "Fits Most Modern Vehicles"
-                }
-            },
-            {
-                id: 7,
-                title: "MLA High-Capacity Car Battery",
-                category: "electrical",
-                price: 150,
-                sku: "MLA-HCB-2031",
-                image: "images/065-powerline-45-435.webp",
-                description: "Keep your vehicle starting smoothly and reliably with the MLA High-Capacity Car Battery. Designed for modern vehicles that require robust electrical support, this battery provides long-lasting power and stability in all weather conditions, ensuring that your car is ready to go whenever you are.",
-                specs: {
-                    "Capacity": "75 Ah",
-                    "Voltage": "12V",
-                    "Type": "Lead-Acid",
-                    "Cold Cranking Amps": "800 CCA",
-                    "Warranty": "5 years",
-                    "Compatibility": "Universal Fit for Most Cars"
-                }
-            },
+            id: 5,
+            title: "MLA All-Terrain Brake Kit",
+            category: "brakes",
+            price: 200,
+            sku: "MLA-ATBK-2029",
+            image: "images/istockphoto-1284268855-612x612.jpg",
+            description: "Designed for SUVs and trucks, this brake kit ensures reliable performance across diverse conditions—from muddy trails to urban roads.",
+            specs: {
+                "Material": "Cast Iron",
+                "Diameter": "300 mm",
+                "Pad Type": "Semi-Metallic",
+                "Warranty": "3 years",
+                "Compatibility": "SUVs & Trucks"
+            }
+        },
+        {
+            id: 6,
+            title: "MLA Advanced Car Dynamo",
+            category: "electrical",
+            price: 120,
+            sku: "MLA-DYN-2030",
+            image: "images/car-generator-white-background-done-d-37481007.webp",
+            description: "Ensure reliable power generation with this advanced car dynamo, engineered to efficiently convert mechanical energy into electrical energy for uninterrupted performance.",
+            specs: {
+                "Output": "100 Amp",
+                "Voltage": "12V",
+                "Material": "Aluminum Alloy",
+                "Warranty": "4 years",
+                "Compatibility": "Modern Vehicles"
+            }
+        },
+        {
+            id: 7,
+            title: "MLA High-Capacity Car Battery",
+            category: "electrical",
+            price: 150,
+            sku: "MLA-HCB-2031",
+            image: "images/065-powerline-45-435.webp",
+            description: "Keep your vehicle running smoothly with our high-capacity car battery designed for long-lasting power and stability in all weather conditions.",
+            specs: {
+                "Capacity": "75 Ah",
+                "Voltage": "12V",
+                "Type": "Lead-Acid",
+                "Cold Cranking Amps": "800 CCA",
+                "Warranty": "5 years",
+                "Compatibility": "Universal Fit"
+            }
+        },
         {
             id: 8,
-            title: "Handcrafted Leather Steering Wheel",
+            title: "MLA Handcrafted Leather Steering Wheel",
             category: "interior",
             price: 20,
             sku: "MLA-HSW-2025",
             image: "images/3580af7009d44c8747202f43a388dd118a76d6b4_original.avif",
-            description: "Hand-stitched Nappa leather steering wheel with contrast stitching and optional carbon fiber inserts.",
+            description: "Expertly hand-stitched using premium Italian Nappa leather with contrast stitching and optional carbon fiber accents.",
             specs: {
                 "Material": "Italian Nappa Leather",
                 "Diameter": "370mm",
@@ -153,17 +155,20 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 50,
             sku: "MLA-SB-2033",
             image: "images/3-ptbeltwfullcover_77ec56bd-8521-4cfe-8216-c5060104867f_1024x1024.webp",
-            description: "Ensure your safety with the MLA Adjustable Car Seat Belt, designed for universal compatibility with most car models. This seat belt features a robust locking mechanism and a comfortable, adjustable strap that accommodates all passengers, enhancing safety and comfort during travel.",
+            description: "A robust and comfortable adjustable car seat belt designed to meet safety regulations while ensuring ease of use and universal compatibility.",
             specs: {
                 "Material": "Nylon Webbing",
                 "Length": "Adjustable up to 120 cm",
                 "Width": "48 mm",
                 "Lock Type": "Retractable Buckle",
                 "Warranty": "5 years",
-                "Compatibility": "Universal Fit for Most Car Models"
+                "Compatibility": "Universal Fit"
             }
-        },
+        }
     ];
+    
+    // Cart-related DOM elements (if available in your header)
+    // (Cart code assumes you have a .cart-count element in your header.)
     
     let partsGrid = document.querySelector('.parts-grid');
     let categoryTabs = document.querySelectorAll('.tab-btn');
@@ -171,11 +176,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let sortSelect = document.querySelector('#sortSelect');
     let priceFilter = document.querySelector('#priceFilter');
   
+    // Helper: Get active category from tab
     function getActiveCategory() {
         let activeTab = document.querySelector('.tab-btn.active');
         return activeTab ? activeTab.dataset.category : 'all';
     }
     
+    // Render parts on the page
     function renderParts(category = 'all') {
         partsGrid.innerHTML = '';
         
@@ -246,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-  
+    
     renderParts();
     
     categoryTabs.forEach(tab => {
@@ -269,15 +276,18 @@ document.addEventListener('DOMContentLoaded', function() {
         renderParts(getActiveCategory());
     });
     
-    let partModal = document.querySelector('.part-modal');
-    let modalOverlay = document.querySelector('.modal-overlay');
-    let modalClose = document.querySelector('.modal-close');
+    // -------------------------------
+    // PART DETAILS MODAL (View Details)
+    // -------------------------------
+    let partModal = document.getElementById('partModal');
+    let partModalOverlay = partModal.querySelector('.modal-overlay');
+    let partModalClose = partModal.querySelector('.modal-close');
     
     function openPartModal(partId) {
         let part = partsData.find(p => p.id === partId);
         if (!part) return;
         
-        let modalBody = document.querySelector('.modal-body');
+        let modalBody = partModal.querySelector('.modal-body');
         modalBody.innerHTML = `
             <div class="modal-img">
                 <img src="${part.image}" alt="${part.title}">
@@ -287,7 +297,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="modal-price">$${part.price.toLocaleString()}</div>
                 <span class="modal-sku">SKU: ${part.sku}</span>
                 <p class="modal-desc">${part.description}</p>
-                
                 <div class="modal-specs">
                     <h4>Specifications</h4>
                     <ul>
@@ -296,13 +305,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         `).join('')}
                     </ul>
                 </div>
-                
                 <div class="modal-actions">
-                    <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="${part.id}">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
                     <button class="btn btn-secondary"><i class="fas fa-phone"></i> Call to Order</button>
                 </div>
             </div>
         `;
+        
+        document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
+            const partId = parseInt(this.getAttribute('data-id'));
+            addToCart(partId);
+        });
         
         partModal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -313,26 +328,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
     }
     
-    modalOverlay.addEventListener('click', closePartModal);
-    modalClose.addEventListener('click', closePartModal);
+    partModalOverlay.addEventListener('click', closePartModal);
+    partModalClose.addEventListener('click', closePartModal);
+    
     partModal.addEventListener('click', function(e) {
-        if (e.target === this) {
+        if (e.target === partModal) {
             closePartModal();
         }
     });
+    
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && partModal.classList.contains('active')) {
             closePartModal();
         }
     });
     
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             let targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
             let targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -358,12 +374,218 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             let emailInput = this.querySelector('input[type="email"]');
             let email = emailInput.value.trim();
-            
             if (email) {
                 alert('Thank you for subscribing to our newsletter!');
                 emailInput.value = '';
             }
         });
     }
-  });
-  
+    
+    // -------------------------------
+    // CART FUNCTIONALITY
+    // -------------------------------
+    
+    // Initialize the cart in localStorage if it doesn't exist yet
+    function initializeCart() {
+        if (!localStorage.getItem('mlaCart')) {
+            localStorage.setItem('mlaCart', JSON.stringify([]));
+        }
+    }
+    
+    // Retrieve the current cart array from localStorage
+    function getCart() {
+        return JSON.parse(localStorage.getItem('mlaCart')) || [];
+    }
+    
+    // Update the cart count display in the header
+    function updateCartCount() {
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            // Optionally hide the count if there are no items:
+            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+        }
+    }
+    
+    // Function to add an item (part) to the cart
+    function addToCart(partId) {
+        const part = partsData.find(p => p.id === partId);
+        if (!part) return;
+        
+        let cart = getCart();
+        const existingItem = cart.find(item => item.id === partId);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: part.id,
+                title: part.title,
+                price: part.price,
+                image: part.image,
+                sku: part.sku,
+                quantity: 1
+            });
+        }
+        
+        localStorage.setItem('mlaCart', JSON.stringify(cart));
+        updateCartCount();
+        updateMiniCart();
+        
+        // Optional: Visual feedback when an item is added
+        const addButton = document.querySelector('.modal-actions .btn-primary');
+        if (addButton) {
+            addButton.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            addButton.classList.add('added');
+            setTimeout(() => {
+                addButton.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                addButton.classList.remove('added');
+            }, 2000);
+        }
+    }
+    
+    // Update the mini-cart (if you have a mini-cart dropdown)
+    function updateMiniCart() {
+        const cart = getCart();
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        document.querySelectorAll('.mini-cart-count').forEach(element => {
+            element.textContent = totalItems;
+        });
+        
+        const miniCartElements = document.querySelectorAll('.mini-cart');
+        
+        miniCartElements.forEach(miniCart => {
+            const emptyEl = miniCart.querySelector('.mini-cart-empty');
+            const itemsEl = miniCart.querySelector('.mini-cart-items');
+            const summaryEl = miniCart.querySelector('.mini-cart-summary');
+            const subtotalEl = miniCart.querySelector('.mini-cart-subtotal span:last-child');
+            
+            if (totalItems === 0) {
+                if (emptyEl) emptyEl.style.display = 'block';
+                if (itemsEl) itemsEl.style.display = 'none';
+                if (summaryEl) summaryEl.style.display = 'none';
+            } else {
+                if (emptyEl) emptyEl.style.display = 'none';
+                if (itemsEl) {
+                    itemsEl.innerHTML = '';
+                    itemsEl.style.display = 'block';
+                    
+                    cart.forEach(item => {
+                        const part = partsData.find(p => p.id === item.id);
+                        if (part) {
+                            const miniCartItem = document.createElement('div');
+                            miniCartItem.className = 'mini-cart-item';
+                            miniCartItem.innerHTML = `
+                                <div class="mini-cart-item-img">
+                                    <img src="${part.image}" alt="${part.title}">
+                                </div>
+                                <div class="mini-cart-item-details">
+                                    <h4 class="mini-cart-item-title">${part.title}</h4>
+                                    <div class="mini-cart-item-price">$${(part.price * item.quantity).toFixed(2)}</div>
+                                    <div class="mini-cart-item-qty">Qty: ${item.quantity}</div>
+                                </div>
+                            `;
+                            itemsEl.appendChild(miniCartItem);
+                        }
+                    });
+                }
+                
+                if (summaryEl) summaryEl.style.display = 'block';
+                if (subtotalEl) {
+                    const subtotal = cart.reduce((sum, item) => {
+                        const part = partsData.find(p => p.id === item.id);
+                        return part ? sum + (part.price * item.quantity) : sum;
+                    }, 0);
+                    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+                }
+            }
+        });
+    }
+    
+    // When the DOM loads, initialize the cart and update the count
+    initializeCart();
+    updateCartCount();
+    updateMiniCart();
+    
+    // ------------------------------
+    // MODAL FUNCTIONALITY FOR NEW FORMS
+    // ------------------------------
+    // Call Parts Specialist Modal
+    const callPartsBtn = document.getElementById('callPartsBtn');
+    const callPartsModal = document.getElementById('callPartsModal');
+    const callModalClose = document.getElementById('callModalClose');
+    const callPartsForm = document.getElementById('callPartsForm');
+    
+    if (callPartsBtn && callPartsModal) {
+        callPartsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            callPartsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (callModalClose) {
+        callModalClose.addEventListener('click', function() {
+            callPartsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    callPartsModal.querySelector('.modal-overlay').addEventListener('click', function() {
+        callPartsModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    if (callPartsForm) {
+        callPartsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! An MLA Parts Specialist will contact you shortly.');
+            callPartsForm.reset();
+            callPartsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Request a Quote Modal
+    const quoteBtn = document.getElementById('quoteBtn');
+    const quoteModal = document.getElementById('quoteModal');
+    const quoteModalClose = document.getElementById('quoteModalClose');
+    const quoteForm = document.getElementById('quoteForm');
+    
+    if (quoteBtn && quoteModal) {
+        quoteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            quoteModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (quoteModalClose) {
+        quoteModalClose.addEventListener('click', function() {
+            quoteModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    quoteModal.querySelector('.modal-overlay').addEventListener('click', function() {
+        quoteModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will prepare a personalized quote and get back to you soon.');
+            quoteForm.reset();
+            quoteModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // ------------------------------
+    // END OF MODAL FUNCTIONALITY
+    // ------------------------------
+});
