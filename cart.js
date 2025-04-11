@@ -9,14 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtotal = document.getElementById('subtotal');
     const total = document.getElementById('total');
     const checkoutBtn = document.getElementById('checkout-btn');
-    const recommendationsGrid = document.getElementById('recommendations-grid');
     const miniCartCount = document.getElementById('mini-cart-count');
     const miniCartItems = document.getElementById('mini-cart-items');
     const miniCartEmpty = document.getElementById('mini-cart-empty');
     const miniCartSubtotal = document.getElementById('mini-cart-subtotal');
     const miniCartSummary = document.getElementById('mini-cart-summary');
     
-    // Hamburger menu functionality (same as parts.js)
+    // Hamburger menu functionality
     let hamburger = document.querySelector('.hamburger');
     let navLinks = document.querySelector('.nav-links');
     
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderCart() {
         // Update cart count
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        itemCount.textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
+        itemCount.textContent = totalItems;
         
         // Update mini cart count
         miniCartCount.textContent = totalItems;
@@ -55,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Disable checkout button
             checkoutBtn.disabled = true;
+             // Reset all values to zero
+             subtotal.textContent = '$0.00';
+             total.textContent = '$0.00';
+             miniCartSubtotal.textContent = '$0.00';
         } else {
             // Hide empty cart message
             cartEmpty.style.display = 'none';
@@ -82,7 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <button class="quantity-btn plus" data-index="${index}">+</button>
                             </div>
                             <div class="remove-item" data-index="${index}">
-                                <i class="fas fa-trash"></i> Remove
+                                <svg class="trash-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Remove
                             </div>
                         </div>
                     </div>
@@ -101,9 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update mini cart
             updateMiniCart();
         }
-        
-        // Render recommendations
-        renderRecommendations();
     }
     
     // Update mini cart
@@ -140,38 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
         miniCartSummary.style.display = 'block';
     }
     
-    // Render recommended items
-    function renderRecommendations() {
-        // Clear existing recommendations
-        recommendationsGrid.innerHTML = '';
-        
-        // Get random 4 parts that aren't already in the cart
-        const partsNotInCart = window.partsData.filter(part => 
-            !cart.some(item => item.id === part.id)
-        ).sort(() => 0.5 - Math.random()).slice(0, 4);
-        
-        if (partsNotInCart.length === 0) {
-            recommendationsGrid.innerHTML = '<p>No recommendations available</p>';
-            return;
-        }
-        
-        partsNotInCart.forEach(part => {
-            const recommendation = document.createElement('div');
-            recommendation.className = 'recommendation-item';
-            recommendation.innerHTML = `
-                <div class="recommendation-img">
-                    <img src="${part.image}" alt="${part.title}">
-                </div>
-                <div class="recommendation-details">
-                    <h3 class="recommendation-title">${part.title}</h3>
-                    <div class="recommendation-price">$${part.price.toLocaleString()}</div>
-                    <button class="recommendation-btn" data-id="${part.id}">Add to Cart</button>
-                </div>
-            `;
-            recommendationsGrid.appendChild(recommendation);
-        });
-    }
-    
     // Event delegation for quantity changes and removals
     document.addEventListener('click', function(e) {
         // Quantity minus button
@@ -201,10 +173,11 @@ document.addEventListener('DOMContentLoaded', function() {
             renderCart();
         }
         
-        // Add recommendation to cart
-        if (e.target.classList.contains('recommendation-btn')) {
-            const partId = parseInt(e.target.dataset.id);
-            addToCart(partId);
+        // Mini cart checkout button
+        if (e.target.classList.contains('btn-checkout') && !e.target.classList.contains('btn-view-cart')) {
+            if (cart.length > 0) {
+                document.getElementById('checkoutModal').classList.add('active');
+            }
         }
     });
     
@@ -229,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('mlaCart', JSON.stringify(cart));
     }
     
-    // Add item to cart (used by other pages)
+    // Add item to cart
     function addToCart(partId) {
         const part = window.partsData.find(p => p.id === partId);
         if (!part) return;
@@ -270,16 +243,67 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
     
-    // Checkout button
-    checkoutBtn.addEventListener('click', function() {
-        alert('Proceeding to checkout would happen here in a real implementation.');
-        // In a real app, you would redirect to a checkout page
-        // window.location.href = 'checkout.html';
-    });
-    
     // Expose addToCart to window for other pages to use
     window.addToCart = addToCart;
     
     // Initialize cart on page load
     renderCart();
+
+    // ============== NEW CHECKOUT MODAL FUNCTIONALITY ==============
+    const checkoutModal = document.getElementById('checkoutModal');
+    const orderConfirmationModal = document.getElementById('orderConfirmationModal');
+    const checkoutForm = document.getElementById('checkoutForm');
+    const confirmationEmail = document.getElementById('confirmationEmail');
+    const confirmationClose = document.getElementById('confirmationClose');
+
+    // Open checkout modal from main checkout button
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.length > 0) {
+            checkoutModal.classList.add('active');
+        }
+    });
+
+    // Close modals
+    document.querySelectorAll('.modal-close, #confirmationClose').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            checkoutModal.classList.remove('active');
+            orderConfirmationModal.classList.remove('active');
+        });
+    });
+
+    // Close when clicking outside modal
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    });
+
+    // Form submission
+    checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const formData = {
+            name: document.getElementById('checkoutName').value,
+            email: document.getElementById('checkoutEmail').value,
+            phone: document.getElementById('checkoutPhone').value,
+            address: document.getElementById('checkoutAddress').value
+        };
+        
+        // Show confirmation
+        confirmationEmail.textContent = formData.email;
+        checkoutModal.classList.remove('active');
+        orderConfirmationModal.classList.add('active');
+        
+        // Clear cart
+        cart = [];
+        localStorage.removeItem('mlaCart');
+        renderCart();
+        
+        // Reset form
+        checkoutForm.reset();
+    });
 });

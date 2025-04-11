@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLA | Your Shopping Cart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="cart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<!-- Checkout Form Modal -->
+<div id="checkoutModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Complete Your Order</h2>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="checkoutName">Full Name*</label>
+            <input type="text" id="checkoutName" required>
+          </div>
+          <div class="form-group">
+            <label for="checkoutEmail">Email*</label>
+            <input type="email" id="checkoutEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="checkoutPhone">Phone*</label>
+            <input type="tel" id="checkoutPhone" required>
+          </div>
+          <div class="form-group">
+            <label for="checkoutAddress">Shipping Address*</label>
+            <textarea id="checkoutAddress" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+      </div>
+      <button class="modal-close">&times;</button>
+    </div>
+  </div>
+  
+  <!-- Order Confirmation Modal -->
+  <div id="orderConfirmationModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Thank You for Your Purchase!</h2>
+        <p>Your order has been received. A confirmation email has been sent to <span id="confirmationEmail"></span>.</p>
+        <p>Our team will process your order within 24 hours. For any questions, contact our support at <strong>1-800-555-1234</strong>.</p>
+        <button class="btn btn-primary" id="confirmationClose">Back to Shopping</button>
+      </div>
+    </div>
+  </div>
 <body>
     <header class="luxury-header">
         <div class="header-top-bar">
@@ -43,13 +81,30 @@
                 <div class="cart-layout">
                     <div class="cart-items-container">
                         <div class="cart-header">
-                            <h2><i class="fas fa-shopping-cart"></i> Your Cart (<span id="item-count">0</span>)</h2>
-                            <a href="Parts.html" class="continue-shopping"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                            <h2>
+                                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                Your Cart (<span id="item-count">0</span>)
+                            </h2>
+                            <a href="Parts.html" class="continue-shopping">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Continue Shopping
+                            </a>
                         </div>
                         
                         <div class="cart-empty" id="cart-empty">
                             <div class="empty-cart-icon">
-                                <i class="fas fa-shopping-bag"></i>
+                                <svg class="bag-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
                             </div>
                             <h3>Your cart is empty</h3>
                             <p>Browse our premium parts collection to get started</p>
@@ -82,32 +137,35 @@
                                     <span id="total">$0.00</span>
                                 </div>
                             </div>
+                            
                             <button class="btn btn-primary btn-checkout" id="checkout-btn">Proceed to Checkout</button>
                             
                             <div class="secure-checkout">
-                                <i class="fas fa-lock"></i>
+                                <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
                                 <span>Secure Checkout</span>
                             </div>
                         </div>
                         
                         <div class="customer-support">
-                            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                            <h4>
+                                <svg class="headset-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                                </svg>
+                                Need Help?
+                            </h4>
                             <p>Our parts specialists are available to assist you with any questions.</p>
-                            <a href="tel:+18005551234" class="support-phone"><i class="fas fa-phone"></i> 1-800-555-1234</a>
+                            <a href="tel:+18005551234" class="support-phone">
+                                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                1-800-555-1234
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="recommendations-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Complete Your Build</h2>
-                    <p>These parts pair well with items in your cart</p>
-                </div>
-                <div class="recommendations-grid" id="recommendations-grid">
-                    <!-- Recommended items will be dynamically inserted here -->
                 </div>
             </div>
         </section>
@@ -120,7 +178,11 @@
     <div class="mini-cart" id="mini-cart">
         <div class="mini-cart-header">
             <span class="mini-cart-count" id="mini-cart-count">0</span>
-            <i class="fas fa-shopping-cart"></i>
+            <svg class="mini-cart-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
         </div>
         <div class="mini-cart-dropdown" id="mini-cart-dropdown">
             <div class="mini-cart-empty" id="mini-cart-empty">
