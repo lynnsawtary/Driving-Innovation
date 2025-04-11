@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('container');
-    const registerBtn = document.getElementById('register');
-    const loginBtn = document.getElementById('login');
-    const signupForm = document.getElementById('signup-form');
-    const loginForm = document.getElementById('login-form');
-    const toggleSignupPassword = document.getElementById('toggle-signup-password');
-    const toggleLoginPassword = document.getElementById('toggle-login-password');
-    const signupPassword = document.getElementById('signup-password');
-    const loginPassword = document.getElementById('login-password');
+    let container = document.getElementById('container');
+    let registerBtn = document.getElementById('register');
+    let loginBtn = document.getElementById('login');
+    let signupForm = document.getElementById('signup-form');
+    let loginForm = document.getElementById('login-form');
+    let toggleSignupPassword = document.getElementById('toggle-signup-password');
+    let toggleLoginPassword = document.getElementById('toggle-login-password');
+    let signupPassword = document.getElementById('signup-password');
+    let loginPassword = document.getElementById('login-password');
 
     // Feedback elements
-    const signupFeedback = document.getElementById('signup-feedback');
-    const loginFeedback = document.getElementById('login-feedback');
+    let signupFeedback = document.getElementById('signup-feedback');
+    let loginFeedback = document.getElementById('login-feedback');
 
     // Load users from localStorage or initialize an empty array
-    const users = JSON.parse(localStorage.getItem('users')) || [
+    let users = JSON.parse(localStorage.getItem('users')) || [
         { name: "Lynn Sawtary", email: "lynn@example.com", password: "123" },
         { name: "Mohammad Mezher", email: "mohammad@example.com", password: "456" },
         { name: "Adam Dishari", email: "adam@example.com", password: "789" }
@@ -36,33 +36,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleSignupPassword.addEventListener('click', () => {
-        const type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+        let type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         signupPassword.setAttribute('type', type);
-        toggleSignupPassword.classList.toggle('fa-eye-slash');
+        toggleSignupPassword.innerHTML = type === 'password' ?
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>' :
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm1 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-1a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>';
     });
 
     toggleLoginPassword.addEventListener('click', () => {
-        const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+        let type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         loginPassword.setAttribute('type', type);
-        toggleLoginPassword.classList.toggle('fa-eye-slash');
+        toggleLoginPassword.innerHTML = type === 'password' ?
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>' :
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm1 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-1a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>';
     });
 
     // Handle Signup form submission
     signupForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        
-        const signupEmail = document.getElementById('signup-email').value.trim();
-        const signupPassword = document.getElementById('signup-password').value.trim();
+
+        let signupEmail = document.getElementById('signup-email').value.trim();
+        let signupPassword = document.getElementById('signup-password').value.trim();
 
         // Check if the email already exists
-        const userExists = users.some(user => user.email === signupEmail);
+        let userExists = users.some(user => user.email === signupEmail);
 
         if (userExists) {
             signupFeedback.textContent = 'Account already exists! Please log in.';
             signupFeedback.style.color = 'red';
         } else {
             // Register new user
-            const newUser = {
+            let newUser = {
                 name: document.getElementById('signup-name').value.trim(),
                 email: signupEmail,
                 password: signupPassword
@@ -87,15 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const loginEmail = document.getElementById('login-email').value.trim(); // Remove spaces
-        const loginPassword = document.getElementById('login-password').value.trim(); // Remove spaces
+        let loginEmail = document.getElementById('login-email').value.trim(); // Remove spaces
+        let loginPassword = document.getElementById('login-password').value.trim(); // Remove spaces
 
         console.log("Login attempt: ");
         console.log("Email:", loginEmail);
         console.log("Password:", loginPassword);
 
         // Check if the user exists and if the password is correct (case-insensitive comparison)
-        const user = users.find(user => 
+        let user = users.find(user =>
             user.email.toLowerCase() === loginEmail.toLowerCase() && user.password === loginPassword
         );
 

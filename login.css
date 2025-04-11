@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color:cadetblue;
+  background-color: cadetblue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,10 +31,6 @@ body {
   line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
-}
-
-.fa-brands {
-  color: #fff;
 }
 
 .container span {
@@ -89,13 +85,25 @@ body {
   width: 100%;
 }
 
-.password-container i {
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Space for the eye icon */
+}
+
+.eye-icon {
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  color: #ffc200;
+}
+
+.eye-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #ffc200;
 }
 
 .form-container {
@@ -229,30 +237,6 @@ input:focus {
   border-color: #4a90e2;
   box-shadow: 0 0 10px turquoise;
   transition: all 0.3s ease;
-}
-
-/* Style for password container */
-.password-container {
-  position: relative;
-  width: 100%;
-}
-
-.password-container input {
-  width: 100%;
-  padding-right: 30px; /* Space for the eye icon */
-}
-
-.password-container i {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #777;
-}
-
-.password-container i:hover {
-  color:cornflowerblue;
 }
 
 .feedback {

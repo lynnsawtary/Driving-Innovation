@@ -5,38 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>MLA Explorer | Premium Car Collection</title> 
     <link rel="stylesheet" href="model.css"> 
-    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="./images/car.png" type="image/x-icon"> 
 </head>
 <body> 
     <div class="main-content"> 
         <!--header-->
         <header class="luxury-header">
-            <div class="header-top-bar">
-              <div class="container">
+          <div class="header-top-bar">
+            <div class="container">
+              <!-- Optional top bar content -->
             </div>
-            <nav class="navbar">
-              <div class="container">
-                <div class="logo">
-                  <a href="index.html">MLA</a>
+          </div>
+          <nav class="navbar">
+            <div class="container">
+              <!-- Logo on the left -->
+              <div class="logo">
+                <a href="index.html">MLA</a>
+              </div>
+              <!-- Navigation links centered -->
+              <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="model.html">Models</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Parts.html">Parts</a></li>
+              </ul>
+              <!-- Header icons on the right -->
+              <div class="header-icons">
+                <!-- User Icon -->
+                <div class="user-icon">
+                  <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-user">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8 8 0 0112 15a8 8 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="header-tagline">
-                    <span>Redefining Luxury Since 1990</span>
-                  </div>
-                <ul class="nav-links">
-                  <li><a href="index.html" class="active">Home</a></li>
-                  <li><a href="model.html">Models</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="Parts.html">Parts</a></li>
-                  <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
-                </ul>
-                <div class="hamburger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                <!-- Cart Icon -->
+                <div class="cart-icon">
+                  <a href="cart.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-cart">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.293 1.414l.293.293m7.414-3.414H7m7.414 3.414l1.293 2.293a1 1 0 01-.293 1.414l-.293.293M5 21a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4z" />
+                    </svg>
+                  </a>
                 </div>
               </div>
-            </nav>
-          </header> 
+              <!-- Hamburger for mobile -->
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </nav>
+        </header>
 
         <!-- Header with Search -->
         <header> 
@@ -296,66 +316,55 @@
       </section>
         </section>
     </div>
-
-    <!-- Footer Section -->
+    <!--footer-->
     <footer class="luxury-footer">
-        <div class="footer-main">
-          <div class="container">
-            <div class="footer-grid">
-              <div class="footer-col">
-                <h3>MLA Automotive</h3>
-                <p>
-                  Redefining the boundaries of luxury performance since 1990.
-                  Each MLA vehicle represents the pinnacle of automotive craftsmanship.
-                </p>
-                <div class="footer-social">
-                  <a href="#"><!-- icon placeholder --></a>
-                  <a href="#"><!-- icon placeholder --></a>
-                  <a href="#"><!-- icon placeholder --></a>
-                  <a href="#"><!-- icon placeholder --></a>
-                </div>
-              </div>
-              <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="model.html">Models</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="Parts.html">Parts</a></li>
-                  <li><a href="login.html">Client Portal</a></li>
-                </ul>
-              </div>
-              <div class="footer-col">
-                <h3>Contact</h3>
-                <ul>
-                  <li><span>100 Luxury Avenue, Beverly Hills, CA 90210</span></li>
-                  <li><span>+1 (555) 123-4567</span></li>
-                  <li><span>contact@mla-automotive.com</span></li>
-                  <li><span>Mon-Fri: 9AM - 6PM</span></li>
-                </ul>
-              </div>
-              <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe for exclusive updates and offers.</p>
-                <form class="newsletter-form">
-                  <input type="email" placeholder="Your Email Address">
-                  <button type="submit">Submit</button>
-                </form>
-              </div>
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <h3>MLA Automotive</h3>
+              <p>
+                Redefining the boundaries of luxury performance since 1990.
+                Each MLA vehicle represents the pinnacle of automotive craftsmanship.
+              </p>
+            </div>
+            <div class="footer-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="model.html">Models</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Parts.html">Parts</a></li>
+                <li><a href="login.html">Client Portal</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Contact</h3>
+              <ul>
+                <li><span>100 Luxury Avenue, Beverly Hills, CA 90210</span></li>
+                <li><span>+1 (555) 123-4567</span></li>
+                <li><span>contact@mla-automotive.com</span></li>
+                <li><span>Mon-Fri: 9AM - 6PM</span></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Newsletter</h3>
+              <p>Subscribe for exclusive updates and offers.</p>
+              <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Your Email Address">
+                <button type="submit">Submit</button>
+              </form>            
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <div class="container">
-            <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
-            <div class="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
-            </div>
-          </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
         </div>
-      </footer>
+      </div>
+    </footer>
+  
     <script src="model.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>

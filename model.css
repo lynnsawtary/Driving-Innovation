@@ -81,70 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* Hero Section */
-.hero-section {
-  position: relative;
-  height: 90vh;
-  background-image: url('/images/Lamborghini-Aventador.avif');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
-  z-index: 1;
-}
-
-.hero-content {
-  max-width: 800px;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-title {
-  font-size: 4rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  background-color: var(--primary-color);
-  color: black;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  border: 2px solid var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.cta-button:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
 /* Header Styles */
 header {
   background-color: var(--background-lighter);
@@ -162,6 +98,7 @@ header {
   padding: 15px 20px;
   max-width: 1400px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .logo-area {
@@ -179,6 +116,93 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+/* Header Icons Container */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+/* Modified Client Portal Button - Logo Only */
+.client-portal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: 50%;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  text-decoration: none;
+}
+
+.client-portal-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.client-portal-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.client-portal-btn span {
+  display: none;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: black;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  position: relative;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.cart-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Cart Counter Badge */
+.cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--heart-color);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
 .search-container {
@@ -407,6 +431,70 @@ header {
   color: white;
   border-radius: 8px;
   font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  background-image: url('/images/Lamborghini-Aventador.avif');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  color: black;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Models Section */
@@ -1302,163 +1390,6 @@ header {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .comparison-container select {
-    min-width: 100%;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
-  }
-  
-  .header-container {
-    flex-wrap: wrap;
-  }
-  
-  .search-container {
-    order: 3;
-    margin-top: 15px;
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .filter-container {
-    display: none;
-  }
-  
-  .mobile-menu-btn {
-    display: block;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .model-boxes {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-  
-  .brand-box {
-    width: 130px;
-    padding: 15px 10px;
-  }
-  
-  .car-item {
-    width: 300px;
-    height: 400px;
-  }
-  
-  .testimonials-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .testimonial {
-    width: 100%;
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  
-  .footer-policy-links {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-section {
-    height: 70vh;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
-  
-  .model-boxes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .brand-box {
-    width: 100%;
-    padding: 20px 15px;
-  }
-  
-  .features-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .comparison-buttons {
-    flex-direction: column;
-  }
-  
-  .comparison-table th, .comparison-table td {
-    padding: 10px;
-    font-size: 0.85rem;
-  }
-  
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-  
-  .cta-section p {
-    font-size: 1rem;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    right: 20px;
-  }
-  
-  .back-to-top.show {
-    bottom: 20px;
-  }
-}
 /* Video Gallery Styles */
 .video-gallery {
   margin-top: 2rem;
@@ -1584,6 +1515,7 @@ header {
     max-height: 60vh;
   }
 }
+
 /* header styles  */
 .luxury-header {
   position: absolute;
@@ -1626,9 +1558,13 @@ header {
 }
 
 .navbar {
-  padding: 20px 0;
-  transition: var(--transition);
-}
+  background-color: var(--background-lighter);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+} 
 
 .navbar.scrolled {
   background-color: rgba(10, 10, 10, 0.95);
@@ -1640,6 +1576,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -1662,14 +1601,14 @@ header {
 }
 
 .nav-links li a {
-  color: var(--text);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  transition: var(--transition);
+  transition: var(--transition-speed);
 }
 
 .nav-links li a:after {
@@ -1679,8 +1618,8 @@ header {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: var(--secondary);
-  transition: var(--transition);
+  background-color: var(--secondary-color);
+  transition: var(--transition-speed);
 }
 
 .nav-links li a:hover:after {
@@ -1688,7 +1627,9 @@ header {
 }
 
 .nav-links li a:hover {
-  color: var(--secondary);
+  color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 .login a {
@@ -1710,7 +1651,7 @@ header {
   width: 100%;
   height: 2px;
   background-color: var(--light);
-  transition: var(--transition);
+  transition: var(--transition-speed);
 }
 /* footer */
 .main-footer {
@@ -2068,7 +2009,6 @@ header {
   background-size: contain;
 }
 
-
 /* Lamborghini Icon - Car */
 .brand-box[data-brand="lambo"] .brand-logo::before 
 {
@@ -2145,9 +2085,9 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   background: url('./images/heart.svg') no-repeat center center;
-  background-size: contain;
   filter: grayscale(100%); /* Makes the heart appear gray by default */
   transition: filter 0.3s ease; /* Smooth transition for the color change */
+  background-size: contain;
 }
 
 .favorite-toggle.favorited::before {
@@ -2156,7 +2096,7 @@ header {
 }
 /* Search Icon */
 #search-btn::before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='gradGreyBlue' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(100,100,100);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(0,0,255);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23gradGreyBlue)' d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
+  content: url("./images/search.svg.svg");
   width: 24px; /* Adjust the size as needed */
   height: 24px; /* Adjust the size as needed */
   display: inline-block;
@@ -2164,28 +2104,12 @@ header {
 }
 
 
-
 /* Chevron Icons */
 .sort-dropdown-btn::after {
-  content: "▼";
+  content:  url("./images/sear.svg.svg");
   font-size: 0.8em;
   margin-left: 5px;
 }
-
-/* User Icon */
-#loginLink::before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.121 17.804A9 9 0 0112 15a9 9 0 016.879 2.804'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 10; /* Adjust clarity here */
-  vertical-align: middle;
-}
-
 /* Menu Icon */
 .mobile-menu-btn::before {
   content: "";
@@ -2193,13 +2117,12 @@ header {
   width: 20px;
   height: 20px;
   margin-right: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4 6h16M4 12h16M4 18h16' /%3E%3C/svg%3E");
+  background-image: url("./images/menu\ bar.png");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.85;
   vertical-align: middle;
 }
-
 
 /* Close Icon */
 .mobile-close-btn::before {
@@ -2208,13 +2131,12 @@ header {
   width: 20px;
   height: 20px;
   margin-right: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /%3E%3C/svg%3E");
+  background-image: url("./images/close.png");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.85;
   vertical-align: middle;
 }
-
 
 /* Arrow Icons */
 .back-btn::before,
@@ -2244,7 +2166,6 @@ header {
   height: 16px; /* Adjust height based on your needs */
 }
 
-
 .author-image::before {
   content: "";
   display: inline-block;
@@ -2253,7 +2174,6 @@ header {
   background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212%22%20r%3D%226%22%20stroke%3D%22%23D4AF37%22%20stroke-width%3D%222%22%20fill%3D%22%23D4AF37%22/%3E%3Cpath%20d%3D%22M6%2024s2-6%2010-6%2010%206%2010%206%22%20stroke%3D%22%23D4AF37%22%20stroke-width%3D%222%22%20fill%3D%22none%22/%3E%3C/svg%3E') no-repeat center;
   font-size: 1.5em; /* Adjust the font size of text */
 }
-
 
 /* Social Icons - Using Unicode characters */
 .social-links a::before {
@@ -2309,7 +2229,7 @@ header {
   display: inline-block;
   width: 64px;  /* Increase width for better resolution */
   height: 64px; /* Increase height for better resolution */
-  background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M32%2024L36%2044L28%2044L32%2024Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M32%2048L32%2052L30%2052L30%2048L32%2048Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M32%2044L32%2048L34%2048L34%2044L32%2044Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M32%2056C32.5523%2056%2033%2055.5523%2033%2055C33%2054.4477%2032.5523%2054%2032%2054C31.4477%2054%2031%2054.4477%2031%2055C31%2055.5523%2031.4477%2056%2032%2056Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M24%2024L32%200L40%2024H24Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M32%200C31.4477%200%2031%200.447715%2031%201C31%201.55228%2031.4477%202%2032%202C32.5523%202%2033%201.55228%2033%201C33%200.447715%2032.5523%200%2032%200Z%22%20fill%3D%22%23FF5733%22%2F%3E%3Cpath%20d%3D%22M40%2024C40.5523%2024%2041%2024.4477%2041%2025C41%2025.5523%2040.5523%2026%2040%2026C39.4477%2026%2039%2025.5523%2039%2025C39%2024.4477%2039.4477%2024%2040%2024Z%22%20fill%3D%22%23FF5733%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
+  background: url('./images/rocket.png') no-repeat center;
   background-size: contain; /* Ensures the SVG scales well */
   font-size: 1.5em;
   animation: rocketAnimation 2s linear infinite;
@@ -2348,7 +2268,6 @@ header {
   }
 }
 
-
 .feature-card:nth-child(4) .feature-icon::before {
   content: "";
   display: inline-block;
@@ -2372,7 +2291,6 @@ header {
 }
 
 
-
 /* Notification Icons */
 .notification.success::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234CAF50' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 14.59L5.41 12.59l1.41-1.41L10.59 11.17L16.59 5.17l1.41 1.41L10.59 17.41z'/%3E%3C/svg%3E");
@@ -2383,7 +2301,6 @@ header {
   margin-right: 8px; /* Maintain the original margin */
 }
 
-
 .notification.error::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF9800' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2v-2h2v2zm0-4h-2V7h2v2z'/%3E%3C/svg%3E");
   width: 20px; /* Adjust the size as needed */
@@ -2391,4 +2308,182 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px; /* Maintain the original margin */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .comparison-container select {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .header-container {
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    order: 3;
+    margin-top: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .filter-container {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-icons {
+    margin-left: 0;
+    order: 4;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .model-boxes {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .brand-box {
+    width: 130px;
+    padding: 15px 10px;
+  }
+  
+  .car-item {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-policy-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 70vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .model-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .brand-box {
+    width: 100%;
+    padding: 20px 15px;
+  }
+  
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-buttons {
+    flex-direction: column;
+  }
+  
+  .comparison-table th, .comparison-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-section p {
+    font-size: 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+  }
+  
+  .back-to-top.show {
+    bottom: 20px;
+  }
+
+  .client-portal-btn,
+  .add-to-cart-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .client-portal-icon,
+  .cart-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
