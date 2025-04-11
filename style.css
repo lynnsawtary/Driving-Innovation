@@ -175,6 +175,44 @@ section {
   color: #b8860b;
 }
 
+/* --- Header Icons (right) container --- */
+.header-icons {
+  flex: 0 0 auto;      /* Keep at right, do not stretch */
+  display: flex;       /* Use flex to align icons side by side */
+  align-items: center; /* Vertically center the icons */
+  gap: 15px;           /* Adjust spacing between icons */
+}
+
+/* Fix dimensions for each icon */
+.header-icons .user-icon,
+.header-icons .cart-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure the SVG icons fit properly */
+.header-icons .icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Optionally, set a color if desired */
+  stroke: currentColor;
+}
+
+/* Optionally adjust the color for these icons */
+.header-icons a {
+  color: #d4af37; /* Your accent color */
+  text-decoration: none;
+}
+
+/* Optional: Adjust hover for icons */
+.header-icons a:hover {
+  opacity: 0.8;
+}
+
 /* Navbar container */
 .navbar {
   padding: 20px 0;
@@ -182,28 +220,38 @@ section {
 
 .navbar .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* Logo will be left, icons right */
+  position: relative;
+}
+/* --- Logo (left) --- */
+.logo {
+  flex: 0 0 auto; /* Fixed size; stays on the left */
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /* Logo styling */
 .logo a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #d4af37;
+  color: inherit;
   text-decoration: none;
   letter-spacing: 1px;
 }
 
-/* Navigation links styling */
+/* --- Navigation Links (center) --- */
 .nav-links {
-  display: flex;
+  flex: 1;            /* Takes all remaining horizontal space */
+  text-align: center; /* Center align the list items */
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* Display nav-links inline */
 .nav-links li {
-  margin-left: 30px;
+  display: inline-block;
+  margin: 0 15px; /* Adjust spacing as needed */
 }
 
 .nav-links a {
@@ -464,7 +512,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(9, 7, 7, 0.416);
 }
 
 .testimonial-slider {
@@ -512,11 +560,18 @@ section {
 }
 
 /* ========== CTA SECTION ========== */
-.cta-section {
+/*.cta-section {
   background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
               url('images/cta-bg.jpg') no-repeat center center/cover;
   text-align: center;
 }
+  */
+  .cta-section {
+    background: url('images/161217142430-2017-cars-ferrari-1.jpg') no-repeat center center/cover;
+    /* The 'cover' value ensures that the background image fills the section while maintaining its aspect ratio */
+    padding: 80px 0; /* adjust padding as needed */
+    text-align: center;
+  }
 
 .cta-content {
   max-width: 700px;
@@ -546,7 +601,10 @@ section {
 }
 
 .footer-main {
-  padding: 50px 0 30px;
+  padding: 30px 0 20px;
+}
+.footer-bottom {
+  padding: 10px 0;       /* Reduced from 15px 0 */
 }
 
 .footer-grid {
@@ -576,7 +634,7 @@ section {
 .footer-col p {
   margin-bottom: 15px;
   color: #cccccc;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 .footer-col ul {
@@ -585,7 +643,7 @@ section {
 
 .footer-col ul li {
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .footer-col ul li a {
@@ -605,6 +663,39 @@ section {
   width: 20px;
   text-align: center;
 }
+.luxury-footer .footer-main {
+  padding: 10px 0; /* Tighter top/bottom */
+}
+
+.luxury-footer .footer-bottom {
+  padding: 6px 0; /* Very small padding */
+}
+
+.footer-grid {
+  gap: 15px; /* Closer columns */
+}
+
+.footer-col {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tighter text spacing */
+.footer-col p,
+.footer-col ul li,
+.footer-links a {
+  margin-bottom: 5px;
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+/* Also ensure ul has no extra margin/padding */
+.footer-col ul {
+  margin: 0;
+  padding: 0;
+}
+
+
 
 .newsletter-form {
   display: flex;
@@ -777,9 +868,66 @@ section {
   overflow: hidden; /* ensures anything outside doesn't show */
   height: 250px;    /* your chosen height */
 }
+/* New CSS for flip effect */
+.flip-container {
+  perspective: 1000px;
+  height: 250px; /* Ensure this matches your card image height */
+}
+
+.flipper {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Flip the card on hover when hovering anywhere on the card */
+.model-card:hover .flipper {
+  transform: rotateY(180deg);
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+/* Front face remains as is */
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back face is rotated by 180 degrees */
+.back {
+  transform: rotateY(180deg);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Optional: Style the text on the back */
+.back h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.back p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
 
 /* The overlay containing the details, hidden by default */
-.model-overlay {
+/*.model-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -797,12 +945,11 @@ section {
   padding: 20px;
   text-align: center;
 }
-
-/* When hovering over the entire card, reveal the overlay */
 .model-card:hover .model-overlay {
   opacity: 1;
   visibility: visible;
 }
+*/
 
 /* Optional styling to ensure overlay text is easy to read */
 .model-overlay h3 {
@@ -1225,6 +1372,64 @@ section {
   color: #000;
   line-height: 1;
 }
+
+/* Newsletter success modal reusing your existing .modal-overlay, .modal-content, etc. */
+#newsletterSuccessModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 3000; /* above other elements */
+}
+
+#newsletterSuccessModal.active {
+  display: flex;
+}
+
+#newsletterSuccessModal .modal-content {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  /* etc. */
+}
+
+#newsletterSuccessModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#newsletterSuccessModal .modal-body {
+  padding: 30px;
+}
+
+#newsletterSuccessModal .modal-body h2 {
+  margin-bottom: 15px;
+  color: #000; /* or your chosen color */
+}
+
+#newsletterSuccessModal .modal-body p {
+  color: #444; /* or your chosen color */
+  line-height: 1.6;
+}
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }

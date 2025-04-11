@@ -15,19 +15,37 @@
     </div>
     <nav class="navbar">
       <div class="container">
+        <!-- Logo on the left -->
         <div class="logo">
           <a href="index.html">MLA</a>
         </div>
-        <div class="header-tagline">
-          <span>Redefining Luxury Since 1990</span>
-        </div>
+        <!-- Navigation links centered -->
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="model.html">Models</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="Parts.html">Parts</a></li>
-          <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
         </ul>
+        <!-- Header icons on the right -->
+        <div class="header-icons">
+          <!-- User Icon -->
+          <div class="user-icon">
+            <a href="login.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-user">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8 8 0 0112 15a8 8 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </a>
+          </div>
+          <!-- Cart Icon -->
+          <div class="cart-icon">
+            <a href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-cart">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.293 1.414l.293.293m7.414-3.414H7m7.414 3.414l1.293 2.293a1 1 0 01-.293 1.414l-.293.293M5 21a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hamburger for mobile -->
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -36,7 +54,7 @@
       </div>
     </nav>
   </header>
-
+  
   <main>
     <section class="hero">
       <video class="hero-video" autoplay muted loop playsinline>
@@ -56,9 +74,39 @@
           <h2 class="section-title">Featured Models</h2>
           <div class="section-divider"></div>
         </div>
-        <!-- Dynamic cards container -->
+        <!-- Models Grid -->
         <div class="models-grid" id="modelsGrid">
-          <!-- Cards will be injected here by JS -->
+          <!-- Example of a static card with the flip effect -->
+          <div class="model-card">
+            <div class="flip-container">
+              <div class="flipper">
+                <!-- Front Face -->
+                <div class="front">
+                  <img src="images/ferrari-f80.jpg" alt="Ferrari F80">
+                </div>
+                <!-- Back Face -->
+                <div class="back">
+                  <h3>MLA GT</h3>
+                  <p>Exhilarating performance and design.</p>
+                  <div class="model-specs-hover">
+                    <span><strong>Engine:</strong> V12 Twin-Turbo</span>
+                    <span><strong>0-60:</strong> 3.2s</span>
+                    <span><strong>HP:</strong> 620 HP</span>
+                    <span><strong>Transmission:</strong> Dual-Clutch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="model-info">
+              <h3>MLA GT</h3>
+              <div class="model-specs">
+                <span>3.2s 0-60</span>
+                <span>620 HP</span>
+                <span>Dual-Clutch</span>
+              </div>
+            </div>
+          </div>
+          <!-- Additional cards can be generated dynamically or statically with the same structure -->
         </div>
         <div class="section-footer">
           <a href="model.html" class="btn btn-secondary">View Full Collection</a>
@@ -200,10 +248,10 @@
           <div class="footer-col">
             <h3>Newsletter</h3>
             <p>Subscribe for exclusive updates and offers.</p>
-            <form class="newsletter-form">
+            <form class="newsletter-form" id="newsletterForm">
               <input type="email" placeholder="Your Email Address">
               <button type="submit">Submit</button>
-            </form>
+            </form>            
           </div>
         </div>
       </div>
@@ -211,11 +259,6 @@
     <div class="footer-bottom">
       <div class="container">
         <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -300,6 +343,16 @@
       </div>
     </div>
   </div>
+  <!-- Newsletter Success Modal -->
+<div class="modal-overlay" id="newsletterSuccessModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeNewsletterModal">&times;</button>
+    <div class="modal-body" style="text-align: center;">
+      <h2>Thank You!</h2>
+      <p>Thank you for subscribing to our newsletter!</p>
+    </div>
+  </div>
+</div>
   <script src="main.js"></script>
 </body>
 </html>
