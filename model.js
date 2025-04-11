@@ -1,5 +1,5 @@
 // Car data with specifications
-const cars = [
+let cars = [
     {
         id: 1,
         brand: "ferrari",
@@ -133,23 +133,8 @@ const cars = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Set current year in footer
-    // document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Logo animation
-    setTimeout(() => {
-        document.querySelector(".logo-container").style.opacity = "0";
-        
-        setTimeout(() => {
-            document.querySelector(".logo-container").style.display = "none";
-            document.querySelector(".main-content").style.display = "block";
-            document.querySelector(".main-footer").style.display = "block";
-            document.querySelector(".main-content").classList.add("fade-in");
-            
-            // Initialize all car functionality
-            initializeCarFeatures();
-        }, 300);
-    }, 2000);
+    // Initialize all car functionality
+    initializeCarFeatures();
 
     function initializeCarFeatures() {
         // Display all cars initially
@@ -204,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Brand selection
         document.querySelectorAll('.brand-box').forEach(box => {
             box.addEventListener('click', function() {
-                const brand = this.dataset.brand;
+                let brand = this.dataset.brand;
                 filterByBrand(brand);
             });
         });
@@ -227,27 +212,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-       // Mobile menu toggle
-document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-    document.querySelector('.mobile-menu').classList.add('show');
-    document.body.style.overflow = 'hidden';
-});
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
 
-document.querySelector('.mobile-close-btn').addEventListener('click', function() {
-    document.querySelector('.mobile-menu').classList.remove('show');
-    document.body.style.overflow = '';
-});
+        document.querySelector('.mobile-close-btn').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('show');
+            document.body.style.overflow = '';
+        });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn') && document.querySelector('.mobile-menu').classList.contains('show')) {
-        document.querySelector('.mobile-menu').classList.remove('show');
-        document.body.style.overflow = '';
-    }
-});
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn') && document.querySelector('.mobile-menu').classList.contains('show')) {
+                document.querySelector('.mobile-menu').classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
 
         // Sort dropdown (for desktop)
-        const sortDropdownBtn = document.querySelector('.sort-dropdown-btn');
+        let sortDropdownBtn = document.querySelector('.sort-dropdown-btn');
         if (sortDropdownBtn) {
             sortDropdownBtn.addEventListener('click', function() {
                 document.querySelector('.sort-dropdown-content').classList.toggle('show');
@@ -255,7 +240,7 @@ document.addEventListener('click', function(e) {
         }
 
         // Test drive form (CTA button)
-        const ctaButton = document.querySelector('.cta-button');
+        let ctaButton = document.querySelector('.cta-button');
         if (ctaButton) {
             ctaButton.addEventListener('click', function() {
                 showTestDriveForm();
@@ -265,7 +250,7 @@ document.addEventListener('click', function(e) {
         // Close sort dropdown when clicking outside
         window.addEventListener('click', function(e) {
             if (!e.target.matches('.sort-dropdown-btn') && !e.target.closest('.sort-dropdown-content')) {
-                const dropdowns = document.querySelectorAll('.sort-dropdown-content');
+                let dropdowns = document.querySelectorAll('.sort-dropdown-content');
                 dropdowns.forEach(dropdown => {
                     if (dropdown.classList.contains('show')) {
                         dropdown.classList.remove('show');
@@ -275,7 +260,7 @@ document.addEventListener('click', function(e) {
         });
         
         // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopBtn = document.getElementById('back-to-top');
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopBtn.classList.add('show');
@@ -293,7 +278,7 @@ document.addEventListener('click', function(e) {
         
         // Add header shadow on scroll
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
+            let header = document.querySelector('header');
             if (window.pageYOffset > 50) {
                 header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
                 header.style.background = 'rgba(26,26,26,0.95)';
@@ -306,13 +291,13 @@ document.addEventListener('click', function(e) {
         });
         
         // Scroll animations for sections
-        const observerOptions = {
+        let observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
         
-        const observer = new IntersectionObserver((entries, observer) => {
+        let observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
@@ -328,7 +313,7 @@ document.addEventListener('click', function(e) {
     }
     
     function toggleMobileMenu() {
-        const mobileMenu = document.querySelector('.mobile-menu');
+        let mobileMenu = document.querySelector('.mobile-menu');
         mobileMenu.classList.toggle('show');
         
         // Prevent body scrolling when menu is open
@@ -340,7 +325,7 @@ document.addEventListener('click', function(e) {
     }
     
     function searchCarsMobile() {
-        const searchTerm = document.getElementById('mobile-search-input').value;
+        let searchTerm = document.getElementById('mobile-search-input').value;
         document.getElementById('search-input').value = searchTerm;
         searchCars();
         toggleMobileMenu(); // Close the menu after search
@@ -348,7 +333,7 @@ document.addEventListener('click', function(e) {
 
     // Display cars in the container
     function displayCars(carsToDisplay, containerElement = null, isFavoritesView = false) {
-        const container = containerElement || document.getElementById('car-container');
+        let container = containerElement || document.getElementById('car-container');
         container.innerHTML = '';
         
         if (isFavoritesView && carsToDisplay.length === 0) {
@@ -374,7 +359,7 @@ document.addEventListener('click', function(e) {
         }
 
         carsToDisplay.forEach(car => {
-            const carElement = document.createElement('div');
+            let carElement = document.createElement('div');
             carElement.className = `car-item ${isFavoritesView ? 'favorites-view' : ''}`;
             carElement.dataset.brand = car.brand;
             carElement.dataset.type = car.type;
@@ -387,8 +372,8 @@ document.addEventListener('click', function(e) {
                 case 'luxury': typeClass = 'type-luxury'; typeText = 'Luxury'; break;
             }
             
-            const favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
-            const isFavorited = favorites.includes(car.id);
+            let favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
+            let isFavorited = favorites.includes(car.id);
             
             if (isFavoritesView) {
                 // Simplified view for favorites section
@@ -452,7 +437,7 @@ document.addEventListener('click', function(e) {
             document.querySelectorAll('.favorite-toggle').forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    const carId = parseInt(this.dataset.carId);
+                    let carId = parseInt(this.dataset.carId);
                     toggleFavorite(carId, this);
                 });
             });
@@ -460,7 +445,7 @@ document.addEventListener('click', function(e) {
             document.querySelectorAll('.view-details-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    const carId = parseInt(this.dataset.carId);
+                    let carId = parseInt(this.dataset.carId);
                     showCarDetails(carId);
                 });
             });
@@ -468,18 +453,18 @@ document.addEventListener('click', function(e) {
     }
 
     function populateComparisonDropdowns() {
-        const select1 = document.getElementById('car1-select');
-        const select2 = document.getElementById('car2-select');
+        let select1 = document.getElementById('car1-select');
+        let select2 = document.getElementById('car2-select');
         
         select1.innerHTML = '<option value="">Select first car</option>';
         select2.innerHTML = '<option value="">Select second car</option>';
         
         cars.forEach(car => {
-            const option1 = document.createElement('option');
+            let option1 = document.createElement('option');
             option1.value = car.id;
             option1.textContent = car.name;
             
-            const option2 = document.createElement('option');
+            let option2 = document.createElement('option');
             option2.value = car.id;
             option2.textContent = car.name;
             
@@ -489,13 +474,13 @@ document.addEventListener('click', function(e) {
     }
 
     function searchCars() {
-        const searchTerm = document.getElementById('search-input').value.toLowerCase();
+        let searchTerm = document.getElementById('search-input').value.toLowerCase();
         if (!searchTerm) {
             displayCars(cars);
             return;
         }
         
-        const filteredCars = cars.filter(car => 
+        let filteredCars = cars.filter(car => 
             car.name.toLowerCase().includes(searchTerm) || 
             car.brand.toLowerCase().includes(searchTerm) ||
             car.type.toLowerCase().includes(searchTerm) ||
@@ -519,12 +504,12 @@ document.addEventListener('click', function(e) {
             return;
         }
         
-        const filteredCars = cars.filter(car => car.type === type);
+        let filteredCars = cars.filter(car => car.type === type);
         displayCars(filteredCars);
     }
 
     function filterByBrand(brand) {
-        const filteredCars = cars.filter(car => car.brand === brand);
+        let filteredCars = cars.filter(car => car.brand === brand);
         displayCars(filteredCars);
         
         // Scroll to car listings
@@ -535,18 +520,18 @@ document.addEventListener('click', function(e) {
     }
 
     function sortCars(sortType) {
-        const carsToSort = [...cars]; // Create a copy of the array
+        let carsToSort = [...cars]; // Create a copy of the array
         
         if (sortType === 'price-asc') {
             carsToSort.sort((a, b) => {
-                const priceA = parseInt(a.price.replace(/\D/g, ''));
-                const priceB = parseInt(b.price.replace(/\D/g, ''));
+                let priceA = parseInt(a.price.replace(/\D/g, ''));
+                let priceB = parseInt(b.price.replace(/\D/g, ''));
                 return priceA - priceB;
             });
         } else if (sortType === 'price-desc') {
             carsToSort.sort((a, b) => {
-                const priceA = parseInt(a.price.replace(/\D/g, ''));
-                const priceB = parseInt(b.price.replace(/\D/g, ''));
+                let priceA = parseInt(a.price.replace(/\D/g, ''));
+                let priceB = parseInt(b.price.replace(/\D/g, ''));
                 return priceB - priceA;
             });
         }
@@ -556,7 +541,7 @@ document.addEventListener('click', function(e) {
 
     function toggleFavorite(carId, toggleElement) {
         let favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
-        const index = favorites.indexOf(carId);
+        let index = favorites.indexOf(carId);
         
         if (index === -1) {
             // Add to favorites
@@ -591,8 +576,8 @@ document.addEventListener('click', function(e) {
     }
 
     function showFavorites() {
-        const favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
-        const favoriteCars = cars.filter(car => favorites.includes(car.id));
+        let favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
+        let favoriteCars = cars.filter(car => favorites.includes(car.id));
         
         document.querySelector('.car-details-section').classList.add('hidden');
         document.querySelector('.favorites-section').classList.remove('hidden');
@@ -612,27 +597,27 @@ document.addEventListener('click', function(e) {
     }
 
     function compareCars() {
-        const car1Id = document.getElementById('car1-select').value;
-        const car2Id = document.getElementById('car2-select').value;
+        let car1Id = document.getElementById('car1-select').value;
+        let car2Id = document.getElementById('car2-select').value;
         
         if (!car1Id || !car2Id) {
             showNotification('Please select two cars to compare', 'error');
             return;
         }
         
-        const car1 = cars.find(c => c.id == car1Id);
-        const car2 = cars.find(c => c.id == car2Id);
+        let car1 = cars.find(c => c.id == car1Id);
+        let car2 = cars.find(c => c.id == car2Id);
         
-        const resultsContainer = document.getElementById('comparison-results');
+        let resultsContainer = document.getElementById('comparison-results');
         resultsContainer.style.display = 'block';
         
         // Get all possible spec keys from both cars
-        const allSpecs = new Set();
+        let allSpecs = new Set();
         Object.keys(car1.specs).forEach(key => allSpecs.add(key));
         Object.keys(car2.specs).forEach(key => allSpecs.add(key));
         
         // Place description at the end
-        const sortedSpecs = Array.from(allSpecs).filter(key => key !== 'description');
+        let sortedSpecs = Array.from(allSpecs).filter(key => key !== 'description');
         if (allSpecs.has('description')) sortedSpecs.push('description');
         
         resultsContainer.innerHTML = `
@@ -668,8 +653,8 @@ document.addEventListener('click', function(e) {
                     </tr>
                     ${sortedSpecs.map(key => {
                         // Highlight differences
-                        const isDifferent = car1.specs[key] !== car2.specs[key];
-                        const diffClass = isDifferent ? 'difference' : '';
+                        let isDifferent = car1.specs[key] !== car2.specs[key];
+                        let diffClass = isDifferent ? 'difference' : '';
                         
                         if (key === 'description') {
                             return `
@@ -694,7 +679,7 @@ document.addEventListener('click', function(e) {
         `;
         
         // Add event listener to the request quote button
-        const requestBtn = resultsContainer.querySelector('.request-quote-btn');
+        let requestBtn = resultsContainer.querySelector('.request-quote-btn');
         if (requestBtn) {
             requestBtn.addEventListener('click', () => {
                 showTestDriveForm(`${car1.name} & ${car2.name}`);
@@ -715,15 +700,15 @@ document.addEventListener('click', function(e) {
     }
     
     function showCarDetails(carId) {
-        const car = cars.find(c => c.id === carId);
+        let car = cars.find(c => c.id === carId);
         if (!car) return;
         
         // Create modal for car details
-        const modal = document.createElement('div');
+        let modal = document.createElement('div');
         modal.className = 'detail-modal';
         
         let specsList = '';
-        for (const [key, value] of Object.entries(car.specs)) {
+        for (let [key, value] of Object.entries(car.specs)) {
             if (key !== 'description') {
                 specsList += `<li><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</li>`;
             }
@@ -787,11 +772,11 @@ document.addEventListener('click', function(e) {
             showTestDriveForm(car.name);
         });
         
-        const favBtn = modal.querySelector('.add-favorite-btn');
+        let favBtn = modal.querySelector('.add-favorite-btn');
         favBtn.addEventListener('click', function() {
-            const carId = parseInt(this.dataset.carId);
+            let carId = parseInt(this.dataset.carId);
             let favorites = JSON.parse(localStorage.getItem('favoriteCars') || '[]');
-            const index = favorites.indexOf(carId);
+            let index = favorites.indexOf(carId);
             
             if (index === -1) {
                 // Add to favorites
@@ -825,7 +810,7 @@ document.addEventListener('click', function(e) {
         
         // Add CSS for modal
         if (!document.getElementById('modal-styles')) {
-            const style = document.createElement('style');
+            let style = document.createElement('style');
             style.id = 'modal-styles';
             style.textContent = `
                 .detail-modal {
@@ -1031,7 +1016,7 @@ document.addEventListener('click', function(e) {
     
     function showTestDriveForm(carName = '') {
         // Create modal for test drive form
-        const modal = document.createElement('div');
+        let modal = document.createElement('div');
         modal.className = 'detail-modal';
         
         modal.innerHTML = `
@@ -1119,7 +1104,7 @@ document.addEventListener('click', function(e) {
         
         // Add CSS for form
         if (!document.getElementById('form-styles')) {
-            const style = document.createElement('style');
+            let style = document.createElement('style');
             style.id = 'form-styles';
             style.textContent = `
                 .test-drive-form {
@@ -1256,10 +1241,10 @@ document.addEventListener('click', function(e) {
     
     // Toast notification system
     function showNotification(message, type = 'success') {
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification ${type}`;
         
-        const icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-circle"></i>';
+        let icon = type === 'success' ? '<i class="fas fa-check-circle"></i>' : '<i class="fas fa-exclamation-circle"></i>';
         
         notification.innerHTML = `
             ${icon}
@@ -1269,7 +1254,7 @@ document.addEventListener('click', function(e) {
         document.body.appendChild(notification);
         
         // Remove any existing notification
-        const existingNotifications = document.querySelectorAll('.notification');
+        let existingNotifications = document.querySelectorAll('.notification');
         if (existingNotifications.length > 1) {
             existingNotifications.forEach((notif, index) => {
                 if (index === 0) return;
@@ -1284,7 +1269,7 @@ document.addEventListener('click', function(e) {
     }
     
     // Add CSS for fade-in animation
-    const fadeInStyle = document.createElement('style');
+    let fadeInStyle = document.createElement('style');
     fadeInStyle.textContent = `
         .fade-in {
             opacity: 0;
@@ -1356,13 +1341,12 @@ document.addEventListener('click', function(e) {
     document.head.appendChild(fadeInStyle);
 });
 
-
 // Video Gallery Variables
-const videoSlides = document.querySelectorAll('.video-slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const videos = document.querySelectorAll('.gallery-video');
+let videoSlides = document.querySelectorAll('.video-slide');
+let dots = document.querySelectorAll('.dot');
+let prevBtn = document.querySelector('.prev-btn');
+let nextBtn = document.querySelector('.next-btn');
+let videos = document.querySelectorAll('.gallery-video');
 let currentSlide = 0;
 
 // Video Gallery Functions
@@ -1370,7 +1354,7 @@ function showSlide(index) {
   // Hide all slides
   videoSlides.forEach(slide => {
     slide.classList.remove('active');
-    const video = slide.querySelector('video');
+    let video = slide.querySelector('video');
     if (video) {
       video.pause();
     }
@@ -1386,7 +1370,7 @@ function showSlide(index) {
   dots[index].classList.add('active');
   
   // Play the video on the active slide
-  const activeVideo = videoSlides[index].querySelector('video');
+  let activeVideo = videoSlides[index].querySelector('video');
   if (activeVideo) {
     activeVideo.currentTime = 0;
     activeVideo.play();
@@ -1396,12 +1380,12 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-  const next = (currentSlide + 1) % videoSlides.length;
+  let next = (currentSlide + 1) % videoSlides.length;
   showSlide(next);
 }
 
 function prevSlide() {
-  const prev = (currentSlide - 1 + videoSlides.length) % videoSlides.length;
+  let prev = (currentSlide - 1 + videoSlides.length) % videoSlides.length;
   showSlide(prev);
 }
 
@@ -1429,7 +1413,7 @@ if (videoSlides.length > 0) {
 // Add touch support for the video gallery
 let touchStartX = 0;
 let touchEndX = 0;
-const videoCarousel = document.querySelector('.video-carousel');
+let videoCarousel = document.querySelector('.video-carousel');
 
 if (videoCarousel) {
   videoCarousel.addEventListener('touchstart', (e) => {
@@ -1443,7 +1427,7 @@ if (videoCarousel) {
 }
 
 function handleSwipe() {
-  const swipeThreshold = 50;
+  let swipeThreshold = 50;
   if (touchEndX < touchStartX - swipeThreshold) {
     // Swipe left -> next slide
     nextSlide();

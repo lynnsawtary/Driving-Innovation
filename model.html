@@ -1,251 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RHU Auto Explorer | Premium Car Collection</title>
-    <link rel="stylesheet" href="model.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon">
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>MLA Explorer | Premium Car Collection</title> 
+    <link rel="stylesheet" href="model.css"> 
+    <link rel="shortcut icon" href="./images/rhu favicon.png" type="image/x-icon"> 
 </head>
-<body>
-    <!-- Animation of RHU Logo -->
-    <div class="logo-container">
-        <img src="./images/rhu.jpg" alt="RHU Logo" class="logo">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-        </div>
-    </div>
-
-    <div class="main-content">
+<body> 
+    <div class="main-content"> 
         <!--header-->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">MLA</a>
+        <header class="luxury-header">
+            <div class="header-top-bar">
+              <div class="container">
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="model.html">Models</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Parts.html">Parts</a></li>
-                <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
+            <nav class="navbar">
+              <div class="container">
+                <div class="logo">
+                  <a href="index.html">MLA</a>
+                </div>
+                <div class="header-tagline">
+                    <span>Redefining Luxury Since 1990</span>
+                  </div>
+                <ul class="nav-links">
+                  <li><a href="index.html" class="active">Home</a></li>
+                  <li><a href="model.html">Models</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="Parts.html">Parts</a></li>
+                  <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
+                </ul>
+                <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </nav>
+          </header> 
 
         <!-- Header with Search -->
-        <header>
-            <div class="header-container">
-                <div class="logo-area">
-                    <span class="brand-name">RHU Auto</span>
+        <header> 
+            <div class="header-container"> 
+                <div class="logo-area"> 
+                    <span class="brand-name">MLA </span> 
                 </div>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search cars...">
-                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                <div class="search-container"> 
+                    <input type="text" id="search-input" placeholder="Search cars..."> 
+                    <button id="search-btn"><i class="fas fa-search"></i></button> 
                 </div>
-                <div class="filter-container">
+                <div class="filter-container"> 
                     <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="sport">Sport</button>
-                    <button class="filter-btn" data-filter="electric">Electric</button>
-                    <button class="filter-btn" data-filter="luxury">Luxury</button>
-                    <button id="show-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button>
+                    <button class="filter-btn" data-filter="sport">Sport</button> 
+                    <button class="filter-btn" data-filter="electric">Electric</button> 
+                    <button class="filter-btn" data-filter="luxury">Luxury</button> 
+                    <button id="show-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button> 
                 </div>
-                <div class="sort-container">
-                    <div class="sort-dropdown">
-                        <button class="sort-dropdown-btn">
-                            Sort by <i class="fas fa-chevron-down"></i>
+                <div class="sort-container"> 
+                    <div class="sort-dropdown"> 
+                        <button class="sort-dropdown-btn"> 
+                            Sort by <i class="fas fa-chevron-down"></i> 
                         </button>
-                        <div class="sort-dropdown-content">
-                            <button class="sort-btn" data-sort="price-asc">Price: Low to High</button>
-                            <button class="sort-btn" data-sort="price-desc">Price: High to Low</button>
+                        <div class="sort-dropdown-content"> 
+                            <button class="sort-btn" data-sort="price-asc">Price: Low to High</button> 
+                            <button class="sort-btn" data-sort="price-desc">Price: High to Low</button> 
                         </div>
                     </div>
-                    <button class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
+                    <button class="mobile-menu-btn"> <!-- Mobile menu button -->
+                        <i class="fas fa-bars"></i> <!-- Menu icon -->
                     </button>
                 </div>
             </div>
         </header>
 
         <!-- Mobile Navigation Menu -->
-        <div class="mobile-menu">
-            <div class="mobile-menu-header">
-                <img src="./images/rhu.jpg" alt="RHU Logo" class="mobile-logo">
-                <button class="mobile-close-btn"><i class="fas fa-times"></i></button>
+        <div class="mobile-menu"> <!-- Mobile menu container -->
+            <div class="mobile-menu-header"> <!-- Mobile menu header -->
+                <img src="./images/rhu.jpg" alt="RHU Logo" class="mobile-logo"> <!-- Mobile logo -->
+                <button class="mobile-close-btn"><i class="fas fa-times"></i></button> <!-- Close button -->
             </div>
-            <div class="mobile-menu-content">
-                <div class="mobile-search">
-                    <input type="text" id="mobile-search-input" placeholder="Search cars...">
-                    <button id="mobile-search-btn"><i class="fas fa-search"></i></button>
+            <div class="mobile-menu-content"> <!-- Mobile menu content -->
+                <div class="mobile-search"> <!-- Mobile search -->
+                    <input type="text" id="mobile-search-input" placeholder="Search cars..."> <!-- Mobile search input -->
+                    <button id="mobile-search-btn"><i class="fas fa-search"></i></button> <!-- Mobile search button -->
                 </div>
-                <div class="mobile-filters">
-                    <h3>Filter By:</h3>
-                    <button class="mobile-filter-btn active" data-filter="all">All Cars</button>
-                    <button class="mobile-filter-btn" data-filter="sport">Sport</button>
-                    <button class="mobile-filter-btn" data-filter="electric">Electric</button>
-                    <button class="mobile-filter-btn" data-filter="luxury">Luxury</button>
+                <div class="mobile-filters"> <!-- Mobile filters -->
+                    <h3>Filter By:</h3> <!-- Filter title -->
+                    <button class="mobile-filter-btn active" data-filter="all">All Cars</button> <!-- All filter -->
+                    <button class="mobile-filter-btn" data-filter="sport">Sport</button> <!-- Sport filter -->
+                    <button class="mobile-filter-btn" data-filter="electric">Electric</button> <!-- Electric filter -->
+                    <button class="mobile-filter-btn" data-filter="luxury">Luxury</button> <!-- Luxury filter -->
                 </div>
-                <button class="mobile-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button>
+                <button class="mobile-favorites-btn"><i class="fas fa-heart"></i> My Favorites</button> <!-- Favorites button -->
             </div>
         </div>
 
         <!-- Our Models Section -->
-        <section class="models-section">
-            <h2 class="section-title">Our Prestigious Models</h2>
-            <p class="subtitle">Discover our varied brand and model range—and find your desired vehicle.</p>
+        <section class="models-section"> <!-- Models section -->
+            <h2 class="section-title">Our Prestigious Models</h2> <!-- Section title -->
+            <p class="subtitle">Discover our varied brand and model range—and find your desired vehicle.</p> <!-- Subtitle -->
         
-            <div class="model-boxes">
-                <div class="brand-box" data-brand="ferrari">
-                    <div class="brand-category">Ferrari</div>
-                    <div class="brand-logo"><i class="fa-solid fa-car-side"></i></div>
+            <div class="model-boxes"> <!-- Model boxes container -->
+                <div class="brand-box" data-brand="ferrari"> <!-- Ferrari brand box -->
+                    <div class="brand-category">Ferrari</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-car-side"></i></div> <!-- Brand icon -->
                 </div>
-                <div class="brand-box" data-brand="lambo">
-                    <div class="brand-category">Lamborghini</div>
-                    <div class="brand-logo"><i class="fa-solid fa-car"></i></div>
+                <div class="brand-box" data-brand="lambo"> <!-- Lamborghini brand box -->
+                    <div class="brand-category">Lamborghini</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-car"></i></div> <!-- Brand icon -->
                 </div>
-                <div class="brand-box" data-brand="mercedes">
-                    <div class="brand-category">Mercedes</div>
-                    <div class="brand-logo"><i class="fa-solid fa-star"></i></div>
+                <div class="brand-box" data-brand="mercedes"> <!-- Mercedes brand box -->
+                    <div class="brand-category">Mercedes</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-star"></i></div> <!-- Brand icon -->
                 </div>
-                <div class="brand-box" data-brand="bmw">
-                    <div class="brand-category">BMW</div>
-                    <div class="brand-logo"><i class="fa-solid fa-gauge-high"></i></div>
+                <div class="brand-box" data-brand="bmw"> <!-- BMW brand box -->
+                    <div class="brand-category">BMW</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-gauge-high"></i></div> <!-- Brand icon -->
                 </div>
-                <div class="brand-box" data-brand="tesla">
-                    <div class="brand-category">Tesla</div>
-                    <div class="brand-logo"><i class="fa-solid fa-bolt"></i></div>
+                <div class="brand-box" data-brand="tesla"> <!-- Tesla brand box -->
+                    <div class="brand-category">Tesla</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-bolt"></i></div> <!-- Brand icon -->
                 </div>
-                <div class="brand-box" data-brand="porsche">
-                    <div class="brand-category">Porsche</div>
-                    <div class="brand-logo"><i class="fa-solid fa-flag-checkered"></i></div>
+                <div class="brand-box" data-brand="porsche"> <!-- Porsche brand box -->
+                    <div class="brand-category">Porsche</div> <!-- Brand name -->
+                    <div class="brand-logo"><i class="fa-solid fa-flag-checkered"></i></div> <!-- Brand icon -->
                 </div>
             </div>
             
             <!-- Favorites Section -->
-            <div class="favorites-section hidden">
-                <div class="favorites-header">
-                    <h2><i class="fas fa-heart"></i> My Favorite Cars</h2>
-                    <button id="back-to-main-btn" class="back-btn">
-                        <i class="fas fa-arrow-left"></i> Back to Cars
+            <div class="favorites-section hidden"> <!-- Favorites section (hidden by default) -->
+                <div class="favorites-header"> <!-- Favorites header -->
+                    <h2><i class="fas fa-heart"></i> My Favorite Cars</h2> <!-- Favorites title -->
+                    <button id="back-to-main-btn" class="back-btn"> <!-- Back button -->
+                        <i class="fas fa-arrow-left"></i> Back to Cars <!-- Back icon and text -->
                     </button>
                 </div>
-                <div class="favorites-container" id="favorites-container"></div>
+                <div class="favorites-container" id="favorites-container"></div> <!-- Favorites container -->
             </div>
             
             <!-- Car Listings -->
-            <div id="car-listings" class="car-details-section">
-                <div class="car-details" id="car-container">
+            <div id="car-listings" class="car-details-section"> <!-- Car listings section -->
+                <div class="car-details" id="car-container"> <!-- Car details container -->
                     <!-- Cars will be loaded here dynamically -->
                 </div>
             </div>
             
             <!-- Features Section -->
-            <section class="features-section">
-                <h2 class="section-title">Premium Features</h2>
-                <div class="features-container">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+            <section class="features-section"> <!-- Features section -->
+                <h2 class="section-title">Premium Features</h2> <!-- Features title -->
+                <div class="features-container"> <!-- Features container -->
+                    <div class="feature-card"> <!-- Feature card 1 -->
+                        <div class="feature-icon"> <!-- Feature icon -->
+                            <i class="fas fa-shield-alt"></i> <!-- Shield icon -->
                         </div>
-                        <h3>Premium Safety</h3>
-                        <p>Advanced safety features for maximum protection on the road</p>
+                        <h3>Premium Safety</h3> <!-- Feature title -->
+                        <p>Advanced safety features for maximum protection on the road</p> <!-- Feature description -->
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tachometer-alt"></i>
+                    <div class="feature-card"> <!-- Feature card 2 -->
+                        <div class="feature-icon"> <!-- Feature icon -->
+                            <i class="fas fa-tachometer-alt"></i> <!-- Tachometer icon -->
                         </div>
-                        <h3>Top Performance</h3>
-                        <p>Engineered for thrilling performance and precision handling</p>
+                        <h3>Top Performance</h3> <!-- Feature title -->
+                        <p>Engineered for thrilling performance and precision handling</p> <!-- Feature description -->
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-cog"></i>
+                    <div class="feature-card"> <!-- Feature card 3 -->
+                        <div class="feature-icon"> <!-- Feature icon -->
+                            <i class="fas fa-cog"></i> <!-- Cog icon -->
                         </div>
-                        <h3>Advanced Tech</h3>
-                        <p>Cutting-edge technology for an enhanced driving experience</p>
+                        <h3>Advanced Tech</h3> <!-- Feature title -->
+                        <p>Cutting-edge technology for an enhanced driving experience</p> <!-- Feature description -->
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
+                    <div class="feature-card"> <!-- Feature card 4 -->
+                        <div class="feature-icon"> <!-- Feature icon -->
+                            <i class="fas fa-leaf"></i> <!-- Leaf icon -->
                         </div>
-                        <h3>Eco-Friendly</h3>
-                        <p>Sustainable options with reduced environmental impact</p>
+                        <h3>Eco-Friendly</h3> <!-- Feature title -->
+                        <p>Sustainable options with reduced environmental impact</p> <!-- Feature description -->
                     </div>
                 </div>
             </section>
             
             <!-- Comparison Section -->
-            <div class="comparison-section">
-                <h2>Compare Cars</h2>
-                <p class="comparison-subtitle">See how our models stack up against each other</p>
-                <div class="comparison-container">
-                    <select id="car1-select">
-                        <option value="">Select first car</option>
+            <div class="comparison-section"> <!-- Comparison section -->
+                <h2>Compare Cars</h2> <!-- Comparison title -->
+                <p class="comparison-subtitle">See how our models stack up against each other</p> <!-- Subtitle -->
+                <div class="comparison-container"> <!-- Comparison container -->
+                    <select id="car1-select"> <!-- First car select dropdown -->
+                        <option value="">Select first car</option> <!-- Default option -->
                     </select>
-                    <select id="car2-select">
-                        <option value="">Select second car</option>
+                    <select id="car2-select"> <!-- Second car select dropdown -->
+                        <option value="">Select second car</option> <!-- Default option -->
                     </select>
-                    <div class="comparison-buttons">
-                        <button id="compare-btn">Compare Now</button>
-                        <button id="reset-btn">Reset</button>
+                    <div class="comparison-buttons"> <!-- Comparison buttons -->
+                        <button id="compare-btn">Compare Now</button> <!-- Compare button -->
+                        <button id="reset-btn">Reset</button> <!-- Reset button -->
                     </div>
                 </div>
-                <div id="comparison-results" class="comparison-results"></div>
+                <div id="comparison-results" class="comparison-results"></div> <!-- Comparison results container -->
             </div>
 
             <!-- Testimonials Section -->
-            <section class="testimonials-section">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <div class="testimonials-container">
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"The performance and handling of my new Ferrari is beyond my expectations. The team provided exceptional service throughout the buying process."</p>
+            <section class="testimonials-section"> <!-- Testimonials section -->
+                <h2 class="section-title">What Our Customers Say</h2> <!-- Testimonials title -->
+                <div class="testimonials-container"> <!-- Testimonials container -->
+                    <div class="testimonial"> <!-- Testimonial 1 -->
+                        <div class="testimonial-content"> <!-- Testimonial content -->
+                            <p>"The performance and handling of my new Ferrari is beyond my expectations. The team provided exceptional service throughout the buying process."</p> <!-- Testimonial text -->
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <i class="fas fa-user-circle"></i>
+                        <div class="testimonial-author"> <!-- Testimonial author -->
+                            <div class="author-image"> <!-- Author image -->
+                                <i class="fas fa-user-circle"></i> <!-- User icon -->
                             </div>
-                            <div class="author-info">
-                                <h4>Michael Johnson</h4>
-                                <p>Ferrari F80 Owner</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"My Tesla Model S Plaid is the most technologically advanced vehicle I've ever owned. The acceleration is mind-blowing and the autopilot features make driving a joy."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Sarah Thompson</h4>
-                                <p>Tesla Model S Owner</p>
+                            <div class="author-info"> <!-- Author info -->
+                                <h4>Michael Johnson</h4> <!-- Author name -->
+                                <p>Ferrari F80 Owner</p> <!-- Author title -->
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"The luxury and comfort of my Mercedes S-Class is unmatched. Every detail is perfectly crafted, and the driving experience is simply superb."</p>
+                    <div class="testimonial"> <!-- Testimonial 2 -->
+                        <div class="testimonial-content"> <!-- Testimonial content -->
+                            <p>"My Tesla Model S Plaid is the most technologically advanced vehicle I've ever owned. The acceleration is mind-blowing and the autopilot features make driving a joy."</p> <!-- Testimonial text -->
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <i class="fas fa-user-circle"></i>
+                        <div class="testimonial-author"> <!-- Testimonial author -->
+                            <div class="author-image"> <!-- Author image -->
+                                <i class="fas fa-user-circle"></i> <!-- User icon -->
                             </div>
-                            <div class="author-info">
-                                <h4>David Williams</h4>
-                                <p>Mercedes S-Class Owner</p>
+                            <div class="author-info"> <!-- Author info -->
+                                <h4>Sarah Thompson</h4> <!-- Author name -->
+                                <p>Tesla Model S Owner</p> <!-- Author title -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial"> <!-- Testimonial 3 -->
+                        <div class="testimonial-content"> <!-- Testimonial content -->
+                            <p>"The luxury and comfort of my Mercedes S-Class is unmatched. Every detail is perfectly crafted, and the driving experience is simply superb."</p> <!-- Testimonial text -->
+                        </div>
+                        <div class="testimonial-author"> <!-- Testimonial author -->
+                            <div class="author-image"> <!-- Author image -->
+                                <i class="fas fa-user-circle"></i> <!-- User icon -->
+                            </div>
+                            <div class="author-info"> <!-- Author info -->
+                                <h4>David Williams</h4> <!-- Author name -->
+                                <p>Mercedes S-Class Owner</p> <!-- Author title -->
                             </div>
                         </div>
                     </div>
@@ -254,46 +249,46 @@
 
             
             <!-- Swipeable Video Gallery -->
-          <div class="video-gallery animate__animated animate__fadeIn">
-            <h3 class="text-tesla-yellow text-xl font-semibold mb-4">Experience Tesla Technology</h3>
-            <div class="video-carousel">
-              <div class="video-track">
-                <div class="video-slide active">
-                  <video class="gallery-video" loop muted playsinline>
-                    <source src="./videos/tesla navigate on autopilot.mp4" type="video/mp4">
+          <div class="video-gallery animate__animated animate__fadeIn"> <!-- Video gallery container -->
+            <h3 class="text-tesla-yellow text-xl font-semibold mb-4">Experience Tesla Technology</h3> <!-- Video gallery title -->
+            <div class="video-carousel"> <!-- Video carousel container -->
+              <div class="video-track"> <!-- Video track (contains slides) -->
+                <div class="video-slide active"> <!-- Video slide 1 (active) -->
+                  <video class="gallery-video" loop muted playsinline> <!-- Video element -->
+                    <source src="./videos/tesla navigate on autopilot.mp4" type="video/mp4"> <!-- Video source -->
                   </video>
-                  <div class="video-info">
-                    <h4>Navigate on Autopilot</h4>
-                    <p>Automatically navigates from on-ramp to off-ramp</p>
+                  <div class="video-info"> <!-- Video info -->
+                    <h4>Navigate on Autopilot</h4> <!-- Video title -->
+                    <p>Automatically navigates from on-ramp to off-ramp</p> <!-- Video description -->
                   </div>
                 </div>
-                <div class="video-slide">
-                  <video class="gallery-video" loop muted playsinline>
-                    <source src="./videos/autolane change.mp4" type="video/mp4">
+                <div class="video-slide"> <!-- Video slide 2 -->
+                  <video class="gallery-video" loop muted playsinline> <!-- Video element -->
+                    <source src="./videos/autolane change.mp4" type="video/mp4"> <!-- Video source -->
                   </video>
-                  <div class="video-info">
-                    <h4>Auto Lane Change</h4>
-                    <p>Changes lanes automatically when safe</p>
+                  <div class="video-info"> <!-- Video info -->
+                    <h4>Auto Lane Change</h4> <!-- Video title -->
+                    <p>Changes lanes automatically when safe</p> <!-- Video description -->
                   </div>
                 </div>
-                <div class="video-slide">
-                  <video class="gallery-video" loop muted playsinline>
-                    <source src="./videos/autopark.mp4" type="video/mp4">
+                <div class="video-slide"> <!-- Video slide 3 -->
+                  <video class="gallery-video" loop muted playsinline> <!-- Video element -->
+                    <source src="./videos/autopark.mp4" type="video/mp4"> <!-- Video source -->
                   </video>
-                  <div class="video-info">
-                    <h4>Autopark</h4>
-                    <p>Parallel and perpendicular parking with one touch</p>
+                  <div class="video-info"> <!-- Video info -->
+                    <h4>Autopark</h4> <!-- Video title -->
+                    <p>Parallel and perpendicular parking with one touch</p> <!-- Video description -->
                   </div>
                 </div>
               </div>
-              <div class="video-nav">
-                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                <div class="video-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
+              <div class="video-nav"> <!-- Video navigation -->
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button> <!-- Previous button -->
+                <div class="video-dots"> <!-- Navigation dots -->
+                  <span class="dot active"></span> <!-- Active dot -->
+                  <span class="dot"></span> <!-- Dot -->
+                  <span class="dot"></span> <!-- Dot -->
                 </div>
-                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button> <!-- Next button -->
               </div>
             </div>
           </div>
@@ -303,64 +298,64 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="main-footer">
-        <footer class="luxury-footer">
-            <div class="footer-main">
-                <div class="container">
-                    <div class="footer-grid">
-                        <div class="footer-col">
-                            <h3>MLA Automotive</h3>
-                            <p>Redefining the boundaries of luxury performance since 1990. Each MLA vehicle represents the pinnacle of automotive craftsmanship.</p>
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        <div class="footer-col">
-                            <h3>Quick Links</h3>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="model.html">Models</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="Parts.html">Parts</a></li>
-                                <li><a href="login.html">Client Portal</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h3>Contact</h3>
-                            <ul>
-                                <li><i class="fas fa-map-marker-alt"></i> 100 Luxury Avenue, Beverly Hills, CA 90210</li>
-                                <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                                <li><i class="fas fa-envelope"></i> contact@mla-automotive.com</li>
-                                <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h3>Newsletter</h3>
-                            <p>Subscribe for exclusive updates and offers.</p>
-                            <form class="newsletter-form">
-                                <input type="email" placeholder="Your Email Address">
-                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                            </form>
-                        </div>
-                    </div>
+    <footer class="luxury-footer">
+        <div class="footer-main">
+          <div class="container">
+            <div class="footer-grid">
+              <div class="footer-col">
+                <h3>MLA Automotive</h3>
+                <p>
+                  Redefining the boundaries of luxury performance since 1990.
+                  Each MLA vehicle represents the pinnacle of automotive craftsmanship.
+                </p>
+                <div class="footer-social">
+                  <a href="#"><!-- icon placeholder --></a>
+                  <a href="#"><!-- icon placeholder --></a>
+                  <a href="#"><!-- icon placeholder --></a>
+                  <a href="#"><!-- icon placeholder --></a>
                 </div>
+              </div>
+              <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="model.html">Models</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="Parts.html">Parts</a></li>
+                  <li><a href="login.html">Client Portal</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                  <li><span>100 Luxury Avenue, Beverly Hills, CA 90210</span></li>
+                  <li><span>+1 (555) 123-4567</span></li>
+                  <li><span>contact@mla-automotive.com</span></li>
+                  <li><span>Mon-Fri: 9AM - 6PM</span></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe for exclusive updates and offers.</p>
+                <form class="newsletter-form">
+                  <input type="email" placeholder="Your Email Address">
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <p>&copy; 2025 MLA Automotive. All rights reserved.</p>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
             </div>
-            <!-- <span id="current-year"></span> -->
-        </footer>
-    
-    <script src="model.js"></script>
+          </div>
+        </div>
+      </footer>
+    <script src="model.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>
