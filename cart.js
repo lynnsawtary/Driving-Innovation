@@ -248,7 +248,40 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize cart on page load
     renderCart();
+// Newsletter Modal functionality
+let newsletterForm = document.querySelector('.newsletter-form');
+let newsletterModal = document.getElementById('newsletterSuccessModal');
+let closeNewsletterModal = document.getElementById('closeNewsletterModal');
 
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Instead of alert, show the newsletter success modal
+        if (newsletterModal) {
+            newsletterModal.classList.add('active');
+        }
+        // Optionally clear the newsletter input field
+        let emailInput = newsletterForm.querySelector('input[type="email"]');
+        if (emailInput) {
+            emailInput.value = '';
+        }
+    });
+}
+
+if (closeNewsletterModal) {
+    closeNewsletterModal.addEventListener('click', function() {
+        newsletterModal.classList.remove('active');
+    });
+}
+
+// Also close the modal if clicking the overlay
+if (newsletterModal) {
+    newsletterModal.addEventListener('click', function(e) {
+        if (e.target === newsletterModal) {
+            newsletterModal.classList.remove('active');
+        }
+    });
+}
     // ============== NEW CHECKOUT MODAL FUNCTIONALITY ==============
     const checkoutModal = document.getElementById('checkoutModal');
     const orderConfirmationModal = document.getElementById('orderConfirmationModal');

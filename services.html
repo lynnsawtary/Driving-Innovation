@@ -10,40 +10,54 @@
        
 </head>
 <body>
-    <!-- Services Header -->
-    <header class="services-header" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/services\ header.avif) no-repeat center center/cover;">
-        <div class="container">
-            <h1>OUR <span>EXPERT SERVICES</span></h1>
-            <p>Precision engineering meets automotive passion - we deliver excellence in every detail</p>
+    <!-- Fixed Luxury Header -->
+<header class="luxury-header">
+    <!-- Main Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">MLA</a>
         </div>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">MLA</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="model.html">Models</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="Parts.html">Parts</a></li>
-                    <li class="login"><a href="login.html" id="loginLink"><i class="fas fa-user"></i> Client Portal</a></li>
-                </ul>
-                <!-- Cart Icon - Add this to your existing header -->
-<div class="cart-icon-container">
-    <a href="cart.html" class="cart-link">
-        <i class="cart-icon">🛒</i>
-        <span class="cart-count">0</span>
-    </a>
-</div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="model.html">Models</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="Parts.html">Parts</a></li>
+        </ul>
+        <!-- Header icons on the right -->
+        <div class="header-icons">
+          <!-- User Icon -->
+          <div class="user-icon">
+            <a href="login.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-user">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8 8 0 0112 15a8 8 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </a>
+          </div>
+          <!-- Cart Icon -->
+          <div class="cart-icon">
+            <a href="cart.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon icon-cart">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.293 1.414l.293.293m7.414-3.414H7m7.414 3.414l1.293 2.293a1 1 0 01-.293 1.414l-.293.293M5 21a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- Hero Section with the image -->
+<section class="services-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/services\ header.avif) no-repeat center center/cover;">
+    <div class="container">
+      <h1>OUR <span>EXPERT SERVICES</span></h1>
+      <p>Precision engineering meets automotive passion - we deliver excellence in every detail</p>
+    </div>
+  </section>
     <!-- Main Services Section -->
     <main class="services-main">
         <div class="container">
@@ -853,8 +867,8 @@
     </div>
 </div>
 </body>
- <!-- FOOTER -->
- <footer class="luxury-footer">
+<!-- FOOTER -->
+<footer class="luxury-footer">
     <div class="footer-main">
       <div class="container">
         <div class="footer-grid">
@@ -903,4 +917,14 @@
       </div>
     </div>
   </footer>
+  <!-- Newsletter Success Modal -->
+<div class="modal-overlay" id="newsletterSuccessModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeNewsletterModal">&times;</button>
+      <div class="modal-body" style="text-align: center; padding: 20px;">
+        <h2>Thank You!</h2>
+        <p>Thank you for subscribing to our newsletter!</p>
+      </div>
+    </div>
+  </div>
 </html>
