@@ -173,11 +173,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
   
-  // ---------- Consultation Modal Functionality ----------
+  // Consultation Modal Functionality
   const bookConsultationBtn = document.getElementById('bookConsultationBtn');
   const consultationOverlay = document.getElementById('consultationOverlay');
   const closeConsultationBtn = document.getElementById('closeConsultationBtn');
   const consultationForm = document.getElementById('consultationForm');
+  // Existing code for opening the consultation form modal...
   if (bookConsultationBtn && consultationOverlay) {
     bookConsultationBtn.addEventListener('click', function(e) {
       e.preventDefault();
@@ -197,13 +198,18 @@ document.addEventListener("DOMContentLoaded", function() {
   if (consultationForm) {
     consultationForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thank you for booking a consultation! We will contact you soon.');
-      consultationOverlay.classList.remove('active');
+      // Instead of alert, show the consultation success modal
+      const consultationSuccessModal = document.getElementById('consultationSuccessModal');
+      if (consultationSuccessModal) {
+        consultationSuccessModal.classList.add('active');
+      }
       consultationForm.reset();
+      // Optionally, also hide the consultation form modal itself:
+      consultationOverlay.classList.remove('active');
     });
   }
   
-  // ---------- Contact Us Modal Functionality ----------
+  // Contact Us Modal Functionality
   const contactUsBtn = document.getElementById('contactUsBtn');
   const contactUsOverlay = document.getElementById('contactUsOverlay');
   const closeContactUsBtn = document.getElementById('closeContactUsBtn');
@@ -227,13 +233,17 @@ document.addEventListener("DOMContentLoaded", function() {
   if (contactUsForm) {
     contactUsForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thank you for contacting us! We will get back to you soon.');
-      contactUsOverlay.classList.remove('active');
+      // Instead of an alert, show the contact us success modal
+      const contactUsSuccessModal = document.getElementById('contactUsSuccessModal');
+      if (contactUsSuccessModal) {
+        contactUsSuccessModal.classList.add('active');
+      }
       contactUsForm.reset();
+      contactUsOverlay.classList.remove('active');
     });
   }
   
-  // ---------- Book Appointment Modal Functionality ----------
+  // Book Appointment Modal Functionality
   const bookAppointmentBtn = document.getElementById('bookAppointmentBtn');
   const bookAppointmentOverlay = document.getElementById('bookAppointmentOverlay');
   const closeBookAppointmentBtn = document.getElementById('closeBookAppointmentBtn');
@@ -257,9 +267,13 @@ document.addEventListener("DOMContentLoaded", function() {
   if (bookAppointmentForm) {
     bookAppointmentForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thank you for booking an appointment! We will contact you soon.');
-      bookAppointmentOverlay.classList.remove('active');
+      // Instead of an alert, show the appointment success modal
+      const appointmentSuccessModal = document.getElementById('appointmentSuccessModal');
+      if (appointmentSuccessModal) {
+        appointmentSuccessModal.classList.add('active');
+      }
       bookAppointmentForm.reset();
+      bookAppointmentOverlay.classList.remove('active');
     });
   }
   
@@ -488,6 +502,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     });
+    // Close modal when clicking on any element with the class "modal-close"
+document.querySelectorAll('.modal-close').forEach(function(closeButton) {
+  closeButton.addEventListener('click', function() {
+    // Find the closest parent with the class "modal-overlay"
+    const modalOverlay = this.closest('.modal-overlay');
+    if (modalOverlay) {
+      modalOverlay.classList.remove('active');
+      // Restore body scrolling
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
   }
   
   initializeCart();

@@ -142,13 +142,7 @@ section {
   transition: all 0.3s ease;
 }
 
-/* Top bar with contact info and social icons */
-.header-top-bar {
-  background-color: #2c2c2c;
-  padding: 10px 0;
-  font-size: 0.8rem;
-  color: #cccccc;
-}
+
 
 .header-top-bar .container {
   display: flex;
@@ -160,20 +154,13 @@ section {
   margin-right: 20px;
 }
 
-.header-contact i,
-.header-social a {
+.header-contact i {
   margin-right: 8px;
   color: #d4af37;
 }
 
-.header-social a {
-  margin-left: 15px;
-  transition: all 0.3s ease;
-}
 
-.header-social a:hover {
-  color: #b8860b;
-}
+
 
 /* --- Header Icons (right) container --- */
 .header-icons {
@@ -560,18 +547,12 @@ section {
 }
 
 /* ========== CTA SECTION ========== */
-/*.cta-section {
+.cta-section {
   background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-              url('images/cta-bg.jpg') no-repeat center center/cover;
+              url('images/Mercedes-C-Class-5.jpg') no-repeat center center/cover;
   text-align: center;
+  filter: brightness(1);
 }
-  */
-  .cta-section {
-    background: url('images/161217142430-2017-cars-ferrari-1.jpg') no-repeat center center/cover;
-    /* The 'cover' value ensures that the background image fills the section while maintaining its aspect ratio */
-    padding: 80px 0; /* adjust padding as needed */
-    text-align: center;
-  }
 
 .cta-content {
   max-width: 700px;
@@ -601,10 +582,7 @@ section {
 }
 
 .footer-main {
-  padding: 30px 0 20px;
-}
-.footer-bottom {
-  padding: 10px 0;       /* Reduced from 15px 0 */
+  padding: 50px 0 30px;
 }
 
 .footer-grid {
@@ -634,16 +612,17 @@ section {
 .footer-col p {
   margin-bottom: 15px;
   color: #cccccc;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
+
 .footer-col ul {
   list-style: none;
 }
 
 .footer-col ul li {
   margin-bottom: 10px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .footer-col ul li a {
@@ -663,39 +642,6 @@ section {
   width: 20px;
   text-align: center;
 }
-.luxury-footer .footer-main {
-  padding: 10px 0; /* Tighter top/bottom */
-}
-
-.luxury-footer .footer-bottom {
-  padding: 6px 0; /* Very small padding */
-}
-
-.footer-grid {
-  gap: 15px; /* Closer columns */
-}
-
-.footer-col {
-  margin: 0;
-  padding: 0;
-}
-
-/* Tighter text spacing */
-.footer-col p,
-.footer-col ul li,
-.footer-links a {
-  margin-bottom: 5px;
-  line-height: 1.4;
-  font-size: 0.85rem;
-}
-
-/* Also ensure ul has no extra margin/padding */
-.footer-col ul {
-  margin: 0;
-  padding: 0;
-}
-
-
 
 .newsletter-form {
   display: flex;
@@ -705,10 +651,10 @@ section {
 .newsletter-form input {
   flex: 1;
   padding: 12px 15px;
-  background-color: #fff;
   border: none;
   border-radius: 4px 0 0 4px;
   font-size: 0.9rem;
+  background-color: #fff;
 }
 
 .newsletter-form button {
@@ -723,6 +669,54 @@ section {
 
 .newsletter-form button:hover {
   background-color: #b8860b;
+}
+
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999999;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-links a {
+  color: #999999;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d4af37;
+}
+
+/* Adjust the main footer area padding for a shorter footer */
+.luxury-footer .footer-main {
+  padding: 15px 0 10px;  /* Reduced from a higher value */
+}
+
+/* Adjust the bottom footer section padding */
+.luxury-footer .footer-bottom {
+  padding: 10px 0;  /* Reduced padding for a more compact look */
+}
+
+/* Optionally, reduce the font size in the footer for a tighter appearance */
+.luxury-footer p,
+.luxury-footer ul li,
+.footer-links a {
+  font-size: 0.8rem;  /* Adjust as needed */
 }
 
 /* ========== MODAL STYLES ========== */
@@ -1373,7 +1367,7 @@ section {
   line-height: 1;
 }
 
-/* Newsletter success modal reusing your existing .modal-overlay, .modal-content, etc. */
+/* Newsletter Success Modal - similar styling to your other modals */
 #newsletterSuccessModal {
   position: fixed;
   top: 0;
@@ -1381,10 +1375,10 @@ section {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.8);
-  display: none; /* hidden by default */
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
-  z-index: 3000; /* above other elements */
+  z-index: 3000;
 }
 
 #newsletterSuccessModal.active {
@@ -1393,40 +1387,359 @@ section {
 
 #newsletterSuccessModal .modal-content {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;  /* slightly smaller modal */
   background-color: #fff;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-out;
   position: relative;
   text-align: center;
-  /* etc. */
+}
+/* Override grid for the newsletter modal body to ensure a vertical (row) layout */
+#newsletterSuccessModal .modal-body {
+  display: block;
+  padding: 30px; /* Adjust padding as needed */
+  text-align: center; /* Center the content, if desired */
+}
+
+
+#newsletterSuccessModal .modal-body h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 15px;
+  background:  #b8860b;
+  border-radius: 6px 6px 0 0;
+}
+
+#newsletterSuccessModal .modal-body p {
+  margin: 0;
+  padding: 20px;
+  white-space: nowrap;
+  color: #444444;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 #newsletterSuccessModal .modal-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
   border: none;
-  background-color: transparent;
-  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: transparent;
 }
 
-#newsletterSuccessModal .modal-body {
+#newsletterSuccessModal .modal-close:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+#newsletterSuccessModal .modal-close::before {
+  content: '×';
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 1;
+}
+
+/* Consultation Success Modal */
+#consultationSuccessModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+#consultationSuccessModal.active {
+  display: flex;
+}
+
+#consultationSuccessModal .modal-content {
+  width: 100%;
+  max-width: 400px;  /* slightly smaller modal */
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-out;
+  position: relative;
+  text-align: center;
+}
+
+/* Override layout to a vertical (row) layout */
+#consultationSuccessModal .modal-body {
+  display: block;
+  padding: 30px; /* Adjust padding as needed */
+  text-align: center;
+}
+
+/* Gold bar on top for the title */
+#consultationSuccessModal .modal-title-bar {
+  background: #b8860b;
+  padding: 15px;
+  border-radius: 6px 6px 0 0;
+}
+
+#consultationSuccessModal .modal-title-bar h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* White section for the text message below */
+#consultationSuccessModal .modal-text-section {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#consultationSuccessModal .modal-text-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: #444444;
+  line-height: 1.5;
+}
+
+/* Close button styling */
+#consultationSuccessModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: transparent;
+}
+
+#consultationSuccessModal .modal-close:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+#consultationSuccessModal .modal-close::before {
+  content: '×';
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 1;
+}
+
+
+/* Contact Us Success Modal */
+#contactUsSuccessModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+#contactUsSuccessModal.active {
+  display: flex;
+}
+
+#contactUsSuccessModal .modal-content {
+  width: 100%;
+  max-width: 400px;  /* Adjust if you need a smaller modal */
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;  /* This ensures the gold bar and white section have matching corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+  text-align: center;
+}
+
+/* Ensure the modal body stacks content vertically (rows) */
+#contactUsSuccessModal .modal-body {
+  display: block;
   padding: 30px;
+  text-align: center;
 }
 
-#newsletterSuccessModal .modal-body h2 {
-  margin-bottom: 15px;
-  color: #000; /* or your chosen color */
+/* Gold bar for the title */
+#contactUsSuccessModal .modal-title-bar {
+  background: #b8860b;      /* Gold color */
+  padding: 20px;            /* Adjust padding as needed */
+  text-align: center;
 }
 
-#newsletterSuccessModal .modal-body p {
-  color: #444; /* or your chosen color */
-  line-height: 1.6;
+#contactUsSuccessModal .modal-title-bar h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;              /* White text on gold */
+}
+
+/* White section for the text below */
+#contactUsSuccessModal .modal-text-section {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#contactUsSuccessModal .modal-text-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: #444;              /* Dark text for good contrast on white */
+  line-height: 1.5;
+}
+
+/* Close Button */
+#contactUsSuccessModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: transparent;
+}
+
+#contactUsSuccessModal .modal-close:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+#contactUsSuccessModal .modal-close::before {
+  content: '×';
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 1;
+}
+
+/* Book Appointment Success Modal */
+#appointmentSuccessModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+#appointmentSuccessModal.active {
+  display: flex;
+}
+
+#appointmentSuccessModal .modal-content {
+  width: 100%;
+  max-width: 400px;  /* Adjust for desired width */
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;  /* Ensure the gold bar and white section share rounded corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+  text-align: center;
+}
+
+/* Ensure the modal body stacks elements vertically (in rows) */
+#appointmentSuccessModal .modal-body {
+  display: block; 
+  padding: 30px;
+  text-align: center;
+}
+
+/* Gold bar at the top for the title */
+#appointmentSuccessModal .modal-title-bar {
+  background: #b8860b; /* Gold color */
+  padding: 20px;
+  text-align: center;
+}
+
+#appointmentSuccessModal .modal-title-bar h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff; /* White text */
+}
+
+/* White area for the text message below */
+#appointmentSuccessModal .modal-text-section {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#appointmentSuccessModal .modal-text-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: #444; /* Dark text for contrast */
+  line-height: 1.5;
+}
+
+/* Close button styling */
+#appointmentSuccessModal .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: transparent;
+}
+
+#appointmentSuccessModal .modal-close:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+#appointmentSuccessModal .modal-close::before {
+  content: '×';
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 1;
 }
 
 
