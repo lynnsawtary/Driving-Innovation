@@ -1408,10 +1408,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* Merged .mini-cart-subtotal:
-   (First block had: color: #1a1a1a;)
-   (Second block had: display, justify-content, margin-bottom, font-weight)
-*/
+
 .mini-cart-subtotal {
   color: #1a1a1a; /* very dark gray, almost black */
   display: flex;
@@ -1538,60 +1535,62 @@ h1, h2, h3, h4, h5, h6 {
     gap: 20px;
   }
 }
-
 @media (max-width: 768px) {
-  /* Hide the default wide nav; show hamburger */
+  /* Mobile menu container */
   .nav-links {
     position: fixed;
-    top: 70px;               /* Just below your header (adjust if header is taller/shorter) */
-    right: 20px;            /* Position it near the right edge */
-    width: 220px;           /* Fixed width (make smaller or bigger as needed) */
-    max-height: 80vh;       /* Prevent it from exceeding most of the screen */
-    overflow-y: auto;       /* Scrollable if content is too tall */
+    top: 60px;               /* Adjust based on your header height */
+    right: 20px;             /* Changed from centered to right-aligned */
+    width: 200px;            /* Smaller width */
+    max-height: calc(100vh - 80px); /* Prevent covering entire screen */
+    overflow-y: auto;        /* Add scroll if too many items */
     background-color: #2c2c2c;
     border-radius: 4px;
     padding: 10px 0;
-    display: none;          /* Hidden by default; shown when .active */
+    display: none;
     flex-direction: column;
-    align-items: center;
-    z-index: 1001;          /* Appear above your page content */
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
-
+  
+  /* Show the dropdown when active */
   .nav-links.active {
     display: flex;
   }
-
-  /* Each nav item is spaced out and full width for easy tapping */
+  
+  /* Menu items styling */
   .nav-links li {
-    margin: 5px 0;
     width: 100%;
-    text-align: center;
+    margin: 0;              /* Reduced margin */
   }
-
+  
   .nav-links a {
     display: block;
+    padding: 8px 15px;     /* Smaller padding */
     color: #fff;
-    font-size: 0.9rem;
-    padding: 8px 0;
+    font-size: 0.85rem;    /* Smaller font size */
     text-decoration: none;
+    white-space: nowrap;   /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
-  /* Optional hover effect to show focus on each item */
+  
+  /* Hover effect */
   .nav-links a:hover {
     background-color: #444;
   }
-
-  /* Show the hamburger menu icon, hide the wide nav links */
+  
+  /* Hamburger button */
   .hamburger {
     display: block;
+    position: absolute;    /* Changed from fixed to absolute */
+    top: 15px;
+    right: 20px;
     cursor: pointer;
+    z-index: 1100;
   }
-
-  /* Hide the nav in wide view if you want (optional):
-     .nav-links { display: none; }  
-     in the broader scope. (Might already be done in your code) */
-
-  /* Hamburger animation if used */
+  
+  /* Hamburger animations */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -1601,8 +1600,19 @@ h1, h2, h3, h4, h5, h6 {
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
+  
+  /* Prevent scrolling when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  /* Add some margin to the page content when menu is open */
+  body.menu-open::after {
+    content: "";
+    display: block;
+    height: 60px; /* Same as your header height */
+  }
 }
-
 
 
 

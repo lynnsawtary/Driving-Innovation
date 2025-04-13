@@ -856,7 +856,6 @@ section {
   flex: 1;
 }
 
-/* Position the model-image container as relative, so overlay can go absolute */
 .model-image {
   position: relative;
   overflow: hidden; /* ensures anything outside doesn't show */
@@ -920,31 +919,6 @@ section {
 }
 
 
-/* The overlay containing the details, hidden by default */
-/*.model-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-.model-card:hover .model-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-*/
-
 /* Optional styling to ensure overlay text is easy to read */
 .model-overlay h3 {
   font-size: 1.3rem;
@@ -974,8 +948,6 @@ section {
   color: #f8f8f8; /* you can differentiate color for label vs value */
 }
 #consultationOverlay .modal-overlay {
-  /* For clarity, this rule is not required because the outer container already has a modal-overlay class,
-     but you can override if needed */
   background-color: rgba(0, 0, 0, 0.85);
 }
 
@@ -1748,6 +1720,10 @@ section {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
   .modal-body {
     grid-template-columns: 1fr;
@@ -1817,43 +1793,81 @@ section {
     gap: 20px;
   }
 }
-
-@media (max-width: 576px) {
-  .header-top-bar .container {
+@media (max-width: 768px) {
+  /* Mobile menu container */
+  .nav-links {
+    position: fixed;
+    top: 60px;               /* Adjust based on your header height */
+    right: 20px;             /* Changed from centered to right-aligned */
+    width: 200px;            /* Smaller width */
+    max-height: calc(100vh - 80px); /* Prevent covering entire screen */
+    overflow-y: auto;        /* Add scroll if too many items */
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    padding: 10px 0;
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   
-  .header-contact {
-    text-align: center;
+  /* Show the dropdown when active */
+  .nav-links.active {
+    display: flex;
   }
   
-  .hero-content h1 {
-    font-size: 2rem;
+  /* Menu items styling */
+  .nav-links li {
+    width: 100%;
+    margin: 0;              /* Reduced margin */
   }
   
-  .hero-content p {
-    font-size: 1rem;
+  .nav-links a {
+    display: block;
+    padding: 8px 15px;     /* Smaller padding */
+    color: #fff;
+    font-size: 0.85rem;    /* Smaller font size */
+    text-decoration: none;
+    white-space: nowrap;   /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  .modal-body {
-    padding: 30px;
+  /* Hover effect */
+  .nav-links a:hover {
+    background-color: #444;
   }
   
-  .modal-actions {
-    flex-direction: column;
+  /* Hamburger button */
+  .hamburger {
+    display: block;
+    position: absolute;    /* Changed from fixed to absolute */
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1100;
   }
   
-  .footer-bottom .container {
-    flex-direction: column;
-    gap: 10px;
+  /* Hamburger animations */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
   
-  .footer-links {
-    margin-top: 10px;
+  /* Prevent scrolling when menu is open */
+  body.menu-open {
+    overflow: hidden;
   }
   
-  .footer-links a {
-    margin: 0 10px;
+  /* Add some margin to the page content when menu is open */
+  body.menu-open::after {
+    content: "";
+    display: block;
+    height: 60px; /* Same as your header height */
   }
 }

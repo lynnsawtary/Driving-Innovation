@@ -6,7 +6,6 @@
   <title>MLA | Genuine Parts & Accessories</title>
   <link rel="stylesheet" href="parts.css">
   <link rel="shortcut icon" href="./images/car.png" type="image/x-icon"> 
-  <!-- Font links removed as per your requirements -->
 </head>
 <body>
   <!-- HEADER -->
@@ -26,8 +25,6 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="Parts.html" class="active">Parts</a></li>
         </ul>
-        
-        <!-- New container for icons using inline SVGs -->
         <div class="header-icons">
           <!-- User Icon -->
           <div class="user-icon">
@@ -54,8 +51,6 @@
       </div>
     </nav>
   </header>
-  <!-- END HEADER -->
-
   <main>
     <!-- Parts Hero Section -->
     <section class="parts-hero">
@@ -106,7 +101,6 @@
           </select>
         </div>
         <div class="parts-grid">
-          <!-- Parts will be dynamically loaded here -->
         </div>
       </div>
     </section>
@@ -118,7 +112,6 @@
           <h2>Can't Find What You Need?</h2>
           <p>Our parts specialists can source any component for your MLA vehicle</p>
           <div class="cta-buttons">
-            <!-- Added IDs so they can trigger modals -->
             <a href="#" class="btn btn-primary" id="callPartsBtn"><i class="fas fa-phone"></i> Call Parts Specialist</a>
             <a href="#" class="btn btn-secondary" id="quoteBtn">Request a Quote</a>
           </div>
@@ -221,7 +214,6 @@
 <!-- Mini Cart -->
 <div class="mini-cart" id="mini-cart">
     <div class="mini-cart-header">
-      <!-- Container for the cart icon -->
       <div class="cart-icon-container">
         <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -230,7 +222,6 @@
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>
       </div>
-      <!-- Count badge (positioned absolutely) -->
       <span class="mini-cart-count" id="mini-cart-count">0</span>
     </div>
     <div class="mini-cart-dropdown" id="mini-cart-dropdown">
@@ -238,7 +229,6 @@
         <p>Your cart is empty</p>
       </div>
       <div class="mini-cart-items" id="mini-cart-items">
-        <!-- Mini cart items will be dynamically inserted here -->
       </div>
       <div class="mini-cart-summary" id="mini-cart-summary">
         <div class="mini-cart-subtotal">
@@ -316,13 +306,12 @@
     </div>
   </div>
   
-  <!-- Part Details Modal (for "View Details") -->
+  <!-- Part Details Modal -->
   <div class="part-modal" id="partModal">
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <button class="modal-close" id="partModalClose"><i class="fas fa-times"></i></button>
       <div class="modal-body">
-        <!-- Content for part details will be injected dynamically -->
       </div>
     </div>
   </div>
@@ -337,7 +326,7 @@
       </div>
     </div>
   </div>
-  <!-- *** NEW: Checkout Form Modal *** -->
+  <!--  Checkout Form Modal -->
   <div id="checkoutModal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-body">
@@ -366,7 +355,7 @@
     </div>
   </div>
   
-  <!-- *** NEW: Order Confirmation Modal *** -->
+  <!--  Order Confirmation Modal -->
   <div id="orderConfirmationModal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-body">
@@ -407,5 +396,6 @@
   </div>
   
   <script src="parts.js"></script>
+  
 </body>
 </html>
