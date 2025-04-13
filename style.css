@@ -1721,153 +1721,68 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
-
-
-/* ========== MEDIA QUERIES ========== */
-@media (max-width: 992px) {
-  .modal-body {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal-img {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 768px) {
+  /* Use fixed positioning for the dropdown so it hovers over the page and does not push content */
   .nav-links {
     position: fixed;
-    top: 120px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 120px);
-    background-color: #2c2c2c;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links.active {
-    left: 0;
-  }
-  
-  .nav-links li {
-    margin: 15px 0;
-  }
-  
-  .hamburger {
-    display: block;
-  }
-  
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .cta-content h2 {
-    font-size: 2rem;
-  }
-  
-  .footer-main {
-    padding: 30px 0 20px;
-  }
-  
-  .footer-grid {
-    gap: 20px;
-  }
-}
-@media (max-width: 768px) {
-  /* Mobile menu container */
-  .nav-links {
-    position: fixed;
-    top: 60px;               /* Adjust based on your header height */
-    right: 20px;             /* Changed from centered to right-aligned */
-    width: 200px;            /* Smaller width */
-    max-height: calc(100vh - 80px); /* Prevent covering entire screen */
-    overflow-y: auto;        /* Add scroll if too many items */
+    top: 60px;               /* Adjust this value if your header has a different height */
+    left: 0;                 /* Position at left side */
+    transform: none;         /* Remove centering transform */
+    width: 250px;            /* Fixed width dropdown */
     background-color: #2c2c2c;
     border-radius: 4px;
-    padding: 10px 0;
-    display: none;
+    padding: 10px 0;         /* Minimal vertical padding */
+    display: none;           /* Hidden by default */
     flex-direction: column;
+    align-items: center;
     z-index: 1001;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   
-  /* Show the dropdown when active */
+  /* When the hamburger is active, show the navigation dropdown */
   .nav-links.active {
     display: flex;
   }
   
-  /* Menu items styling */
+  /* Ensure that each nav item takes full width and centered */
   .nav-links li {
     width: 100%;
-    margin: 0;              /* Reduced margin */
+    margin: 5px 0;           /* Even spacing between items */
+    text-align: center;
   }
   
+  /* Style the link text clearly */
   .nav-links a {
     display: block;
-    padding: 8px 15px;     /* Smaller padding */
     color: #fff;
-    font-size: 0.85rem;    /* Smaller font size */
+    font-size: 0.9rem;
+    padding: 8px 0;
     text-decoration: none;
-    white-space: nowrap;   /* Prevent text wrapping */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 100%;
   }
   
-  /* Hover effect */
+  /* Optional: If you want hover effects for clarity */
   .nav-links a:hover {
     background-color: #444;
   }
   
-  /* Hamburger button */
+  /* Ensure your hamburger icon remains visible on mobile */
   .hamburger {
     display: block;
-    position: absolute;    /* Changed from fixed to absolute */
-    top: 15px;
-    right: 20px;
     cursor: pointer;
-    z-index: 1100;
+    position: relative;
+    z-index: 1100;  /* Higher than the nav */
   }
   
-  /* Hamburger animations */
+  /* Hamburger animation rules if they are still used */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+  
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
+  
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  /* Prevent scrolling when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
-  
-  /* Add some margin to the page content when menu is open */
-  body.menu-open::after {
-    content: "";
-    display: block;
-    height: 60px; /* Same as your header height */
   }
 }
